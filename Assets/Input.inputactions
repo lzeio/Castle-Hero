@@ -1,0 +1,34 @@
+{
+    "name": "Input",
+    "maps": [
+        {
+            "name": "Camera Controls",
+            "id": "6553997f-f761-40b2-856b-fd243ae90033",
+            "actions": [
+                {
+                    "name": "MouseLook XY",
+                    "type": "PassThrough",
+                    "id": "af1a3c42-90ad-4612-ac79-a4021a7b5dae",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cbf7333a-9ec2-4f83-b355-779d254822d3",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseLook XY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
