@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 9136488870483083447}
   m_Layer: 7
   m_Name: SmallFry
-  m_TagString: Untagged
+  m_TagString: SmallFries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1432,7 +1432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed39b7c276db31f46b2bcc036710f23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 11400000, guid: 00dda599ac6d580418bb0fd279f01a56, type: 2}
+  health: 0
 --- !u!114 &9136488870483083447
 MonoBehaviour:
   m_ObjectHideFlags: 0

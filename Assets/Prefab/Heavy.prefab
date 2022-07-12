@@ -1064,9 +1064,10 @@ GameObject:
   - component: {fileID: 1644685763163738786}
   - component: {fileID: -8175509183230030104}
   - component: {fileID: 24451667017711788}
+  - component: {fileID: 1781940572}
   m_Layer: 7
   m_Name: Heavy
-  m_TagString: Untagged
+  m_TagString: Heavy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1099,7 +1100,7 @@ Animator:
   m_GameObject: {fileID: 5049267944382661205}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5c658df0d8d544b4c860c0ad70993a2a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 08f6634017a8e784a8807f193b72bec9, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb1bff0775a097742a7dd61931bbcbf5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1156,6 +1157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed39b7c276db31f46b2bcc036710f23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 410cc5354c9144a4883dce5836d4cf5e, type: 2}
+  health: 0
 --- !u!114 &24451667017711788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,6 +1173,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1644685763163738786}
   Castle: {fileID: 0}
+  anim: {fileID: 0}
+  heavyData: {fileID: 11400000, guid: 410cc5354c9144a4883dce5836d4cf5e, type: 2}
+--- !u!54 &1781940572
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049267944382661205}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5049267944382667255
 GameObject:
   m_ObjectHideFlags: 0

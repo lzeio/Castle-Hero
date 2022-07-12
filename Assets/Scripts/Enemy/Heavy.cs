@@ -11,30 +11,51 @@ public class Heavy : MonoBehaviour
 
     public Animator anim;
 
-    EnemyStates smallfry;
+    EnemyStates heavy;
 
+    
     public EnemyScriptable heavyData;
+
+
+
+    
     void Start()
     {
         anim = GetComponent<Animator>();
-        smallfry = EnemyStates.Idle;
+        heavy = EnemyStates.Idle;
         Spawn();
+        HealthSystem healthSystem = GetComponent<HealthSystem>();
+        healthSystem.OnDeath += HealthSystem_OnDeath;
+        transform.LookAt(Castle);
+    }
+
+    private void HealthSystem_OnDeath(object sender, System.EventArgs e)
+    {
+        anim.SetBool("Dead", true);
+        heavy = EnemyStates.Death;
+        agent.Stop();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (EnemyStates.Attack == smallfry)
+        if (EnemyStates.Attack == heavy)
         {
-            anim.SetBool("Attacking", true);
+            anim.SetBool("HornAttack", true);
             anim.SetBool("Running", false);
         }
-        if (EnemyStates.Run == smallfry)
+        if (EnemyStates.Run == heavy)
         {
             anim.SetBool("Running", true);
-            anim.SetBool("Attacking", false);
+            anim.SetBool("HornAttack", false);
         }
 
+        if (EnemyStates.CastleAttack == heavy)
+        {
+            anim.SetBool("Running", false);
+            anim.SetBool("Attacking", true);
+        }
         Debug.Log(heavyData.health);
     }
 
@@ -44,31 +65,44 @@ public class Heavy : MonoBehaviour
         agent.speed = heavyData.speed;
     }
 
-    void Attack()
+    void TrapAttacks()
     {
-        smallfry = EnemyStates.Attack;
-
+        heavy = EnemyStates.Attack;
     }
 
-
+    void CastleAttacks()
+    {
+        heavy = EnemyStates.CastleAttack;
+    }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Traps")
+        if (other.gameObject.CompareTag("Traps"))
         {
             GetComponent<HealthSystem>().Damage((int)other.GetComponent<Traps>().damage);
             agent.speed = heavyData.speed / 1.4f;
-            smallfry = EnemyStates.Run;
-
+            heavy = EnemyStates.Run;
             other.GetComponent<Traps>().Damage(heavyData.attack);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Traps")
+        if (other.gameObject.CompareTag("Traps"))
         {
-            Attack();
+            TrapAttacks();
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Called");
+        if (collision.gameObject.CompareTag("Castle"))
+        {
+            agent.Stop();
+            CastleAttacks();
+            collision.gameObject.GetComponent<Castle>().Damage(heavyData.attack);
+        }
+    }
+
 }

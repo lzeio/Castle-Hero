@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Traps
   - SmallFries
+  - Heavy
+  - Special
+  - Castle
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
+  - Castle
   - 
   - 
   - 

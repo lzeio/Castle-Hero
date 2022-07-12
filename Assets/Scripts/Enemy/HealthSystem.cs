@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HealthSystem : MonoBehaviour
 {
     public EnemyScriptable enemy;
+    public float health;
 
-    float health;
+    public event EventHandler OnDeath;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +27,16 @@ public class HealthSystem : MonoBehaviour
 
         if(health<=0)
         {
-            Death();
+            OnDeath?.Invoke(this, EventArgs.Empty);
         }
     }
-    
+
     void Death()
     {
         this.gameObject.SetActive(false);
+        if(gameObject.CompareTag("Heavy"))
+        {
+            GetComponent<Heavy>().anim.SetBool("Dead", true);
+        }
     }
 }
