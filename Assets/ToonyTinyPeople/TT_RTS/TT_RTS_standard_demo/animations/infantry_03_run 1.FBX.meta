@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 713b1e69f38310048ad50131a6cf45fc
+guid: c9aa61a52e16b6e40a6b85db5231c048
 timeCreated: 1552272524
 licenseType: Store
 ModelImporter:
@@ -59,7 +59,7 @@ ModelImporter:
     400048: L_hand_container
     400050: L_shield_container
     400052: R_hand_container
-    7400000: infantry_04_attack_A
+    7400000: infantry_03_run
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -83,17 +83,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: infantry_04_attack_A
+      name: infantry_03_run
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 45
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
