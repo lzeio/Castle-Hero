@@ -45,6 +45,8 @@ public class GlobeRotator : MonoBehaviour
         
     }
 
+    
+
 
       
     //private void FixedUpdate()
