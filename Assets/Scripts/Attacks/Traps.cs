@@ -4,22 +4,14 @@ using UnityEngine;
 
 public class Traps : MonoBehaviour
 {
-    public int damage;
-    // Start is called before the first frame update
-    void Start()
+    public float health,damage;
+   public void Damage(float damage)
     {
-        
-    }
+        health -= damage;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.layer == 7)
-        other.gameObject.GetComponent<HealthSystem>().Damage(damage);
+        if (health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

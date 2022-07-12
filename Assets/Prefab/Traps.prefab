@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3038145105150846559}
   - component: {fileID: 3038145105150846558}
   - component: {fileID: -7879813190362585811}
-  - component: {fileID: 8367625812293160378}
+  - component: {fileID: 1224439622136549520}
   m_Layer: 0
   m_Name: Traps
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &8367625812293160378
+--- !u!114 &1224439622136549520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,4 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e622078e229754db27143cedd57527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   damage: 50

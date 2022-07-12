@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Traps
+  - SmallFries
   layers:
   - Default
   - TransparentFX

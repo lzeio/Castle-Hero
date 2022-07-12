@@ -34,6 +34,7 @@ public class SmallFries : MonoBehaviour
             anim.SetBool("Attacking", false);
         }
 
+        Debug.Log(smallFriesData.health);
     }
 
     void Spawn()
@@ -50,15 +51,24 @@ public class SmallFries : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Traps")
         {
-            GetComponent<HealthSystem>().Damage(other.GetComponent<Traps>().damage);
+            GetComponent<HealthSystem>().Damage((int)other.GetComponent<Traps>().damage);
             agent.speed = smallFriesData.speed / 1.4f;
-        }
+            smallfry = EnemyStates.Run;
 
-        
+            other.GetComponent<Traps>().Damage(smallFriesData.attack);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Traps")
+        {
+            Attack();
+        }
     }
 
 }

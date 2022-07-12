@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+    public EnemyScriptable enemy;
+
+    float health;
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = enemy.health;
     }
 
     // Update is called once per frame
@@ -18,6 +21,16 @@ public class HealthSystem : MonoBehaviour
 
     public void Damage(int damage)
     {
-        Debug.Log("Damage Taken" + damage);
+        health -= damage;
+
+        if(health<=0)
+        {
+            Death();
+        }
+    }
+    
+    void Death()
+    {
+        this.gameObject.SetActive(false);
     }
 }
