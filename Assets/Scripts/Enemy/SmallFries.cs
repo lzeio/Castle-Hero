@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,15 @@ public class SmallFries : MonoBehaviour
         anim= GetComponent<Animator>();
         smallfry = EnemyStates.Idle;
         Spawn();
+
+        HealthSystem healthSystem = GetComponent<HealthSystem>();
+        healthSystem.OnDeath += HealthSystem_OnDeath;
         transform.LookAt(Castle);
+    }
+
+    private void HealthSystem_OnDeath(object sender, EventArgs e)
+    {
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,26 +61,38 @@ public class SmallFries : MonoBehaviour
 
 
 
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Traps"))
         {
-            GetComponent<HealthSystem>().Damage((int)other.GetComponent<Traps>().damage);
             agent.speed = smallFriesData.speed / 1.4f;
             smallfry = EnemyStates.Run;
-
-            other.GetComponent<Traps>().Damage(smallFriesData.attack);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Traps"))
+        if (other.gameObject.CompareTag("Traps"))   
+        {
+            Attack();
+        }
+        if (other.gameObject.CompareTag("Shield"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Castle"))
         {
             Attack();
         }
     }
 
+  
 }
 
 public enum EnemyStates

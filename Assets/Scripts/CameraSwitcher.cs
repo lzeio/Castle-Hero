@@ -12,22 +12,25 @@ public class CameraSwitcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        topDown.enabled = true;
-        castleCam.enabled = false;
+        topDown.enabled = false;
+        castleCam.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Keyboard.current.digit1Key.isPressed))
+        if (Keyboard.current.cKey.isPressed)
         {
-            topDown.enabled = false;
-            castleCam.enabled = true;
-        }
-        if ((Keyboard.current.digit2Key.isPressed))
-        {
-            topDown.enabled = true;
-            castleCam.enabled = false;
+            if (topDown.enabled)
+            {
+                topDown.enabled = false;
+                castleCam.enabled = true;
+            }
+            else
+            {
+                topDown.enabled = true;
+                castleCam.enabled = false;
+            }
         }
     }
 }

@@ -36,8 +36,8 @@ public class TrapsSpawner : MonoBehaviour
                 if (hit.transform.gameObject.layer == 6)
                 {
                     Debug.Log("Pressed");
-                    Instantiate(cube, hit.point, Quaternion.identity, globe);
-                }
+                    GameObject temp = Instantiate(cube, hit.point, cube.transform.rotation, globe);
+                }   
             }
         }
     }

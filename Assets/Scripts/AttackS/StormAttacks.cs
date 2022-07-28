@@ -15,6 +15,7 @@ public class StormAttacks : MonoBehaviour
     Camera cam;
     public float timeBetweenAttacks;
     public bool isReadyToAttack;
+    public Collider[] onFire;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +42,15 @@ public class StormAttacks : MonoBehaviour
         if (isReadyToAttack && AttackPoint().transform.gameObject.layer == 6)
         {
             isReadyToAttack = false;
-            Physics.OverlapSphere(AttackPoint().point, attackRadius, LayerMask.GetMask(LayerMask.LayerToName(7)));
             Instantiate(fireAttack, AttackPoint().point, globe.transform.rotation, globe);
+            onFire = Physics.OverlapSphere(AttackPoint().point, attackRadius, LayerMask.GetMask(LayerMask.LayerToName(7)));
+            foreach (Collider enemy in onFire)
+            {
+                if(enemy.gameObject.layer==7)
+                {
+                    enemy.GetComponent<HealthSystem>().FireDamage(5);
+                }
+            }
             Invoke("ResetAttack", timeBetweenAttacks);
         }
         else
@@ -50,14 +58,21 @@ public class StormAttacks : MonoBehaviour
             return;
         }
     }
-    public Collider[] col;
+    public Collider[] frozen;
     private void FreezeAttack()
     {
         if (isReadyToAttack && AttackPoint().transform.gameObject.layer >= 6)
         {
             isReadyToAttack = false;
-            col = Physics.OverlapSphere(AttackPoint().point, attackRadius, LayerMask.GetMask(LayerMask.LayerToName(7)));
             Instantiate(freezeAttack, AttackPoint().point, globe.transform.rotation, globe);
+            frozen = Physics.OverlapSphere(AttackPoint().point, attackRadius, LayerMask.GetMask(LayerMask.LayerToName(7)));
+            foreach(Collider enemy in frozen)
+            {
+                if(enemy.gameObject.layer== 7)
+                {
+                    enemy.GetComponent<HealthSystem>().FreezeDamage();
+                }
+            }
             Invoke("ResetAttack", timeBetweenAttacks);
         }
         else

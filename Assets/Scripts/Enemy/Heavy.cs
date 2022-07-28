@@ -11,7 +11,7 @@ public class Heavy : MonoBehaviour
 
     public Animator anim;
 
-    EnemyStates heavy;
+    public EnemyStates heavy;
 
     
     public EnemyScriptable heavyData;
@@ -40,21 +40,28 @@ public class Heavy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EnemyStates.Attack == heavy)
-        {
-            anim.SetBool("HornAttack", true);
-            anim.SetBool("Running", false);
-        }
         if (EnemyStates.Run == heavy)
         {
             anim.SetBool("Running", true);
             anim.SetBool("HornAttack", false);
         }
+        
+        if (EnemyStates.Attack == heavy)
+        {
+            anim.SetBool("HornAttack", true);
+            anim.SetBool("Running", false);
+        }
 
         if (EnemyStates.CastleAttack == heavy)
         {
-            anim.SetBool("Running", false);
             anim.SetBool("Attacking", true);
+            anim.SetBool("Running", false);
+            heavy = EnemyStates.Death;
+        }
+
+        if (EnemyStates.Death == heavy)
+        {
+            anim.Play("Die");
         }
         Debug.Log(heavyData.health);
     }
@@ -65,7 +72,7 @@ public class Heavy : MonoBehaviour
         agent.speed = heavyData.speed;
     }
 
-    void TrapAttacks()
+    void Attacks()
     {
         heavy = EnemyStates.Attack;
     }
@@ -75,14 +82,25 @@ public class Heavy : MonoBehaviour
         heavy = EnemyStates.CastleAttack;
     }
 
+   public void OnDeath()
+    {
+        StartCoroutine(Death(3));
+    }
+
+
+    IEnumerator Death(int time)
+    {
+       yield return new WaitForSeconds(time);
+        gameObject.SetActive(false);
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Traps"))
         {
-            GetComponent<HealthSystem>().Damage((int)other.GetComponent<Traps>().damage);
+            GetComponent<HealthSystem>().DamageTaken((int)other.GetComponent<Traps>().damage);
             agent.speed = heavyData.speed / 1.4f;
             heavy = EnemyStates.Run;
-            other.GetComponent<Traps>().Damage(heavyData.attack);
+            other.GetComponent<Traps>().DamageTaken(heavyData.attack);
         }
     }
 
@@ -90,19 +108,25 @@ public class Heavy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Traps"))
         {
-            TrapAttacks();
+            Attacks();
+        }
+        if(other.gameObject.CompareTag("Shield"))
+        {
+            other.gameObject.GetComponent<Shield>().DamageTaken(heavyData.attack);
+            GetComponent<HealthSystem>().DamageTaken((int)other.GetComponent<Shield>().damage);
+            Attacks();
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Called");
         if (collision.gameObject.CompareTag("Castle"))
         {
             agent.Stop();
             CastleAttacks();
-            collision.gameObject.GetComponent<Castle>().Damage(heavyData.attack);
+            collision.gameObject.GetComponent<Castle>().DamageTaken(heavyData.attack*2);
         }
+
     }
 
 }

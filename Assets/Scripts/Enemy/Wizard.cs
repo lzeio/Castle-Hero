@@ -7,21 +7,51 @@ public class Wizard : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform Castle;
+    public GameObject shield;
+    public EnemyStates specialStates;
+
+
+    public GameObject projectilePrefab;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        agent.SetDestination(Castle.position);
+        Spawn();
     }
+
 
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!shield.activeInHierarchy)
+        {
+            agent.stoppingDistance = 10f;
+        }
+
+        if(EnemyStates.Attack == specialStates)
+        {
+            anim.SetBool("Attacking",true);
+        }
+
+        Attack();   
+
+    }
+
+    void Attack()
+    {
+        if (agent.remainingDistance <=  30f  && agent.remainingDistance>=20f)
+        {
+            specialStates = EnemyStates.Attack;
+            agent.Stop();
+        }
+    
     }
 
     void Spawn()
     {
         agent.SetDestination(Castle.position);
     }
+
+    
 }
