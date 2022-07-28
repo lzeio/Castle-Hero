@@ -56,7 +56,7 @@ public class HealthSystem : MonoBehaviour
             {
                 burnTickTimers[i]--;
             }
-            health -= 5;
+            health -= 10;
             burnTickTimers.RemoveAll(i => i == 0);
 
             yield return new WaitForSeconds(.5f);

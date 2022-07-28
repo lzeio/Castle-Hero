@@ -43,7 +43,7 @@ public class Wizard : MonoBehaviour
         if (agent.remainingDistance <=  30f  && agent.remainingDistance>=20f)
         {
             specialStates = EnemyStates.Attack;
-            agent.Stop();
+            agent.isStopped = true;
         }
     
     }

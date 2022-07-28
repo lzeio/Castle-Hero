@@ -33,7 +33,7 @@ public class Heavy : MonoBehaviour
     {
         anim.SetBool("Dead", true);
         heavy = EnemyStates.Death;
-        agent.Stop();
+        agent.isStopped = true;
         
     }
 
@@ -122,7 +122,7 @@ public class Heavy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Castle"))
         {
-            agent.Stop();
+            agent.isStopped = true;
             CastleAttacks();
             collision.gameObject.GetComponent<Castle>().DamageTaken(heavyData.attack*2);
         }
