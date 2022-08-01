@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class StormAttacks : MonoBehaviour
 {
@@ -70,7 +71,8 @@ public class StormAttacks : MonoBehaviour
             {
                 if(enemy.gameObject.layer== 7)
                 {
-                    enemy.GetComponent<HealthSystem>().FreezeDamage();
+                    enemy.GetComponent<HealthSystem>().DamageTaken(10);
+                    enemy.GetComponent<NavMeshAgent>().speed /= 0.5f;
                 }
             }
             Invoke("ResetAttack", timeBetweenAttacks);
