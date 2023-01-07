@@ -10,7 +10,7 @@ public class HealthSystem : MonoBehaviour
 
     public event EventHandler OnDeath;
 
-    public List<int> burnTickTimers = new();
+    public List<int> burnTickTimers = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
