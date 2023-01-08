@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallFrySword : MonoBehaviour
+public class SmallFrySword : Enemy   
 {
     public EnemyScriptable smallFryData;
     // Start is called before the first frame update

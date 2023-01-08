@@ -4,18 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Heavy : MonoBehaviour
+public class Heavy : Enemy
 {
-    public NavMeshAgent agent;
-    public Transform Castle;
-
-    public Animator anim;
-
-    public EnemyStates heavy;
-
-    
-    public EnemyScriptable heavyData;
-
+   
 
 
     

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Wizard : MonoBehaviour
+public class Wizard : Enemy
 {
-    public NavMeshAgent agent;
-    public Transform Castle;
+ 
     public GameObject shield;
     public EnemyStates specialStates;
 

@@ -4,13 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SmallFries : MonoBehaviour
+public class SmallFries : Enemy
 {
-    public NavMeshAgent agent;
-    public Transform Castle;
-
-    public Animator anim;
-
     EnemyStates smallfry;
 
     public EnemyScriptable smallFriesData;
