@@ -8,5 +8,6 @@ public class EnemyScriptable : ScriptableObject
     public float speed;
     public float attack;
     public float health;
+    public bool canMove;
     public GameObject projectiles;
 }
