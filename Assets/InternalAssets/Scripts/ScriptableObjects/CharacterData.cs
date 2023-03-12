@@ -6,6 +6,7 @@ public class CharacterData : ScriptableObject
 
     public float speed;
     public float attackDamage;
+    public float attackDistance;
     public float health;
     public bool canMove;
     public GameObject projectiles;

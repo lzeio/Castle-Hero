@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Infantry : Melee
 {
-
+   
     public override void Attack()
     {
         base.Attack();
@@ -15,4 +15,8 @@ public class Infantry : Melee
         base.Start();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
 }
