@@ -8,12 +8,15 @@ public class GridManager : MonoBehaviour
     public int columns;
 
     public GameObject gridCellPrefab;
-    public GameObject gridCubePrefab;
+    [SerializeField] private List<GameObject> heroesPrefabs = default;
 
     public float cellSpacing;
 
     private GameObject[,] grid;
-
+    private void Awake()
+    {
+        InputManager.OnClick += SpawnHero;
+    }
     private void Start()
     {
         grid = new GameObject[rows, columns];
@@ -35,12 +38,20 @@ public class GridManager : MonoBehaviour
             }
         }
     }
-
-    private void Update()
+  
+    public Vector3 GetCellPosition(int row, int col)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float cellWidth = grid[0, 0].GetComponent<Renderer>().bounds.size.x;
+        float cellHeight = grid[0, 0].GetComponent<Renderer>().bounds.size.y;
+        float xPos = col * (cellWidth + cellSpacing);
+        float yPos = row * (cellHeight + cellSpacing);
+        return new Vector3(xPos, 0, yPos);
+    }
+
+    public void SpawnHero()
+    {
+        Debug.LogWarningFormat("SpawnHero");
+       Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
@@ -69,20 +80,12 @@ public class GridManager : MonoBehaviour
 
                 if (row >= 0 && col >= 0)
                 {
+
                     Vector3 cellPos = GetCellPosition(row, col);
-                    GameObject cube = Instantiate(gridCubePrefab);
+                    GameObject cube = Instantiate(heroesPrefabs[InputManager.Instance.heroindex]);
                     cube.transform.position = cellPos + new Vector3(0, 0, 0);
                 }
             }
-        }
     }
-
-    public Vector3 GetCellPosition(int row, int col)
-    {
-        float cellWidth = grid[0, 0].GetComponent<Renderer>().bounds.size.x;
-        float cellHeight = grid[0, 0].GetComponent<Renderer>().bounds.size.y;
-        float xPos = col * (cellWidth + cellSpacing);
-        float yPos = row * (cellHeight + cellSpacing);
-        return new Vector3(xPos, 0, yPos);
-    }
+  
 }

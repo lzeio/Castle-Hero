@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d6aa12332f28c46a121eebeab72a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 0}
+  characterData: {fileID: 11400000, guid: 7d7737a69c23e35479ddaa46b416e477, type: 2}
   Animator: {fileID: 0}
 --- !u!114 &3760346587514616233
 MonoBehaviour:
