@@ -2005,6 +2005,22 @@ PrefabInstance:
       propertyPath: cellSpacing
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5590581817230250084, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
+      propertyPath: heroesPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4106403732787650665, guid: 745933a34458e2d4e8ef17d505e59ddc, type: 3}
+    - target: {fileID: 5590581817230250084, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
+      propertyPath: heroesPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 3007658537030703722, guid: 8876c1714ccf6f241b2f05592c0b29a6, type: 3}
+    - target: {fileID: 5590581817230250084, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
+      propertyPath: heroesPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8486290135017808214, guid: 7e5f145a8df43854e9cc38c5c2824918, type: 3}
+    - target: {fileID: 5590581817230250084, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
+      propertyPath: heroesPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3737859242038660865, guid: cfb03da7c95439449a7b0342d254fd42, type: 3}
     - target: {fileID: 5590581817230250085, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
       propertyPath: m_RootOrder
       value: 7

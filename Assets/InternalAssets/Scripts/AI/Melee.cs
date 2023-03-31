@@ -1,13 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [RequireComponent(typeof(Health))]
-public abstract class Melee : MonoBehaviour
+public class Melee : MonoBehaviour
 {
     public CharacterData characterData;
+    public Transform Raycaster;
     public Animator Animator;
     private bool canMove;
-    Ray ray;
+    public Ray Ray;
 
     protected virtual void Start()
     {
@@ -15,19 +17,20 @@ public abstract class Melee : MonoBehaviour
         canMove = characterData.canMove;
     }
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
-        if(Physics.Raycast(ray, out RaycastHit hitInfo,characterData.attackDistance))
+        if (Physics.Raycast(Raycaster.position, transform.forward, out RaycastHit hitInfo, characterData.attackDistance))
         {
-            Debug.Log(" checattack");
             if (hitInfo.collider.TryGetComponent(out Health health))
             {
-                Debug.Log("attack");
+                Attack();
+            }
+            else
+            {
+            //    Idle();
             }
         }
-
     }
-
     // Start is called before the first frame update
 
     public virtual void Attack()
@@ -39,9 +42,15 @@ public abstract class Melee : MonoBehaviour
         Animator.SetBool(AnimationConstants.CommonAnimation.Walking, true);
     }
 
+    public virtual void Idle()
+    {
+
+        Animator.SetBool(AnimationConstants.CommonAnimation.Walking, true);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Debug.DrawRay(transform.position, transform.forward*characterData.attackDistance,Color.yellow);
+       Debug.DrawRay(Raycaster.position, transform.forward * characterData.attackDistance, Color.yellow);
     }
 }

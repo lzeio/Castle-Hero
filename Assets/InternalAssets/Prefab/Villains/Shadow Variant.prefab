@@ -53,8 +53,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4712246556682973207, guid: 3c35900df4e433048b1ace673f006acd, type: 3}
       propertyPath: m_Name
-      value: Shadow
+      value: Shadow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6446677846961125985, guid: 3c35900df4e433048b1ace673f006acd, type: 3}
+      propertyPath: Raycaster
+      value: 
+      objectReference: {fileID: 8104833911217767214}
     - target: {fileID: 6446677846961125985, guid: 3c35900df4e433048b1ace673f006acd, type: 3}
       propertyPath: characterData
       value: 
@@ -90,8 +94,13 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8104833911217675914}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!4 &8104833911217767214 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4712246556682808755, guid: 3c35900df4e433048b1ace673f006acd, type: 3}
+  m_PrefabInstance: {fileID: 3539658636262256285}
+  m_PrefabAsset: {fileID: 0}

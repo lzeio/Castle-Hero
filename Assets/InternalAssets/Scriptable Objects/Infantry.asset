@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   attackDamage: 10
-  attackDistance: 10
+  attackDistance: 4.26
   health: 100
   canMove: 0
   projectiles: {fileID: 0}
