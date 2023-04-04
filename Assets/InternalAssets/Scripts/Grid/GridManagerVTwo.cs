@@ -26,7 +26,7 @@ public class GridManagerVTwo : MonoBehaviour
         {
             for (int col = 0; col < columns; col++)
             {
-                GameObject gridCell = Instantiate(gridCellPrefab, transform);
+                GameObject gridCell = Instantiate(gridCellPrefab, transform, true);
 
                 float xPos = col * (cellWidth + (gridWidth - cellWidth * columns) / (columns - 1));
                 float yPos = row * (cellHeight + (gridHeight - cellHeight * rows) / (rows - 1));

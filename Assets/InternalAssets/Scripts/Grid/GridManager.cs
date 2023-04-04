@@ -25,7 +25,7 @@ public class GridManager : MonoBehaviour
         {
             for (int col = 0; col < columns; col++)
             {
-                GameObject gridCell = Instantiate(gridCellPrefab, transform);
+                GameObject gridCell = Instantiate(gridCellPrefab, transform,true);
                 float cellWidth = gridCell.GetComponent<Renderer>().bounds.size.x;
                 float cellHeight = gridCell.GetComponent<Renderer>().bounds.size.y;
                 float xPos = col * (cellWidth + cellSpacing);
@@ -50,8 +50,7 @@ public class GridManager : MonoBehaviour
 
     public void SpawnHero()
     {
-        Debug.LogWarningFormat("SpawnHero");
-       Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
