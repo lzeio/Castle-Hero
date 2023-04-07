@@ -839,10 +839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider King
       objectReference: {fileID: 0}
-    - target: {fileID: 7501724690619581030, guid: 64c00825eec14b14ebcf69ef5bc9d917, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7501724690620079686, guid: 64c00825eec14b14ebcf69ef5bc9d917, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -905,10 +901,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem
       objectReference: {fileID: 0}
-    - target: {fileID: 2835295330714545824, guid: 6495859a1472db5489e7a5d7ff5ff4d9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2835295330714545826, guid: 6495859a1472db5489e7a5d7ff5ff4d9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -965,10 +957,6 @@ PrefabInstance:
     - target: {fileID: 7824131125181369295, guid: 4d9dfde281c42aa4bbb75aafeaadc2f3, type: 3}
       propertyPath: m_Name
       value: Stinger
-      objectReference: {fileID: 0}
-    - target: {fileID: 7824131125181369295, guid: 4d9dfde281c42aa4bbb75aafeaadc2f3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7824131125181470703, guid: 4d9dfde281c42aa4bbb75aafeaadc2f3, type: 3}
       propertyPath: m_RootOrder
@@ -1057,7 +1045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5552755353708694171, guid: 85ab6870d93c2af42ac33285b133e7b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 5552755353708694171, guid: 85ab6870d93c2af42ac33285b133e7b5, type: 3}
       propertyPath: m_LocalRotation.w

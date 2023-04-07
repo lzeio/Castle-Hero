@@ -3337,9 +3337,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castle
       objectReference: {fileID: 0}
-    - target: {fileID: 8347195091210326968, guid: 07c0862b96a59a949b35f5bd6ad373b3, type: 3}
-      propertyPath: m_Size.x
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c0862b96a59a949b35f5bd6ad373b3, type: 3}
