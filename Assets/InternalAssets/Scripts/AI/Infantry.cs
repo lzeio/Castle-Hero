@@ -3,11 +3,9 @@ using UnityEngine;
 public class Infantry : Melee
 {
    
-    public override void Attack()
+    public void Attack()
     {
-        base.Attack();
-        Animator.SetBool(AnimationConstants.CommonAnimation.Attacking, true);
-
+        animationController.Attack();
     }
 
     protected override void Start()
@@ -18,7 +16,8 @@ public class Infantry : Melee
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        
+        //for testing
+        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + 1.5f);
 
     }
 }

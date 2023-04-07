@@ -1,13 +1,20 @@
 using UnityEngine;
+using System;
+using static UnityEditor.Progress;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "CharacterName", menuName = "CharacterData")]
 public class CharacterData : ScriptableObject
 {
+    public string CharacterId;
 
-    public float speed;
-    public float attackDamage;
-    public float attackDistance;
-    public float health;
-    public bool canMove;
-    public GameObject projectiles;
+    [Header("Character Stats")]
+    public float Speed;
+    public int AttackDamage;
+    public float AttackRange;
+    public int Health;
+    public bool CanMove;
+
+    [Header("Character Abilities")]
+    public GameObject projectiles= default;
 }

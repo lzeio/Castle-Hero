@@ -1,56 +1,68 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(StatSystem))]
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AnimationController))]
 public class Melee : MonoBehaviour
 {
-    public CharacterData characterData;
-    public Transform Raycaster;
-    public Animator Animator;
+    [SerializeField] protected Ray Ray;
+    protected AnimationController animationController;
+    protected StatSystem statSystem;
+    protected Vector3 raycastPoint;
+    
     private bool canMove;
-    public Ray Ray;
-
+    private void Awake()
+    {
+       
+    }
     protected virtual void Start()
     {
-        Animator = GetComponent<Animator>();
-        canMove = characterData.canMove;
+        animationController = GetComponent<AnimationController>();
+        statSystem = GetComponent<StatSystem>();
+        canMove = statSystem.characterData.CanMove;
+        statSystem.OnDeath+= OnDeath;
     }
+
+    private void OnDestroy()
+    {
+        statSystem.OnDeath -= OnDeath;
+    }
+
+
 
     protected virtual void FixedUpdate()
     {
-        if (Physics.Raycast(Raycaster.position, transform.forward, out RaycastHit hitInfo, characterData.attackDistance))
+        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + .5f);
+        if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, statSystem.characterData.AttackRange))
         {
-            if (hitInfo.collider.TryGetComponent(out Health health))
+            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem))
             {
-                Attack();
-            }
-            else
-            {
-            //    Idle();
+                animationController.Attack();
             }
         }
+        else
+        {
+            animationController.ResetAnimation();
+            animationController.Idle();
+        }
     }
-    // Start is called before the first frame update
-
-    public virtual void Attack()
+    private void OnDeath()
     {
-        Animator.SetBool(AnimationConstants.CommonAnimation.Attacking, true);
-    }
-    public virtual void Move()
-    {
-        Animator.SetBool(AnimationConstants.CommonAnimation.Walking, true);
+        animationController.ResetAnimation();
+        animationController.Death();
+
+
     }
 
-    public virtual void Idle()
-    {
-
-        Animator.SetBool(AnimationConstants.CommonAnimation.Walking, true);
-    }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-       Debug.DrawRay(Raycaster.position, transform.forward * characterData.attackDistance, Color.yellow);
+        if(statSystem!=null)
+        Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.yellow);
     }
 }
