@@ -511,5 +511,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5590581817230250084, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
+--- !u!1 &5590581816790531124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5590581817230250086, guid: 243045bea53adf84cb5bf6735408cb5a, type: 3}
+  m_PrefabInstance: {fileID: 5590581816790531123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5590581816790531125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590581816790531124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05760c37fe4d2df4080475d8ff77ce38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rows: 4
+  columns: 4
+  gridCubePrefab: {fileID: 81852707020303449, guid: 6c1bbc3ad4e1233448dad2670a256eb1, type: 3}
+  gridCellPrefab: {fileID: 7144974841016361280, guid: 61a0088ebe8bcc24b926e27dee5be64a, type: 3}
+  gridWidth: 10
+  gridHeight: 8
