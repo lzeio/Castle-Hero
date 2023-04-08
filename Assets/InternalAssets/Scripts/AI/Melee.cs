@@ -50,12 +50,11 @@ public class Melee : MonoBehaviour
             animationController.Idle();
         }
     }
+
     private void OnDeath()
     {
         animationController.ResetAnimation();
         animationController.Death();
-
-
     }
 
 
