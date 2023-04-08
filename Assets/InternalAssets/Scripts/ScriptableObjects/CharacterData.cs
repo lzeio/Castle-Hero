@@ -16,5 +16,5 @@ public class CharacterData : ScriptableObject
     public bool CanMove;
 
     [Header("Character Abilities")]
-    public GameObject projectiles= default;
+    public GameObject Projectile= default;
 }

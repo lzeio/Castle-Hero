@@ -27,7 +27,6 @@ public class StatSystem : MonoBehaviour
         if (health <= 0)
         {
             OnDeath?.Invoke();
-            Debug.Log($"{this.name} is KIA");
         }
     }
     public int DealDamage()
