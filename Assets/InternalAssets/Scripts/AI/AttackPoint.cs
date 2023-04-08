@@ -18,7 +18,6 @@ public class AttackPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        hit = true;
         if(other.TryGetComponent<StatSystem>(out StatSystem stats))
         {
             Debug.Log(other.name);
@@ -27,7 +26,7 @@ public class AttackPoint : MonoBehaviour
         
     }
 
-    public void ArrowAttack(StatSystem data)
+    public void SetStatsData(StatSystem data)
     {
         characterStats = data;
     }
