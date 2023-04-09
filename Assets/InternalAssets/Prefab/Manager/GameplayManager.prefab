@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5590581817230250086
+--- !u!1 &3686984445312993125
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5590581817230250085}
-  - component: {fileID: 908614443}
+  - component: {fileID: 3686984445312993124}
+  - component: {fileID: 3686984445312993123}
   m_Layer: 0
-  m_Name: GridManager
+  m_Name: GameplayManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5590581817230250085
+--- !u!4 &3686984445312993124
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5590581817230250086}
+  m_GameObject: {fileID: 3686984445312993125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -4}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -41.272556, y: 44.23667, z: 22.528307}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &908614443
+--- !u!114 &3686984445312993123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5590581817230250086}
+  m_GameObject: {fileID: 3686984445312993125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05760c37fe4d2df4080475d8ff77ce38, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e4d25fea45656840a38410e3b46b008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 4
-  columns: 4
-  gridCubePrefab: {fileID: 81852707020303449, guid: 6c1bbc3ad4e1233448dad2670a256eb1, type: 3}
-  gridCellPrefab: {fileID: 7144974841016361280, guid: 61a0088ebe8bcc24b926e27dee5be64a, type: 3}
-  gridWidth: 4
-  gridHeight: 2.5
+  SpawnManager: {fileID: 0}
+  UIManager: {fileID: 0}
+  GridManager_Two: {fileID: 0}
+  GridManager: {fileID: 0}

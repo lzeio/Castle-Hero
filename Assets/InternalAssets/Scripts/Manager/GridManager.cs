@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public int rows;
-    public int columns;
+    public int Rows;
+    public int Columns;
+    public GameObject[,] Grid;
 
-    public GameObject gridCellPrefab;
-    [SerializeField] private List<GameObject> heroesPrefabs = default;
+    [SerializeField] private GameObject gridCellPrefab;
+    [SerializeField] private float cellSpacing;
 
-    public float cellSpacing;
-
-    private GameObject[,] grid;
     private void Awake()
     {
         InputManager.OnClick += SpawnHero;
     }
     private void Start()
     {
-        grid = new GameObject[rows, columns];
+        Grid = new GameObject[Rows, Columns];
 
-        for (int row = 0; row < rows; row++)
+        for (int row = 0; row < Rows; row++)
         {
-            for (int col = 0; col < columns; col++)
+            for (int col = 0; col < Columns; col++)
             {
                 GameObject gridCell = Instantiate(gridCellPrefab, transform,true);
                 float cellWidth = gridCell.GetComponent<Renderer>().bounds.size.x;
@@ -31,7 +29,7 @@ public class GridManager : MonoBehaviour
                 float xPos = col * (cellWidth + cellSpacing);
                 float yPos = row * (cellHeight + cellSpacing);
                 gridCell.transform.position = new Vector3(xPos, 0, yPos);
-                grid[row, col] = gridCell;
+                Grid[row, col] = gridCell;
 
                 //GameObject gridCube = Instantiate(gridCubePrefab, transform);
                 //gridCube.transform.position = gridCell.transform.position + new Vector3(0, 0.1f, 0);
@@ -41,8 +39,8 @@ public class GridManager : MonoBehaviour
   
     public Vector3 GetCellPosition(int row, int col)
     {
-        float cellWidth = grid[0, 0].GetComponent<Renderer>().bounds.size.x;
-        float cellHeight = grid[0, 0].GetComponent<Renderer>().bounds.size.y;
+        float cellWidth = Grid[0, 0].GetComponent<Renderer>().bounds.size.x;
+        float cellHeight = Grid[0, 0].GetComponent<Renderer>().bounds.size.y;
         float xPos = col * (cellWidth + cellSpacing);
         float yPos = row * (cellHeight + cellSpacing);
         return new Vector3(xPos, 0, yPos);
@@ -59,11 +57,11 @@ public class GridManager : MonoBehaviour
                 int row = -1;
                 int col = -1;
 
-                for (int i = 0; i < rows; i++)
+                for (int i = 0; i < Rows; i++)
                 {
-                    for (int j = 0; j < columns; j++)
+                    for (int j = 0; j < Columns; j++)
                     {
-                        if (grid[i, j] == hitObject)
+                        if (Grid[i, j] == hitObject)
                         {
                             row = i;
                             col = j;
@@ -81,8 +79,7 @@ public class GridManager : MonoBehaviour
                 {
 
                     Vector3 cellPos = GetCellPosition(row, col);
-                    GameObject cube = Instantiate(heroesPrefabs[InputManager.Instance.heroindex]);
-                    cube.transform.position = cellPos + new Vector3(0, 0, 0);
+                   // GameObject cube = Instantiate(heroesPrefabs[InputManager.Instance.heroindex]);
                 }
             }
     }

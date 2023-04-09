@@ -6,14 +6,10 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public static Action OnClick;
-    public static InputManager Instance { get; private set; }
     public int heroindex;
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+
     }
     // Start is called before the first frame update
     void Start()
@@ -50,12 +46,12 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            heroindex =3;
+            heroindex = 3;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            heroindex=4;
+            heroindex = 4;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
@@ -70,12 +66,12 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
-            heroindex =7;   
+            heroindex = 7;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
-            heroindex = 8;  
+            heroindex = 8;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha9))
