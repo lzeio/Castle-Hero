@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -10,10 +11,11 @@ using UnityEngine.PlayerLoop;
 public class Melee : MonoBehaviour
 {
     [SerializeField] protected Ray Ray;
+    [SerializeField] private List<AttackPoint> attackPoints;
     protected AnimationController animationController;
     protected StatSystem statSystem;
     protected Vector3 raycastPoint;
-    
+
     private bool canMove;
     private void Awake()
     {
@@ -25,6 +27,10 @@ public class Melee : MonoBehaviour
         statSystem = GetComponent<StatSystem>();
         canMove = statSystem.characterData.CanMove;
         statSystem.OnDeath+= OnDeath;
+        foreach(AttackPoint attackPoint in attackPoints)
+        {
+            attackPoint.SetStatsData(statSystem);
+        }
     }
 
     private void OnDestroy()
@@ -39,7 +45,7 @@ public class Melee : MonoBehaviour
         raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + .5f);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, statSystem.characterData.AttackRange))
         {
-            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem))
+            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem) && hitInfo.transform.gameObject.layer != this.gameObject.layer)
             {
                 animationController.Attack();
             }
@@ -62,6 +68,6 @@ public class Melee : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         if(statSystem!=null)
-        Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.yellow);
+        Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.green);
     }
 }

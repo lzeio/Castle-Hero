@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 7078377036322032492}
   - component: {fileID: 2846731427958223293}
   - component: {fileID: 2209508329248633578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Heavy Infantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d6aa12332f28c46a121eebeab72a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoints:
+  - {fileID: 1546337928}
 --- !u!114 &2846731427958223293
 MonoBehaviour:
   m_ObjectHideFlags: 0

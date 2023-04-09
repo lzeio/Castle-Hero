@@ -16,11 +16,6 @@ public class StatSystem : MonoBehaviour
         health = characterData.Health;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void TakeDamage(int damage)
     {
         health -= damage;

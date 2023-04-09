@@ -25,10 +25,10 @@ public class Archer : MonoBehaviour
 
     void Update()
     {
-        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + .5f);
+        raycastPoint = new Vector3(transform.position.x, transform.position.y + .75f, transform.position.z);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, characterStats.characterData.AttackRange))
         {
-            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem))
+            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem) && hitInfo.transform.gameObject.layer!= this.gameObject.layer )
             {
                 animationController.Attack();
             }
@@ -38,6 +38,7 @@ public class Archer : MonoBehaviour
             animationController.ResetAnimation();
             animationController.Idle();
         }
+        
     }
     private void OnDestroy()
     {
@@ -46,28 +47,23 @@ public class Archer : MonoBehaviour
 
     private void SpawnArrow()
     {
-        GameObject arrow = Instantiate(characterStats.characterData.Projectile, transform.GetChild(2).transform.position, Quaternion.identity);
+        GameObject arrow = Instantiate(characterStats.characterData.Projectile, this.transform);
+        arrow.transform.localScale = Vector3.one;
         AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
         arrowAttack.SetStatsData(characterStats);
-        arrow.transform.SetParent(transform.GetChild(2).transform, false);
-        arrow.transform.parent = null;
-        arrow.transform.localScale = characterStats.characterData.Projectile.transform.localScale;
         ShootProjectile(arrow);
     }
     private void SpawnBall()
     {
-        GameObject ball = Instantiate(characterStats.characterData.Projectile, transform.GetChild(2).transform.position, Quaternion.identity);
+        GameObject ball = Instantiate(characterStats.characterData.Projectile, this.transform);
         AttackPoint ballAttack = ball.GetComponent<AttackPoint>();
         ballAttack.SetStatsData(characterStats);
-        ball.transform.SetParent(transform.GetChild(2).transform, false);
-        ball.transform.parent = null;
-        ball.transform.localScale = characterStats.characterData.Projectile.transform.localScale;
         ShootProjectile(ball);
     }
 
     public void ShootProjectile(GameObject projectile)
     {
-        projectile.transform.DOMove(transform.forward * characterStats.characterData.AttackRange, 10f);
+        projectile.transform.DOLocalMoveZ(projectile.transform.position.z * characterStats.characterData.AttackRange, 10f);
     }
     private void OnDeath()
     {
@@ -77,7 +73,7 @@ public class Archer : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        if (statSystem != null)
-            Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.yellow);
+        if (characterStats != null)
+            Debug.DrawRay(raycastPoint, transform.forward * 10f, Color.red);
     }
 }

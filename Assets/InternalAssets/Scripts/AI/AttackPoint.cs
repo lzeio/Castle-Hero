@@ -2,8 +2,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class AttackPoint : MonoBehaviour
 {
-    public bool hit {get; private set;}
     private StatSystem characterStats;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +13,7 @@ public class AttackPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+     
     }
 
     private void OnTriggerEnter(Collider other)
