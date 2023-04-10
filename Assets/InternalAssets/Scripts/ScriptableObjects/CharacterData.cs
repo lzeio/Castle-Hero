@@ -11,9 +11,9 @@ public class CharacterData : ScriptableObject
     [Header("Character Stats")]
     public float Speed;
     public int AttackDamage;
-    public float AttackRange;
     public int Health;
     public bool CanMove;
+    public float AttackRange;
 
     [Header("Character Abilities")]
     public GameObject Projectile= default;

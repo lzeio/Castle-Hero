@@ -1,3 +1,4 @@
+using System.Net;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class AttackPoint : MonoBehaviour
@@ -20,7 +21,7 @@ public class AttackPoint : MonoBehaviour
     {
         if(other.TryGetComponent<StatSystem>(out StatSystem stats))
         {
-            Debug.Log(other.name);
+            
             stats.TakeDamage(characterStats.DealDamage());
         }
         

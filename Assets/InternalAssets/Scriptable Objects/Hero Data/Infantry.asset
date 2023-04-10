@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Infantry
   m_EditorClassIdentifier: 
   CharacterId: 
-  Speed: 100
+  Speed: 0
   AttackDamage: 100
-  AttackRange: 20
+  AttackRange: 10
   Health: 100
   CanMove: 0
-  projectiles: {fileID: 0}
+  Projectile: {fileID: 0}

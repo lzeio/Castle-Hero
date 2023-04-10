@@ -9,7 +9,7 @@ public class StatSystem : MonoBehaviour
     public event Action OnDeath;
     public CharacterData characterData;
 
-    private int health; 
+    public int health; 
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,7 @@ public class StatSystem : MonoBehaviour
         {
             OnDeath?.Invoke();
         }
+
     }
     public int DealDamage()
     {

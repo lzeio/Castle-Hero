@@ -14,7 +14,7 @@ public class Melee : MonoBehaviour
     [SerializeField] private List<AttackPoint> attackPoints;
     protected AnimationController animationController;
     protected StatSystem statSystem;
-    protected Vector3 raycastPoint;
+    public Vector3 raycastPoint;
 
     private bool canMove;
     private void Awake()
@@ -45,16 +45,26 @@ public class Melee : MonoBehaviour
         raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + .5f);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, statSystem.characterData.AttackRange))
         {
-            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem) && hitInfo.transform.gameObject.layer != this.gameObject.layer)
+
+            if (hitInfo.transform.gameObject.layer != this.gameObject.layer)
             {
+                Debug.Log(hitInfo.transform.name);
                 animationController.Attack();
             }
+            else
+            {
+                animationController.ResetAnimation();
+                animationController.Idle();
+            }
         }
-        else
+        else 
+        if (statSystem.characterData.CanMove)
         {
             animationController.ResetAnimation();
-            animationController.Idle();
+            animationController.Move();
+            transform.position += (transform.forward * statSystem.characterData.Speed * Time.deltaTime);
         }
+      
     }
 
     private void OnDeath()

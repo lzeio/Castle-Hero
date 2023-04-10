@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Ice Dragon
   m_EditorClassIdentifier: 
   CharacterId: 
-  Speed: 100
-  AttackDamage: 100
-  AttackRange: 100
+  Speed: 5
+  AttackDamage: 25
+  AttackRange: 10
   Health: 100
   CanMove: 1
   Projectile: {fileID: 2119046959669137327, guid: 4b536f39a9da356438e71a7c086a99bd, type: 3}

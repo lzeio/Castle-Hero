@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Fire Dragon
   m_EditorClassIdentifier: 
   CharacterId: 
-  Speed: 100
-  AttackDamage: 100
-  AttackRange: 100
+  Speed: 5
+  AttackDamage: 25
+  AttackRange: 10
   Health: 100
   CanMove: 1
   Projectile: {fileID: 2119046959669137327, guid: 30c9e029e339b574b9bd01302e73f363, type: 3}
