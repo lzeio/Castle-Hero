@@ -12,6 +12,7 @@ public class GameplayManager : MonoBehaviour
     public GridManagerVTwo GridManager_Two;
     public GridManager GridManager;
     public InputManager InputManager;
+    public CoinsManager CoinsManager;
     void Awake()
     {
         if (Instance == null)
@@ -24,6 +25,7 @@ public class GameplayManager : MonoBehaviour
         GridManager=  FindObjectOfType<GridManager>();
         GridManager_Two=  FindObjectOfType<GridManagerVTwo>();
         InputManager= FindObjectOfType<InputManager>();
+        CoinsManager = FindObjectOfType<CoinsManager>();
     }
 
     // Update is called once per frame
