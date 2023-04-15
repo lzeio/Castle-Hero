@@ -12,9 +12,9 @@ public class CharacterData : ScriptableObject
     public float Speed;
     public int AttackDamage;
     public int Health;
-    public bool CanMove;
     public float AttackRange;
 
     [Header("Character Abilities")]
+    public bool Movable;
     public GameObject Projectile= default;
 }

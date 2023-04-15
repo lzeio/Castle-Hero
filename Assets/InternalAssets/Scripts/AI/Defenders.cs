@@ -18,14 +18,14 @@ public class Defenders : MonoBehaviour
     {
         animationController = GetComponent<AnimationController>();
         statSystem = GetComponent<StatSystem>();
-        canMove = statSystem.characterData.CanMove;
+        canMove = statSystem.characterData.Movable;
         statSystem.OnDeath += OnDeath;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (statSystem.characterData.CanMove)
+        if (statSystem.characterData.Movable)
         {
             animationController.Move();
             transform.position += (transform.forward * statSystem.characterData.Speed * Time.deltaTime);

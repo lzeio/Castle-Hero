@@ -25,7 +25,7 @@ public class Melee : MonoBehaviour
     {
         animationController = GetComponent<AnimationController>();
         statSystem = GetComponent<StatSystem>();
-        canMove = statSystem.characterData.CanMove;
+        canMove = statSystem.characterData.Movable;
         statSystem.OnDeath += OnDeath;
         foreach (AttackPoint attackPoint in attackPoints)
         {
@@ -58,7 +58,7 @@ public class Melee : MonoBehaviour
         }
         else
         {
-            if (statSystem.characterData.CanMove)
+            if (statSystem.characterData.Movable)
             {
                 animationController.ResetAnimation();
                 animationController.Move();

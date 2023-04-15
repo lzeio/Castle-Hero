@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoints:
   - {fileID: 1546337928}
+  raycastPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &2846731427958223293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 7d7737a69c23e35479ddaa46b416e477, type: 2}
+  health: 0
 --- !u!114 &2209508329248633578
 MonoBehaviour:
   m_ObjectHideFlags: 0
