@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245551a22b0528345a3259ab705cf266, type: 3}
   m_Name: Cannon
   m_EditorClassIdentifier: 
-  CharacterId: 
+  CharacterId: Cannon
   Speed: 100
   AttackDamage: 100
-  AttackRange: 100
   Health: 100
   CanMove: 0
+  AttackRange: 100
   Projectile: {fileID: 9003779680269178257, guid: a3f0852f016464c47a4c2a0b6611d872, type: 3}

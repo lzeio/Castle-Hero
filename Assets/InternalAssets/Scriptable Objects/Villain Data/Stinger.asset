@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245551a22b0528345a3259ab705cf266, type: 3}
   m_Name: Stinger
   m_EditorClassIdentifier: 
-  CharacterId: 
+  CharacterId: Stinger
   Speed: 5
   AttackDamage: 25
-  AttackRange: 10
   Health: 100
   CanMove: 1
+  AttackRange: 10
   Projectile: {fileID: 0}

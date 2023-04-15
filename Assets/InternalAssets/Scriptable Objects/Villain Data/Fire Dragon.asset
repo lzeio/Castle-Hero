@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245551a22b0528345a3259ab705cf266, type: 3}
   m_Name: Fire Dragon
   m_EditorClassIdentifier: 
-  CharacterId: 
+  CharacterId: FireDragon
   Speed: 5
   AttackDamage: 25
-  AttackRange: 10
   Health: 100
   CanMove: 1
+  AttackRange: 10
   Projectile: {fileID: 2119046959669137327, guid: 30c9e029e339b574b9bd01302e73f363, type: 3}

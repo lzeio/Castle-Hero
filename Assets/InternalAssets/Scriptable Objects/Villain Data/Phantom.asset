@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245551a22b0528345a3259ab705cf266, type: 3}
   m_Name: Phantom
   m_EditorClassIdentifier: 
-  CharacterId: 
+  CharacterId: Phantom
   Speed: 10
   AttackDamage: 10
   Health: 100

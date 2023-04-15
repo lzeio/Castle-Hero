@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245551a22b0528345a3259ab705cf266, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  CharacterId: 
+  CharacterId: Archer
   Speed: 100
   AttackDamage: 100
-  AttackRange: 100
   Health: 100
   CanMove: 0
+  AttackRange: 100
   Projectile: {fileID: 8224076286754674253, guid: 69f1511ba8e8bde4da0bef43b2cb380e, type: 3}
