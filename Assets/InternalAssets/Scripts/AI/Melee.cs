@@ -19,15 +19,15 @@ public class Melee : MonoBehaviour
     private bool canMove;
     private void Awake()
     {
-       
+
     }
     protected virtual void Start()
     {
         animationController = GetComponent<AnimationController>();
         statSystem = GetComponent<StatSystem>();
         canMove = statSystem.characterData.CanMove;
-        statSystem.OnDeath+= OnDeath;
-        foreach(AttackPoint attackPoint in attackPoints)
+        statSystem.OnDeath += OnDeath;
+        foreach (AttackPoint attackPoint in attackPoints)
         {
             attackPoint.SetStatsData(statSystem);
         }
@@ -42,13 +42,12 @@ public class Melee : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + .5f);
+        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, statSystem.characterData.AttackRange))
         {
 
             if (hitInfo.transform.gameObject.layer != this.gameObject.layer)
             {
-                Debug.Log(hitInfo.transform.name);
                 animationController.Attack();
             }
             else
@@ -57,14 +56,16 @@ public class Melee : MonoBehaviour
                 animationController.Idle();
             }
         }
-        else 
-        if (statSystem.characterData.CanMove)
+        else
         {
-            animationController.ResetAnimation();
-            animationController.Move();
-            transform.position += (transform.forward * statSystem.characterData.Speed * Time.deltaTime);
+            if (statSystem.characterData.CanMove)
+            {
+                animationController.ResetAnimation();
+                animationController.Move();
+                transform.position += (transform.forward * statSystem.characterData.Speed * Time.deltaTime);
+            }
         }
-      
+
     }
 
     private void OnDeath()
@@ -74,10 +75,10 @@ public class Melee : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        if(statSystem!=null)
-        Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.green);
+        if (statSystem != null)
+            Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.green);
     }
 }

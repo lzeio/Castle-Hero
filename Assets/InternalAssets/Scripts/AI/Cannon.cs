@@ -23,7 +23,7 @@ public class Cannon : MonoBehaviour
         raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + 1.5f);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, characterStats.characterData.AttackRange))
         {
-            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem))
+            if (hitInfo.transform.gameObject.layer!=this.gameObject.layer)
             {
                 SpawnCannon();
             }
@@ -49,7 +49,7 @@ public class Cannon : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         if (characterStats != null)

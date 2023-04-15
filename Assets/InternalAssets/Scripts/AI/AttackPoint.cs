@@ -21,8 +21,7 @@ public class AttackPoint : MonoBehaviour
     {
         if(other.TryGetComponent<StatSystem>(out StatSystem stats))
         {
-            
-            stats.TakeDamage(characterStats.DealDamage());
+            stats.UpdateHealth(characterStats.DealDamage());
         }
         
     }

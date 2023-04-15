@@ -239,7 +239,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5127413957140447857}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.34595177, y: 1.4528031, z: 0.06556256}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 5129172925032118564}
   - component: {fileID: 5129172925032118570}
   - component: {fileID: 5129172925032118569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light Infantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ Animator:
   m_GameObject: {fileID: 5127627604827454293}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e4aa31f274820b94eb0d0b764e0f383b, type: 3}
-  m_Controller: {fileID: 9100000, guid: 081111fd1834f42469e07a9a2ce295c6, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3352b736fe2623498c1dc81a2857e1e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -640,6 +640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d6aa12332f28c46a121eebeab72a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoints: []
+  raycastPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &5129172925032118570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 3c62f38af88131e42b3df75a87ce28f3, type: 2}
+  health: 0
 --- !u!114 &5129172925032118569
 MonoBehaviour:
   m_ObjectHideFlags: 0

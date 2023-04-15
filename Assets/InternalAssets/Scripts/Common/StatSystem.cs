@@ -16,9 +16,10 @@ public class StatSystem : MonoBehaviour
         health = characterData.Health;
     }
 
-    public void TakeDamage(int damage)
+    public void UpdateHealth(int damage)
     {
         health -= damage;
+        Debug.Log($"Health is {health} and Character is {this.gameObject}");
         if (health <= 0)
         {
             OnDeath?.Invoke();
@@ -27,6 +28,6 @@ public class StatSystem : MonoBehaviour
     }
     public int DealDamage()
     {
-        return characterData.AttackDamage/10;
+        return characterData.AttackDamage;
     }
 }

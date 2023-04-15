@@ -16,6 +16,8 @@ public class Archer : MonoBehaviour
    private StatSystem statSystem;
 
     private List<GameObject> arrowList;
+
+    public bool canShoot = true;
     void Start()
     {
         characterStats = GetComponent<StatSystem>();
@@ -28,9 +30,17 @@ public class Archer : MonoBehaviour
         raycastPoint = new Vector3(transform.position.x, transform.position.y + .75f, transform.position.z);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, characterStats.characterData.AttackRange))
         {
-            if (hitInfo.collider.TryGetComponent(out StatSystem statSystem) && hitInfo.transform.gameObject.layer!= this.gameObject.layer )
+            Debug.Log("Shooting is " + canShoot);
+            if ( hitInfo.transform.gameObject.layer != this.gameObject.layer && canShoot)
             {
+                canShoot = false;
                 animationController.Attack();
+                DOVirtual.DelayedCall(10f, () => canShoot = true);
+            }
+            else
+            {
+                animationController.ResetAnimation();
+                animationController.Idle();
             }
         }
         else
@@ -42,7 +52,7 @@ public class Archer : MonoBehaviour
     }
     private void OnDestroy()
     {
-        statSystem.OnDeath -= OnDeath;
+        characterStats.OnDeath -= OnDeath;
     }
 
     private void SpawnArrow()
@@ -63,14 +73,15 @@ public class Archer : MonoBehaviour
 
     public void ShootProjectile(GameObject projectile)
     {
-        projectile.transform.DOLocalMoveZ(projectile.transform.position.z * characterStats.characterData.AttackRange, 10f);
+        projectile.transform.DOLocalMoveZ(projectile.transform.position.z * characterStats.characterData.AttackRange, 1f);
     }
     private void OnDeath()
     {
         animationController.ResetAnimation();
         animationController.Death();
+        
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         if (characterStats != null)
