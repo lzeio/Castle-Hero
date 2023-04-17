@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: HighTower
   Speed: 0
-  AttackDamage: 10
+  AttackDamage: 0
   Health: 100
-  CanMove: 0
   AttackRange: 1
+  Movable: 0
   Projectile: {fileID: 0}

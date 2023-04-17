@@ -1779,6 +1779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f98e5fc4888abc44b90f8b439a5fd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 746389323129277047}
   upgradeButton: {fileID: 746389323698175229}
   retireButton: {fileID: 746389324352986201}
 --- !u!1 &746389324519617253
@@ -2371,6 +2372,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7975171759868874781, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2455,9 +2460,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7975171760825943571, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171761327992993, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7975171761327992999, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2468,6 +2485,11 @@ PrefabInstance:
 --- !u!224 &746389323129277003 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+  m_PrefabInstance: {fileID: 7275060886572764250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &746389323129277047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
   m_PrefabInstance: {fileID: 7275060886572764250}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &746389323698175229 stripped
