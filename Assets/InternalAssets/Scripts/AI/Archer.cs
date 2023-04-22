@@ -84,7 +84,7 @@ public class Archer : MonoBehaviour
     {
         animationController.ResetAnimation();
         animationController.Death();
-        transform.DOScaleY(0, 1f).OnComplete(() => Destroy(gameObject));
+        transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
     }
     private void OnDrawGizmos()
     {

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +39,7 @@ public class Defenders : MonoBehaviour
         {
             animationController.ResetAnimation();
             animationController.Death();
+            transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
         }
     }
     private void OnTriggerEnter(Collider other)
