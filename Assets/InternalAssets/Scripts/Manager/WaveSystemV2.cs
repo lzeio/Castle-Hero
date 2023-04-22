@@ -96,11 +96,11 @@ public class WaveSystemV2 : MonoBehaviour
         while (waveValue > 0 || generatedEnemies.Count < 50)
         {
             int randEnemyId = Random.Range(0, enemies.Count);
-            int randEnemyCost = enemies[randEnemyId].cost;
+            int randEnemyCost = enemies[randEnemyId].Count;
 
             if (waveValue - randEnemyCost >= 0)
             {
-                generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
+                generatedEnemies.Add(enemies[randEnemyId].EnemyPrefab);
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)
@@ -117,6 +117,6 @@ public class WaveSystemV2 : MonoBehaviour
 [System.Serializable]
 public class Enemy
 {
-    public GameObject enemyPrefab;
-    public int cost;
+    public GameObject EnemyPrefab;
+    public int Count;
 }
