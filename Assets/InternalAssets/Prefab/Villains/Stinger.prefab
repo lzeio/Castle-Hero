@@ -1805,6 +1805,7 @@ MonoBehaviour:
   characterData: {fileID: 11400000, guid: c8249813bbd83fe4cb36813e650c682e, type: 2}
   health: 0
   damage: 0
+  NextUpgradeLevel: 0
 --- !u!114 &6902694356657750491
 MonoBehaviour:
   m_ObjectHideFlags: 0
