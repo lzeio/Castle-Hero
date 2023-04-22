@@ -19,8 +19,15 @@ public class StatSystem : MonoBehaviour
     {
         health = characterData.TierI_Health;
         damage = characterData.TierI_AttackDamage;
-        upgradeableComponent= GetComponent<UpgradeableComponent>(); 
-        upgradeableComponent.OnUpgrade += UpdateStats;
+        try
+        {
+                upgradeableComponent = GetComponent<UpgradeableComponent>();
+                upgradeableComponent.OnUpgrade += UpdateStats;
+        }
+        catch (Exception)
+        {
+            Debug.Log("Villains cannot be upgraded");
+        }
         NextUpgradeLevel = 2;
     }
 
@@ -28,11 +35,6 @@ public class StatSystem : MonoBehaviour
     {
         switch (NextUpgradeLevel)
         {
-            //case 1:
-            //    health = characterData.TierI_Health;
-            //    damage = characterData.TierI_AttackDamage;
-            //    UpgradeLevel++;
-            //    break;
             case 2:
                 health = characterData.TierII_Health;
                 damage = characterData.TierII_AttackDamage;
