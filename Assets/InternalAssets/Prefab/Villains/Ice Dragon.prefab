@@ -5041,9 +5041,9 @@ GameObject:
   - component: {fileID: 8852020747786729652}
   - component: {fileID: 8902602219250601537}
   - component: {fileID: 8902602219250601536}
+  - component: {fileID: 8902602219250601551}
   - component: {fileID: 8902602219250601539}
   - component: {fileID: 8902602219250601538}
-  - component: {fileID: 8902602219250601551}
   m_Layer: 7
   m_Name: Ice Dragon
   m_TagString: Animal
@@ -5059,8 +5059,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8901468430432981448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -19}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8907380269822047976}
@@ -5100,8 +5100,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &8902602219250601536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5118,6 +5118,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8902602219250601551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901468430432981448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a7b73092e86104b973e5ba6b347e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canShoot: 1
 --- !u!114 &8902602219250601539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5147,19 +5160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
---- !u!114 &8902602219250601551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8901468430432981448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a7b73092e86104b973e5ba6b347e74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canShoot: 1
 --- !u!1 &8901503609539736428
 GameObject:
   m_ObjectHideFlags: 0
