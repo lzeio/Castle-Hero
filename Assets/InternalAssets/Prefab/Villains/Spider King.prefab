@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 9046441946329764436}
   - component: {fileID: 9046441946329764433}
   - component: {fileID: 9046441946329764432}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spider King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1174,7 +1174,7 @@ Animator:
   m_GameObject: {fileID: 7501724690619581030}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d2be7501b2c5da34798024d07c8d2c73, type: 3}
-  m_Controller: {fileID: 9100000, guid: 6b1cc0f82166a3a44af6f71e055538a6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 96b487d542e263b4e91502df58c20a49, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1226,7 +1226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e3f00ff5d0f6645af056c3cf622cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 59296b57d92515f40bc3b66c544a78fb, type: 2}
+  characterData: {fileID: 11400000, guid: df264e6a1653dbf4cbadac3b6fdeb915, type: 2}
+  health: 0
+  damage: 0
+  NextUpgradeLevel: 0
 --- !u!114 &9046441946329764433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d6aa12332f28c46a121eebeab72a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoints: []
+  raycastPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &7501724690619581032
 GameObject:
   m_ObjectHideFlags: 0

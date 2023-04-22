@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 2835295329627325363}
   - component: {fileID: 2835295329627325360}
   - component: {fileID: 2835295329627325359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ Animator:
   m_GameObject: {fileID: 2835295330714545824}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0f2c5202b918687408ac5bc7429a03ea, type: 3}
-  m_Controller: {fileID: 9100000, guid: 64e2ef14a02f69a4b94edbee54ca296a, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea4329933361e794a9217db9e608b00e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -486,6 +486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 60bceb1007f0c9b43aa0a9e93f62f465, type: 2}
+  health: 0
+  damage: 0
+  NextUpgradeLevel: 0
 --- !u!114 &2835295329627325360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d6aa12332f28c46a121eebeab72a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoints: []
+  raycastPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &2835295330724404489
 GameObject:
   m_ObjectHideFlags: 0
