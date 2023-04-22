@@ -521,6 +521,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8115061890055591467, guid: cf0fe3e81cdb7bb49bd7f5ddad3bb71d, type: 3}
+      propertyPath: waveDuration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8115061890587602500, guid: cf0fe3e81cdb7bb49bd7f5ddad3bb71d, type: 3}
       propertyPath: m_RootOrder
       value: 5

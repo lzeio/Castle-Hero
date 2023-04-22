@@ -73,7 +73,7 @@ public class WaveSystemV2 : MonoBehaviour
 
     public void GenerateWave()
     {
-        waveValue = currWave * 10;
+        waveValue = currWave * 20;
         GenerateEnemies();
 
         spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
