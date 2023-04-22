@@ -35,7 +35,7 @@ public class Cannon : MonoBehaviour
         if (canShoot)
         {
             canShoot = false;
-            GameObject arrow = Instantiate(characterStats.characterData.Projectile, characterStats.characterData.Projectile.transform.position, Quaternion.identity, this.transform);
+            GameObject arrow = Instantiate(characterStats.characterData.Projectile,raycastPoint, Quaternion.identity, this.transform);
             AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
             arrowAttack.SetStatsData(characterStats);
             ShootProjectile(arrow);
@@ -45,7 +45,7 @@ public class Cannon : MonoBehaviour
 
     public void ShootProjectile(GameObject projectile)
     {
-        projectile.transform.DOMove(transform.forward * characterStats.characterData.AttackRange, 10f);
+        projectile.transform.DOMoveZ(projectile.transform.position.z * characterStats.characterData.AttackRange, 10f);
     }
 
 

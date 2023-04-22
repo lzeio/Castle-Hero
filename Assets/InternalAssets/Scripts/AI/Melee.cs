@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,7 +14,7 @@ public class Melee : MonoBehaviour
     [SerializeField] protected Ray Ray;
     [SerializeField] private List<AttackPoint> attackPoints;
     protected AnimationController animationController;
-    protected StatSystem statSystem;
+    protected StatSystem characterStats;
     public Vector3 raycastPoint;
 
     private bool canMove;
@@ -24,18 +25,18 @@ public class Melee : MonoBehaviour
     protected virtual void Start()
     {
         animationController = GetComponent<AnimationController>();
-        statSystem = GetComponent<StatSystem>();
-        canMove = statSystem.characterData.Movable;
-        statSystem.OnDeath += OnDeath;
+        characterStats = GetComponent<StatSystem>();
+        canMove = characterStats.characterData.Movable;
+        characterStats.OnDeath += OnDeath;
         foreach (AttackPoint attackPoint in attackPoints)
         {
-            attackPoint.SetStatsData(statSystem);
+            attackPoint.SetStatsData(characterStats);
         }
     }
 
     private void OnDestroy()
     {
-        statSystem.OnDeath -= OnDeath;
+        characterStats.OnDeath -= OnDeath;
     }
 
 
@@ -43,7 +44,7 @@ public class Melee : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, statSystem.characterData.AttackRange))
+        if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, characterStats.characterData.AttackRange))
         {
 
             if (hitInfo.transform.gameObject.layer != this.gameObject.layer)
@@ -58,11 +59,11 @@ public class Melee : MonoBehaviour
         }
         else
         {
-            if (statSystem.characterData.Movable)
+            if (characterStats.characterData.Movable)
             {
                 animationController.ResetAnimation();
                 animationController.Move();
-                transform.position += (transform.forward * statSystem.characterData.Speed * Time.deltaTime);
+                transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
             }
         }
 
@@ -72,13 +73,14 @@ public class Melee : MonoBehaviour
     {
         animationController.ResetAnimation();
         animationController.Death();
+        transform.DOScaleY(0, 1f).OnComplete(()=> Destroy(gameObject));
     }
 
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        if (statSystem != null)
-            Debug.DrawRay(raycastPoint, transform.forward * statSystem.characterData.AttackRange, Color.green);
+        if (characterStats != null)
+            Debug.DrawRay(raycastPoint, transform.forward * characterStats.characterData.AttackRange, Color.green);
     }
 }

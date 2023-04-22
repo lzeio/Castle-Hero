@@ -6,7 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
 
     [SerializeField] private List<GameObject> Heroes = default;
-    // Start is called before the first frame update
+       // Start is called before the first frame update
+       public List<SpawnData> spawnData = new List<SpawnData>();    
     void Start()
     {
 
@@ -26,7 +27,7 @@ public class SpawnManager : MonoBehaviour
                 int row = -1;
                 int col = -1;
 
-                for (int i = 0; i <GameplayManager.Instance.GridManager_Two.Rows; i++)
+                for (int i = 0; i < GameplayManager.Instance.GridManager_Two.Rows; i++)
                 {
                     for (int j = 0; j < GameplayManager.Instance.GridManager_Two.Columns; j++)
                     {
@@ -43,14 +44,26 @@ public class SpawnManager : MonoBehaviour
                         break;
                     }
                 }
-
                 if (row >= 0 && col >= 0)
                 {
+                    if (GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied)
+                    {
+                        return;
+                    }
                     Vector3 cellPos = GameplayManager.Instance.GridManager_Two.GetCellPosition(row, col);
-                    GameObject cube = Instantiate(Heroes[GameplayManager.Instance.InputManager.heroindex]);
-                    cube.transform.position = cellPos + new Vector3(0, 0, 0);
+                    GameObject _hero = Instantiate(Heroes[GameplayManager.Instance.InputManager.heroindex]);
+                    _hero.transform.position = cellPos + new Vector3(0, 0, 1f);
+                    GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied = true;
                 }
             }
         }
     }
+}
+
+[System.Serializable]
+
+public class SpawnData
+{
+    public bool isPlaced;
+    public int[,] location;
 }

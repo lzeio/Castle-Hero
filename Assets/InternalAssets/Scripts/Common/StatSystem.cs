@@ -14,6 +14,8 @@ public class StatSystem : MonoBehaviour
     public int damage;
 
     public int NextUpgradeLevel;
+
+    
     // Start is called before the first frame update
     void Start()
     {
