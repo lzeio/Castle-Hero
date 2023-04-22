@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: HighTower
   Speed: 0
-  AttackDamage: 0
-  Health: 100
   AttackRange: 1
+  TierI_AttackDamage: 10
+  TierI_Health: 100
+  TierII_AttackDamage: 20
+  TierII_Health: 200
+  TierIII_AttackDamage: 30
+  TierIII_Health: 300
   Movable: 0
   Projectile: {fileID: 0}
