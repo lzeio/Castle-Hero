@@ -25,12 +25,12 @@ public class Cannon : MonoBehaviour
         {
             if (hitInfo.transform.gameObject.layer!=this.gameObject.layer)
             {
-                SpawnCannon();
+                SpawnCannonBall();
             }
         }
         
     }
-    private void SpawnCannon()
+    private void SpawnCannonBall()
     {
         if (canShoot)
         {

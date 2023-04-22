@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine.UI;
 
 public class UpgradeableComponent : MonoBehaviour
 {
-    [SerializeField] private GameObject UI;
+    public event Action OnUpgrade;
+   [SerializeField] private GameObject UI;
    [SerializeField] private Button upgradeButton;
    [SerializeField] private Button retireButton;
 
@@ -26,13 +28,12 @@ public class UpgradeableComponent : MonoBehaviour
 
     public void Upgrade()
     {
-        Debug.Log("Upgrade");
-        characterData.AttackDamage
+        OnUpgrade?.Invoke();    
     }
 
     public void Retire()
     {
-        Debug.Log("Retire");
+        Destroy(gameObject);
     }
     
     public  void ToggleUI(bool toggle)

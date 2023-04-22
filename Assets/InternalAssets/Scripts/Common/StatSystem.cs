@@ -8,13 +8,44 @@ public class StatSystem : MonoBehaviour
 {
     public event Action OnDeath;
     public CharacterData characterData;
+    private UpgradeableComponent upgradeableComponent;
 
     public int health;
     public int damage;
+
+    public int NextUpgradeLevel;
     // Start is called before the first frame update
     void Start()
     {
-        health = characterData.Health;
+        health = characterData.TierI_Health;
+        damage = characterData.TierI_AttackDamage;
+        upgradeableComponent= GetComponent<UpgradeableComponent>(); 
+        upgradeableComponent.OnUpgrade += UpdateStats;
+        NextUpgradeLevel = 2;
+    }
+
+    private void UpdateStats()
+    {
+        switch (NextUpgradeLevel)
+        {
+            //case 1:
+            //    health = characterData.TierI_Health;
+            //    damage = characterData.TierI_AttackDamage;
+            //    UpgradeLevel++;
+            //    break;
+            case 2:
+                health = characterData.TierII_Health;
+                damage = characterData.TierII_AttackDamage;
+                NextUpgradeLevel++;
+                break;
+            case 3:
+                health = characterData.TierIII_Health;
+                damage = characterData.TierIII_AttackDamage;
+                NextUpgradeLevel++;
+                break;
+            default:
+                break;
+        }
     }
 
     public void UpdateHealth(int damage)
@@ -27,8 +58,10 @@ public class StatSystem : MonoBehaviour
         }
 
     }
+
+
     public int DealDamage()
     {
-        return characterData.AttackDamage;
+        return damage;
     }
 }
