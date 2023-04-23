@@ -21,8 +21,8 @@ public class AttackPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == this.gameObject.layer) 
-            return;
+        //if (other.gameObject.layer == this.gameObject.layer) 
+        //    return;
 
         if (other.TryGetComponent<StatSystem>(out StatSystem stats))
         {
