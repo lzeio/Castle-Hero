@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +11,10 @@ public class Archer : MonoBehaviour
     private AnimationController animationController;
     private StatSystem characterStats;
     private Vector3 raycastPoint;
-
     private List<GameObject> arrowList;
 
     public bool canShoot = true;
+    public RaycastHit[] hits;
     void Start()
     {
         characterStats = GetComponent<StatSystem>();
@@ -27,17 +25,23 @@ public class Archer : MonoBehaviour
     void Update()
     {
         raycastPoint = new Vector3(transform.position.x, transform.position.y + 1.75f, transform.position.z);
-        if (Physics.Raycast(raycastPoint, transform.forward,characterStats.characterData.AttackRange))
+        hits = Physics.RaycastAll(raycastPoint, transform.forward, characterStats.characterData.AttackRange);
+        foreach (RaycastHit hit in hits)
         {
-            if (canShoot)
+            if (hit.transform.gameObject.layer == this.gameObject.layer)
+            {
+                continue;
+            }
+            if (canShoot && hit.transform.gameObject.layer != this.gameObject.layer)
             {
                 canShoot = false;
                 animationController.Attack();
                 DOVirtual.DelayedCall(1f, () => canShoot = true);
+                return;
             }
+
         }
-        else
-        {
+
             if (characterStats.characterData.Movable)
             {
                 animationController.ResetAnimation();
@@ -49,13 +53,13 @@ public class Archer : MonoBehaviour
                 animationController.ResetAnimation();
                 animationController.Idle();
             }
-        }
     }
 
 
     private void OnDestroy()
     {
         characterStats.OnDeath -= OnDeath;
+        DOTween.KillAll();
     }
 
     private void SpawnArrow()
@@ -65,8 +69,8 @@ public class Archer : MonoBehaviour
         AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
         arrowAttack.SetStatsData(characterStats);
         arrow.layer = this.gameObject.layer;
-        
-        arrow.transform.DOMoveZ(arrow.transform.position.z * characterStats.characterData.AttackRange, 5f);
+        arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 10f);
+        DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); }) ;
     }
 
     private void SpawnBall()
@@ -75,11 +79,10 @@ public class Archer : MonoBehaviour
         AttackPoint ballAttack = ball.GetComponent<AttackPoint>();
         ballAttack.SetStatsData(characterStats);
         ball.layer = this.gameObject.layer;
-        
-        ball.transform.DOMoveZ(-ball.transform.position.z * characterStats.characterData.AttackRange, 50f, false);
+        ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 200f);
     }
 
-   
+
     private void OnDeath()
     {
         animationController.ResetAnimation();
