@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Phantom
   m_EditorClassIdentifier: 
   CharacterId: Phantom
-  Speed: 10
+  Speed: 1
   AttackRange: 10
   TierI_AttackDamage: 10
   TierI_Health: 100

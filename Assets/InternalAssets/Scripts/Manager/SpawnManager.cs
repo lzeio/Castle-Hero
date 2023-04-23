@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> Heroes = default;
        // Start is called before the first frame update
-       public List<SpawnData> spawnData = new List<SpawnData>();
+    public List<SpawnData> spawnData = new List<SpawnData>();
     int heroIndex;
     void Start()
     {

@@ -17,9 +17,12 @@ MonoBehaviour:
   AttackRange: 10
   TierI_AttackDamage: 10
   TierI_Health: 100
+  TierI_Cost: 50
   TierII_AttackDamage: 20
   TierII_Health: 200
+  TierII_Cost: 100
   TierIII_AttackDamage: 30
   TierIII_Health: 300
+  TierIII_Cost: 150
   Movable: 0
   Projectile: {fileID: 0}
