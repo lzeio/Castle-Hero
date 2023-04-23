@@ -27,8 +27,5 @@ public class InputManager : MonoBehaviour
         
     }
 
-    public void SelectHero(int index)
-    {
-        heroindex = index;
-    }
+   
 }

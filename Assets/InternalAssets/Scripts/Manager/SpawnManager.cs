@@ -7,7 +7,8 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> Heroes = default;
        // Start is called before the first frame update
-       public List<SpawnData> spawnData = new List<SpawnData>();    
+       public List<SpawnData> spawnData = new List<SpawnData>();
+    int heroIndex;
     void Start()
     {
 
@@ -51,12 +52,17 @@ public class SpawnManager : MonoBehaviour
                         return;
                     }
                     Vector3 cellPos = GameplayManager.Instance.GridManager_Two.GetCellPosition(row, col);
-                    GameObject _hero = Instantiate(Heroes[GameplayManager.Instance.InputManager.heroindex]);
+                    GameObject _hero = Instantiate(Heroes[heroIndex]);
                     _hero.transform.position = cellPos + new Vector3(0, 0, 1f);
                     GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied = true;
                 }
             }
         }
+    }
+
+    public void SelectHero(int index)
+    {
+        heroIndex = index;
     }
 }
 
