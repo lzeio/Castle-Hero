@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class WaveSystemV2 : MonoBehaviour
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
-    public Transform[] spawnLocation;
+    public Transform[] spawnLocation= default;
     public int spawnIndex;
 
     public int waveDuration;
@@ -20,6 +20,8 @@ public class WaveSystemV2 : MonoBehaviour
     public List<GameObject> spawnedEnemies = new List<GameObject>();
 
     public bool waveEnded;
+
+    public int countMultiplier;
     void Start()
     {
         GenerateWave();
@@ -32,7 +34,7 @@ public class WaveSystemV2 : MonoBehaviour
             //spawn an enemy
             if (enemiesToSpawn.Count > 0)
             {
-                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, spawnLocation[spawnIndex].rotation); // spawn first enemy in our list
+                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, spawnLocation[spawnIndex].rotation); // spawn first enemy in our listx
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
                 spawnTimer = spawnInterval;
@@ -73,7 +75,7 @@ public class WaveSystemV2 : MonoBehaviour
 
     public void GenerateWave()
     {
-        waveValue = currWave * 20;
+        waveValue = currWave * countMultiplier;
         GenerateEnemies();
 
         spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies

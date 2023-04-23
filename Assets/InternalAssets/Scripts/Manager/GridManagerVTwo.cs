@@ -9,7 +9,6 @@ public class GridManagerVTwo : MonoBehaviour
     public float GridWidth;
     public float GridHeight;
 
-    [SerializeField] private GameObject gridCubePrefab;
     [SerializeField] private GameObject gridCellPrefab;
 
 
