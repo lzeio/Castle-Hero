@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: Golem
   Speed: 5
-  AttackRange: 10
+  AttackRange: 5
   TierI_AttackDamage: 10
   TierI_Health: 100
   TierII_AttackDamage: 20
