@@ -11136,6 +11136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a7b73092e86104b973e5ba6b347e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType:
+    serializedVersion: 2
+    m_Bits: 64
   canShoot: 1
 --- !u!114 &6945820739882930568
 MonoBehaviour:
