@@ -15,6 +15,7 @@ public class StatSystem : MonoBehaviour
 
     public int NextUpgradeLevel;
 
+    public int rowPosition, colPosition;
     
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class StatSystem : MonoBehaviour
         if (health <= 0)
         {
             OnDeath?.Invoke();
+            GameplayManager.Instance.GridManager_Two.Grid[rowPosition, colPosition].GetComponent<Tile>().IsOccupied = false;
         }
 
     }

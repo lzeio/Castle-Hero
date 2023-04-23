@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinsManager : MonoBehaviour
 {
-    private int Coins;
+    public int Coins;
 
     public void AddCoins(int amount)
     {

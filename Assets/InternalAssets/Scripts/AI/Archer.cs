@@ -42,17 +42,17 @@ public class Archer : MonoBehaviour
 
         }
 
-            if (characterStats.characterData.Movable)
-            {
-                animationController.ResetAnimation();
-                animationController.Move();
-                transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
-            }
-            else
-            {
-                animationController.ResetAnimation();
-                animationController.Idle();
-            }
+            //if (characterStats.characterData.Movable)
+            //{
+            //    animationController.ResetAnimation();
+            //    animationController.Move();
+            //    transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
+            //}
+            //else
+            //{
+            //    animationController.ResetAnimation();
+            //    animationController.Idle();
+            //}
     }
 
 

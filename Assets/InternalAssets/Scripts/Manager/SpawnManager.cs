@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<GameObject> Heroes = default;
        // Start is called before the first frame update
     public List<SpawnData> spawnData = new List<SpawnData>();
-    int heroIndex;
+    int heroIndex=0;
     void Start()
     {
 
@@ -47,7 +47,9 @@ public class SpawnManager : MonoBehaviour
                 }
                 if (row >= 0 && col >= 0)
                 {
-                    if (GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied)
+                    
+                    if (GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied || 
+                        !GameplayManager.Instance.CoinsManager.HasEnoughCoins(Heroes[heroIndex].GetComponent<StatSystem>().characterData.TierI_Cost))
                     {
                         return;
                     }
@@ -55,6 +57,10 @@ public class SpawnManager : MonoBehaviour
                     GameObject _hero = Instantiate(Heroes[heroIndex]);
                     _hero.transform.position = cellPos + new Vector3(0, 0, 1f);
                     GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied = true;
+                    GameplayManager.Instance.CoinsManager.AddCoins(-Heroes[heroIndex].GetComponent<StatSystem>().characterData.TierI_Cost);
+                    Heroes[heroIndex].GetComponent<StatSystem>().rowPosition = row;
+                    Heroes[heroIndex].GetComponent<StatSystem>().colPosition = col;
+
                 }
             }
         }
