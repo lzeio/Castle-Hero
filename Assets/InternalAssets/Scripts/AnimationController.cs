@@ -26,8 +26,6 @@ public class AnimationController : MonoBehaviour
     public void Death()
     {
         Animator.SetBool(AnimationConstants.CommonAnimation.Death, true);
-        //for time being then put it somewhere better
-        DOVirtual.DelayedCall(2f, ()=> Destroy(this.gameObject));
     }
 
     public void ResetAnimation()
