@@ -33,4 +33,37 @@ public class GameplayManager : MonoBehaviour
     {
         
     }
+
+    public enum TimeScaleOption
+    {
+        Normal,
+        Double,
+        Quadruple
+    }
+    private TimeScaleOption timeScale = TimeScaleOption.Normal;
+
+    // Set the default Timescale Multiplier to Normal
+
+    // Change the Timescale Multiplier when called
+    public void ChangeTimeScale()
+    {
+        switch (timeScale)
+        {
+            case TimeScaleOption.Normal:
+                timeScale = TimeScaleOption.Double;
+                Time.timeScale = 2f;
+                break;
+            case TimeScaleOption.Double:
+                timeScale = TimeScaleOption.Quadruple;
+                Time.timeScale = 4f;
+                break;
+            case TimeScaleOption.Quadruple:
+                timeScale = TimeScaleOption.Normal;
+                Time.timeScale = 1f;
+                break;
+        }
+
+        // Print the current Timescale Multiplier to the console
+        Debug.Log("Current Timescale Multiplier: " + timeScale.ToString());
+    }
 }
