@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,12 @@ public class Cannon : MonoBehaviour
     void Start()
     {
         characterStats = GetComponent<StatSystem>();
+        characterStats.OnDeath += OnDeath;
+    }
+
+    private void OnDeath()
+    {
+        transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
     }
 
     // Update is called once per frame
