@@ -24,59 +24,11 @@ public class InputManager : MonoBehaviour
         {
             OnClick?.Invoke();
         }
-        SelectHero();
+        
     }
 
-    public void SelectHero()
+    public void SelectHero(int index)
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            heroindex = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            heroindex = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            heroindex = 2;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            heroindex = 3;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            heroindex = 4;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            heroindex = 5;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            heroindex = 6;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            heroindex = 7;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            heroindex = 8;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            heroindex = 9;
-        }
+        heroindex = index;
     }
 }
