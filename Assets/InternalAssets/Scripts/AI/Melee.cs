@@ -51,11 +51,7 @@ public class Melee : MonoBehaviour
             {
                 animationController.Attack();
             }
-            else
-            {
-                animationController.ResetAnimation();
-                animationController.Idle();
-            }
+
         }
         else
         {
@@ -64,6 +60,11 @@ public class Melee : MonoBehaviour
                 animationController.ResetAnimation();
                 animationController.Move();
                 transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
+            }
+            else
+            {
+                animationController.ResetAnimation();
+                animationController.Idle();
             }
         }
 
