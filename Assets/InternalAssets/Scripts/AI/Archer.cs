@@ -32,27 +32,27 @@ public class Archer : MonoBehaviour
             {
                 continue;
             }
-            if (canShoot && hit.transform.gameObject.layer != this.gameObject.layer)
+            else
+            if (hit.transform.gameObject.layer != this.gameObject.layer)
             {
-                canShoot = false;
                 animationController.Attack();
-                DOVirtual.DelayedCall(1f, () => canShoot = true);
                 return;
             }
 
+
         }
 
-            //if (characterStats.characterData.Movable)
-            //{
-            //    animationController.ResetAnimation();
-            //    animationController.Move();
-            //    transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
-            //}
-            //else
-            //{
-            //    animationController.ResetAnimation();
-            //    animationController.Idle();
-            //}
+        if (characterStats.characterData.Movable)
+        {
+            animationController.ResetAnimation();
+            animationController.Move();
+            transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
+        }
+        else
+        {
+            animationController.ResetAnimation();
+            animationController.Idle();
+        }
     }
 
 
@@ -70,7 +70,7 @@ public class Archer : MonoBehaviour
         arrowAttack.SetStatsData(characterStats);
         arrow.layer = this.gameObject.layer;
         arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 10f);
-        DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); }) ;
+        DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); });
     }
 
     private void SpawnBall()
