@@ -1,6 +1,3 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
@@ -14,7 +11,7 @@ public class AnimationController : MonoBehaviour
     {
         Animator.SetBool(AnimationConstants.CommonAnimation.Attacking, true);
     }
-    public  void Move()
+    public void Move()
     {
         Animator.SetBool(AnimationConstants.CommonAnimation.Walking, true);
     }
@@ -35,5 +32,5 @@ public class AnimationController : MonoBehaviour
             Animator.SetBool(parameter.name, false);
         }
     }
-    
+
 }
