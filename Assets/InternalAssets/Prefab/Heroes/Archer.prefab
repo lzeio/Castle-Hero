@@ -1739,9 +1739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a7b73092e86104b973e5ba6b347e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackType:
-    serializedVersion: 2
-    m_Bits: 128
   canShoot: 1
 --- !u!114 &3562484711934065636
 MonoBehaviour:
@@ -1759,6 +1756,9 @@ MonoBehaviour:
   health: 0
   damage: 0
   NextUpgradeLevel: 0
+  NextUpgradeCost: 0
+  rowPosition: 0
+  colPosition: 0
 --- !u!114 &4374725118422318672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,6 +2464,10 @@ PrefabInstance:
     - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_Name
       value: UpgradeRetire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}

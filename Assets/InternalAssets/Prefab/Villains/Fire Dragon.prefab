@@ -11064,7 +11064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6946541024286829039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11136,9 +11136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a7b73092e86104b973e5ba6b347e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackType:
-    serializedVersion: 2
-    m_Bits: 64
   canShoot: 1
 --- !u!114 &6945820739882930568
 MonoBehaviour:
@@ -11156,6 +11153,9 @@ MonoBehaviour:
   health: 0
   damage: 0
   NextUpgradeLevel: 0
+  NextUpgradeCost: 0
+  rowPosition: 0
+  colPosition: 0
 --- !u!114 &6945820739882930569
 MonoBehaviour:
   m_ObjectHideFlags: 0
