@@ -14,7 +14,7 @@ public class MainMenuUIManager : MonoBehaviour
     private int CurrentPanel;
     public void Start()
     {
-        SetQuality(PlayerPrefs.GetInt("QualityLevelIndex", 2));
+        SetQuality(GameData.GetCurrentQuality());
     }
     public void ExitGame()
     {
@@ -38,6 +38,16 @@ public class MainMenuUIManager : MonoBehaviour
         StartCoroutine(DelayedPanel(1));
         CurrentPanel = 1;
     }
+    public void OndifficultyPanel()
+    {
+        StartCoroutine(DelayedPanel(2));
+        CurrentPanel= 2;
+    }
+    public void OnAlmanacPanel()
+    {
+        StartCoroutine(DelayedPanel(3));
+        CurrentPanel= 3;
+    }
     private void ResetPanels()
     {
         foreach (GameObject panel in UIPanels)
@@ -53,7 +63,11 @@ public class MainMenuUIManager : MonoBehaviour
         }
         QualityHighlights[index].SetActive(true);
         QualitySettings.SetQualityLevel(index);
-        PlayerPrefs.SetInt("QualityLevelIndex",index);
+        GameData.SetCurrentQuality(index);
         
+    }
+    public void SelectDifficulty(int indedx)
+    {
+        Debug.Log("Selected" + indedx);
     }
 }
