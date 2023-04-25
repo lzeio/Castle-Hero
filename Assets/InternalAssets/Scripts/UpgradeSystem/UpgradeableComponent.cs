@@ -12,18 +12,20 @@ public class UpgradeableComponent : MonoBehaviour
    [SerializeField] private Button retireButton;
 
     private CharacterData characterData;
+    private StatSystem statSystem;
     // Start is called before the first frame update
     void Start()
     {
         upgradeButton.onClick.AddListener(Upgrade);
         retireButton.onClick.AddListener(Retire);
-        characterData = GetComponent<StatSystem>().characterData;
+        statSystem = GetComponent<StatSystem>();
+        characterData = statSystem.characterData;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        upgradeButton.interactable = GameplayManager.Instance.CoinsManager.HasEnoughCoins(statSystem.NextUpgradeCost);  
     }
 
     public void Upgrade()

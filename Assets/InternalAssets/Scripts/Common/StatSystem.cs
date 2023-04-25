@@ -14,7 +14,7 @@ public class StatSystem : MonoBehaviour
     public int damage;
 
     public int NextUpgradeLevel;
-
+    public int NextUpgradeCost;
     public int rowPosition, colPosition;
     
     // Start is called before the first frame update
@@ -32,6 +32,7 @@ public class StatSystem : MonoBehaviour
             Debug.Log("Villains cannot be upgraded");
         }
         NextUpgradeLevel = 2;
+        NextUpgradeCost = characterData.TierII_Cost;
     }
 
     private void UpdateStats()
@@ -42,10 +43,14 @@ public class StatSystem : MonoBehaviour
                 health = characterData.TierII_Health;
                 damage = characterData.TierII_AttackDamage;
                 NextUpgradeLevel++;
+                GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
+                NextUpgradeCost = characterData.TierIII_Cost;
+
                 break;
             case 3:
                 health = characterData.TierIII_Health;
                 damage = characterData.TierIII_AttackDamage;
+                GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
                 NextUpgradeLevel++;
                 break;
             default:
