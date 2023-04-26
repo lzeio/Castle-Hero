@@ -12,6 +12,7 @@ public class GamePlayUIScript : MonoBehaviour
     private int CurrentPanel;
     public GameObject CastleHealth;
     public GameObject Wavenumber;
+    public GameObject CoinsText;
     public static GamePlayUIScript Instance;
 
     private void Awake()
