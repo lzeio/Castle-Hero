@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.40622923, g: 0.5523411, b: 0.63393766, a: 1}
+  m_IndirectSpecularColor: {r: 0.4062455, g: 0.55233073, b: 0.63394237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,13 +134,25 @@ PrefabInstance:
       propertyPath: autoKill
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 188584372, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
+      propertyPath: isIndependentUpdate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 188584373, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
       propertyPath: autoKill
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 188584373, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
+      propertyPath: isIndependentUpdate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 188584374, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
       propertyPath: autoKill
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 188584374, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
+      propertyPath: isIndependentUpdate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 555572619, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -229,6 +241,10 @@ PrefabInstance:
     - target: {fileID: 4051839336041599226, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051839336041599227, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
+      propertyPath: isIndependentUpdate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4051839336041599229, guid: bab4c7120ee4a5244811d23d9bd72b9d, type: 3}
       propertyPath: m_IsActive
@@ -727,7 +743,7 @@ MonoBehaviour:
   id: 1
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -842,7 +858,7 @@ MonoBehaviour:
   id: 1
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1134,7 +1150,7 @@ MonoBehaviour:
   id: 1
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1254,7 +1270,7 @@ MonoBehaviour:
   id: 1
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1556,7 +1572,7 @@ MonoBehaviour:
   id: 1
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1600,7 +1616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1511351641
 MonoBehaviour:
   m_ObjectHideFlags: 0
