@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class GamePlayUIScript : MonoBehaviour
@@ -9,6 +10,14 @@ public class GamePlayUIScript : MonoBehaviour
     [SerializeField] private DOTweenAnimation[] GameUIAnimations;
     [SerializeField] private GameObject[] QualityHighlights;
     private int CurrentPanel;
+    public GameObject CastleHealth;
+    public GameObject Wavenumber;
+    public static GamePlayUIScript Instance;
+
+    private void Awake()
+    {
+        Instance= this;
+    }
     IEnumerator DelayedPanel(int index)
     {
         GameUIAnimations[0].DOPlayBackwardsAllById(CurrentPanel + "");

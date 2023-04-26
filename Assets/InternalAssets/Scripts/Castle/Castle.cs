@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Castle : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Castle : MonoBehaviour
         {
             Health -= statSystem.health;
             other.transform.DOScale(0f, .2f).SetUpdate(false).OnComplete(() => Destroy(other.gameObject));
+            GamePlayUIScript.Instance.CastleHealth.GetComponent<TMP_Text>().text = Health+"";
         }
     }
 

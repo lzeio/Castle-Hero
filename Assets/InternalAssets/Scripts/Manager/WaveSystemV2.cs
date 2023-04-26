@@ -1,5 +1,6 @@
     using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaveSystemV2 : MonoBehaviour
@@ -58,6 +59,7 @@ public class WaveSystemV2 : MonoBehaviour
         if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
         {
             currWave++;
+            GamePlayUIScript.Instance.Wavenumber.GetComponent<TMP_Text>().text = ": "+currWave;
             GenerateWave();
         }
         if (spawnedEnemies.Count == 0)
