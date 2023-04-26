@@ -70,7 +70,8 @@ public class Archer : MonoBehaviour
         arrowAttack.SetStatsData(characterStats);
         arrow.layer = this.gameObject.layer;
         arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 10f);
-        DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); });
+        if (arrow != null)
+            DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); });
     }
 
     private void SpawnBall()

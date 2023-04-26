@@ -22,6 +22,7 @@ public class Cannon : MonoBehaviour
     private void OnDeath()
     {
         transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
+       
     }
 
     // Update is called once per frame
@@ -36,6 +37,11 @@ public class Cannon : MonoBehaviour
             }
         }
         
+    }
+    private void OnDestroy()
+    {
+        characterStats.OnDeath -= OnDeath;
+        DOTween.KillAll();  
     }
     private void SpawnCannonBall()
     {

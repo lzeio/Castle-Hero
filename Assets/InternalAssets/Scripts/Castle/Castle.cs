@@ -10,9 +10,11 @@ public class Castle : MonoBehaviour
     public LayerMask villainLayerMask;
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
-        Health -= other.GetComponent<StatSystem>().health;
-        other.transform.DOScale(0f, .1f).SetUpdate(false).OnComplete(() => Destroy(other.gameObject));
+        if(other.TryGetComponent(out StatSystem statSystem))
+        {
+            Health -= statSystem.health;
+            other.transform.DOScale(0f, .2f).SetUpdate(false).OnComplete(() => Destroy(other.gameObject));
+        }
     }
 
     private void OnTriggerStay(Collider other)

@@ -39,8 +39,8 @@ public class Defenders : MonoBehaviour
         {
             animationController.ResetAnimation();
             animationController.Death();
-            transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
         }
+        transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
     }
     private void OnTriggerEnter(Collider other)
     {
