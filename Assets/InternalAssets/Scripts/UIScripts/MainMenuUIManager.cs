@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUIManager : MonoBehaviour
 {
@@ -69,5 +70,6 @@ public class MainMenuUIManager : MonoBehaviour
     public void SelectDifficulty(int indedx)
     {
         Debug.Log("Selected" + indedx);
+        SceneManager.LoadScene(1);
     }
 }
