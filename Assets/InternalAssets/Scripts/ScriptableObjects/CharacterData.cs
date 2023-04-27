@@ -12,6 +12,7 @@ public class CharacterData : ScriptableObject
     [Header("Character Stats")]
     public float Speed;
     public float AttackRange;
+    public int Reward;
 
     [Header("Tier 1 Upgrades")]
     public int TierI_AttackDamage;
@@ -27,6 +28,7 @@ public class CharacterData : ScriptableObject
     public int TierIII_AttackDamage;
     public int TierIII_Health;
     public int TierIII_Cost;
+
 
     [Header("Character Abilities")]
     public bool Movable;
