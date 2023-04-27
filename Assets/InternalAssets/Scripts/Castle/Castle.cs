@@ -14,13 +14,11 @@ public class Castle : MonoBehaviour
         if(other.TryGetComponent(out StatSystem statSystem))
         {
             Health -= statSystem.health;
-            other.transform.DOScale(0f, .2f).SetUpdate(false).OnComplete(() => Destroy(other.gameObject));
+            statSystem.UpdateHealth(statSystem.health);
             GamePlayUIScript.Instance.CastleHealth.GetComponent<TMP_Text>().text = Health+"";
+            Destroy(statSystem.gameObject);
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-
-    }
+  
 }
