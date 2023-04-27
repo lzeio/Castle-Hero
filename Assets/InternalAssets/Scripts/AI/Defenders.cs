@@ -33,14 +33,16 @@ public class Defenders : MonoBehaviour
         }
 
     }
-    private void OnDeath()
+    private void OnDeath(GameObject character)
     {
         if (animationController != null)
         {
             animationController.ResetAnimation();
             animationController.Death();
         }
-        transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
+        GameplayManager.Instance.WaveSystem.KIA(character);
+        transform.DOScale(0f, 1f);
+        DOVirtual.DelayedCall(1f, () => Destroy(gameObject));
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
@@ -19,9 +20,10 @@ public class Cannon : MonoBehaviour
         characterStats.OnDeath += OnDeath;
     }
 
-    private void OnDeath()
+    private void OnDeath(GameObject character)
     {
-        transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
+        GameplayManager.Instance.WaveSystem.KIA(character);
+        transform.DOScale(0f, 1f).OnComplete(() => Destroy(gameObject));
        
     }
 
@@ -41,6 +43,7 @@ public class Cannon : MonoBehaviour
     private void OnDestroy()
     {
         characterStats.OnDeath -= OnDeath;
+
         DOTween.KillAll();  
     }
     private void SpawnCannonBall()

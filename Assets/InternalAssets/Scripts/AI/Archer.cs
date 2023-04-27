@@ -84,12 +84,15 @@ public class Archer : MonoBehaviour
     }
 
 
-    private void OnDeath()
+    private void OnDeath(GameObject character)
     {
         animationController.ResetAnimation();
         animationController.Death();
-        transform.DOScale(0, 1f).OnComplete(() => Destroy(gameObject));
+        GameplayManager.Instance.WaveSystem.KIA(character);
+        transform.DOScale(0f, 1f).SetUpdate(false);
+        DOVirtual.DelayedCall(1f, () => Destroy(gameObject));
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
