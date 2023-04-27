@@ -1,16 +1,15 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class WaveSystemV2 : MonoBehaviour
+public class WaveSystem : MonoBehaviour
 {
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
-    public Transform[] spawnLocation= default;
+    public Transform[] spawnLocation;
     public int spawnIndex;
 
     public int waveDuration;
@@ -19,15 +18,13 @@ public class WaveSystemV2 : MonoBehaviour
     private float spawnTimer;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
-
-    public bool waveEnded;
-
-    public int countMultiplier;
+    // Start is called before the first frame update
     void Start()
     {
         GenerateWave();
     }
 
+    // Update is called once per frame
     void FixedUpdate()
     {
         if (spawnTimer <= 0)
@@ -35,7 +32,7 @@ public class WaveSystemV2 : MonoBehaviour
             //spawn an enemy
             if (enemiesToSpawn.Count > 0)
             {
-                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, spawnLocation[spawnIndex].rotation); // spawn first enemy in our listx
+                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, spawnLocation[spawnIndex].rotation); // spawn first enemy in our list
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
                 spawnTimer = spawnInterval;
@@ -49,6 +46,10 @@ public class WaveSystemV2 : MonoBehaviour
                     spawnIndex = 0;
                 }
             }
+            else
+            {
+                waveTimer = 0; // if no enemies remain, end wave
+            }
         }
         else
         {
@@ -59,25 +60,13 @@ public class WaveSystemV2 : MonoBehaviour
         if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
         {
             currWave++;
-            GamePlayUIScript.Instance.Wavenumber.GetComponent<TMP_Text>().text = ": "+currWave;
             GenerateWave();
-        }
-        if (spawnedEnemies.Count == 0)
-        {
-            GenerateWave();
-        }
-        for (int i = 0; i < spawnedEnemies.Count; i++)
-        {
-            if (spawnedEnemies[i] == null)
-            {
-                spawnedEnemies.RemoveAt(i);
-            }
         }
     }
 
     public void GenerateWave()
     {
-        waveValue = currWave * countMultiplier;
+        waveValue = currWave * 10;
         GenerateEnemies();
 
         spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
@@ -94,17 +83,17 @@ public class WaveSystemV2 : MonoBehaviour
 
         // repeat... 
 
-        // if we have no points left, leave the loop
+        //  -> if we have no points left, leave the loop
 
         List<GameObject> generatedEnemies = new List<GameObject>();
         while (waveValue > 0 || generatedEnemies.Count < 50)
         {
             int randEnemyId = Random.Range(0, enemies.Count);
-            int randEnemyCost = enemies[randEnemyId].Count;
+            int randEnemyCost = enemies[randEnemyId].cost;
 
             if (waveValue - randEnemyCost >= 0)
             {
-                generatedEnemies.Add(enemies[randEnemyId].EnemyPrefab);
+                generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)
@@ -115,12 +104,19 @@ public class WaveSystemV2 : MonoBehaviour
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
     }
-
+    public void KIA(GameObject gameObject)
+    {
+        if(spawnedEnemies.Contains(gameObject))
+        {
+            spawnedEnemies.Remove(gameObject);
+        }
+    }
 }
+
 
 [System.Serializable]
 public class Enemy
 {
-    public GameObject EnemyPrefab;
-    public int Count;
+    public GameObject enemyPrefab;
+    public int cost;
 }

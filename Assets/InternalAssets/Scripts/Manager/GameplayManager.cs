@@ -18,7 +18,7 @@ public class GameplayManager : MonoBehaviour
     public GridManager GridManager;
     public InputManager InputManager;
     public CoinsManager CoinsManager;
-
+    public WaveSystem WaveSystem;
     private TimeScaleOption timeScale = TimeScaleOption.Normal;
     void Awake()
     {
@@ -33,6 +33,7 @@ public class GameplayManager : MonoBehaviour
         GridManager_Two = FindObjectOfType<GridManagerVTwo>();
         InputManager = FindObjectOfType<InputManager>();
         CoinsManager = FindObjectOfType<CoinsManager>();
+        WaveSystem = FindObjectOfType<WaveSystem>();
     }
 
     public void ChangeTimeScale()
