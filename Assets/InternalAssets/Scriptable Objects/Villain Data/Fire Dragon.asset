@@ -15,11 +15,15 @@ MonoBehaviour:
   CharacterId: FireDragon
   Speed: 5
   AttackRange: 100
+  Reward: 50
   TierI_AttackDamage: 10
   TierI_Health: 100
+  TierI_Cost: 0
   TierII_AttackDamage: 20
   TierII_Health: 200
+  TierII_Cost: 0
   TierIII_AttackDamage: 30
   TierIII_Health: 300
+  TierIII_Cost: 0
   Movable: 1
   Projectile: {fileID: 2119046959669137327, guid: 30c9e029e339b574b9bd01302e73f363, type: 3}

@@ -15,11 +15,15 @@ MonoBehaviour:
   CharacterId: Phantom
   Speed: 1
   AttackRange: 10
+  Reward: 50
   TierI_AttackDamage: 10
   TierI_Health: 100
+  TierI_Cost: 0
   TierII_AttackDamage: 20
   TierII_Health: 200
+  TierII_Cost: 0
   TierIII_AttackDamage: 30
   TierIII_Health: 300
+  TierIII_Cost: 0
   Movable: 1
   Projectile: {fileID: 0}
