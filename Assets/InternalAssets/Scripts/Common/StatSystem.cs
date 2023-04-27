@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class StatSystem : MonoBehaviour
 {
-    public event Action OnDeath;
+    public event Action<GameObject> OnDeath;
     public CharacterData characterData;
     private UpgradeableComponent upgradeableComponent;
 
@@ -15,7 +15,7 @@ public class StatSystem : MonoBehaviour
 
     public int NextUpgradeLevel;
     public int NextUpgradeCost;
-    public int rowPosition, colPosition;
+    public int rowPosition = -1, colPosition = -1;
     
     // Start is called before the first frame update
     void Start()
@@ -58,13 +58,16 @@ public class StatSystem : MonoBehaviour
         }
     }
 
+        bool isAlive = true;
     public void UpdateHealth(int damage)
     {
         health -= damage;
         Debug.Log($"Health is {health} and Character is {this.gameObject}");
-        if (health <= 0)
+        if (health <= 0 && isAlive)
         {
-            OnDeath?.Invoke();
+            isAlive = false;
+            OnDeath?.Invoke(gameObject);
+            GameplayManager.Instance.CoinsManager.AddCoins(characterData.Reward);
             GameplayManager.Instance.GridManager_Two.Grid[rowPosition, colPosition].GetComponent<Tile>().IsOccupied = false;
         }
 
