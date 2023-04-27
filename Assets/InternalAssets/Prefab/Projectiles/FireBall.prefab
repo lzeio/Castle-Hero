@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 62358114033268626}
   - component: {fileID: 62358114033268652}
   - component: {fileID: 62358114033268627}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OutlineStars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4835,7 +4835,7 @@ GameObject:
   - component: {fileID: 62358114354003236}
   - component: {fileID: 62358114354003238}
   - component: {fileID: 62358114354003237}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9717,7 +9717,7 @@ GameObject:
   - component: {fileID: 62358114482521872}
   - component: {fileID: 62358114482521874}
   - component: {fileID: 62358114482521873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TrailAlpha_Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14544,7 +14544,7 @@ GameObject:
   - component: {fileID: 2119046959669137313}
   - component: {fileID: 8895152057230209280}
   - component: {fileID: 2921757368291690569}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

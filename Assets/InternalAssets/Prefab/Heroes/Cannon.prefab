@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9102767660246741607}
   - component: {fileID: 9102767660245971545}
   - component: {fileID: 9102767660244840601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cannon_small_upgrade_03b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 9102767660246741617}
   - component: {fileID: 9102767660245971539}
   - component: {fileID: 9102767660244840595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cannon_small_upgrade_02a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 9102767660246741623}
   - component: {fileID: 9102767660245971543}
   - component: {fileID: 9102767660244840599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cannon_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 9102767660246741625}
   - component: {fileID: 9102767660245971547}
   - component: {fileID: 9102767660244840603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cannon_small_upgrade_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 9102767660246741629}
   - component: {fileID: 9102767660245971551}
   - component: {fileID: 9102767660244840607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cannon_small_upgrade_03a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 9102767660246741631}
   - component: {fileID: 9102767660245971537}
   - component: {fileID: 9102767660244840593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cannon_small_upgrade_02b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,6 +623,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9102767660246741621}
     m_Modifications:
+    - target: {fileID: 151438922311932749, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338773336202428467, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611119604808057120, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400352150765421429, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998625183047786428, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798613829367163091, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171759868874781, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -681,23 +709,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.6532815
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.27059805
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70710677
+      value: -0.6532815
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.27059805
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -705,11 +733,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943569, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -732,8 +760,24 @@ PrefabInstance:
       value: UpgradeRetire
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171760844988041, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171761327992993, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975171761460079342, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
