@@ -4,8 +4,10 @@ using UnityEngine;
 public class AttackPoint : MonoBehaviour
 {
     [SerializeField] private bool IsProjectile;
+    [SerializeField] private bool DealsDamageOverTime;
     private StatSystem characterStats;
 
+    int duration = 5;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,10 @@ public class AttackPoint : MonoBehaviour
 
         if (other.TryGetComponent<StatSystem>(out StatSystem stats))
         {
+            if(DealsDamageOverTime)
+            {
+                stats.DealDamageOverTime(characterStats.DealDamage(), duration);
+            }
             stats.UpdateHealth(characterStats.DealDamage());
             if(IsProjectile)
             {

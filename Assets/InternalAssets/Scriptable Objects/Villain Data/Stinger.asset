@@ -16,7 +16,7 @@ MonoBehaviour:
   Speed: 5
   AttackRange: 3
   Reward: 50
-  TierI_AttackDamage: 10
+  TierI_AttackDamage: 1
   TierI_Health: 100
   TierI_Cost: 0
   TierII_AttackDamage: 20

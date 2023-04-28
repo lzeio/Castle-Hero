@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class StatSystem : MonoBehaviour
     public int NextUpgradeLevel;
     public int NextUpgradeCost;
     public int rowPosition = -1, colPosition = -1;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,8 @@ public class StatSystem : MonoBehaviour
         damage = characterData.TierI_AttackDamage;
         try
         {
-                upgradeableComponent = GetComponent<UpgradeableComponent>();
-                upgradeableComponent.OnUpgrade += UpdateStats;
+            upgradeableComponent = GetComponent<UpgradeableComponent>();
+            upgradeableComponent.OnUpgrade += UpdateStats;
         }
         catch (Exception)
         {
@@ -58,7 +59,7 @@ public class StatSystem : MonoBehaviour
         }
     }
 
-        bool isAlive = true;
+    bool isAlive = true;
     public void UpdateHealth(int damage)
     {
         health -= damage;
@@ -73,9 +74,20 @@ public class StatSystem : MonoBehaviour
 
     }
 
-
     public int DealDamage()
     {
         return damage;
+    }
+    public void DealDamageOverTime(int damage, int duration)
+    {
+        StartCoroutine(DealsDamageOverTime(damage, duration));
+    }
+    public IEnumerator DealsDamageOverTime(int damage, int duration)
+    {
+        for (int i = 0; i < duration; i++)
+        {
+            UpdateHealth(damage);
+            yield return new WaitForSeconds(1);
+        }
     }
 }
