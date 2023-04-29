@@ -23,7 +23,7 @@ public class Cannon : MonoBehaviour
     private void OnDeath(GameObject character)
     {
         GameplayManager.Instance.WaveSystem.KIA(character);
-        transform.DOScale(0f, 1f).OnComplete(() => Destroy(gameObject));
+        transform.DOScale(0f, 1f).OnComplete(() => Destroy(gameObject)).SetUpdate(false);
        
     }
 
@@ -55,7 +55,7 @@ public class Cannon : MonoBehaviour
             AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
             arrowAttack.SetStatsData(characterStats);
             ShootProjectile(arrow);
-            DOVirtual.DelayedCall(2f, () => canShoot = true);
+            DOVirtual.DelayedCall(2f, () => canShoot = true).SetUpdate(false);
         }
     }
 

@@ -77,7 +77,7 @@ public class Melee : MonoBehaviour
         animationController.Death();
         GameplayManager.Instance.WaveSystem.KIA(character);
         transform.DOScale(0f, .25f);
-        DOVirtual.DelayedCall(1f, ()=> Destroy(gameObject));
+        DOVirtual.DelayedCall(1f, () => Destroy(gameObject)).SetUpdate(false);
     }
 
 

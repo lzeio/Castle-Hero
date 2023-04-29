@@ -74,6 +74,13 @@ public class StatSystem : MonoBehaviour
 
     }
 
+    public void KillCharacter()
+    {
+        health = 0;
+        OnDeath?.Invoke(gameObject);
+        GameplayManager.Instance.GridManager_Two.Grid[rowPosition, colPosition].GetComponent<Tile>().IsOccupied = false;
+    }
+
     public int DealDamage()
     {
         return damage;

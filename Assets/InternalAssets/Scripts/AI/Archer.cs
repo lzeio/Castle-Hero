@@ -69,9 +69,9 @@ public class Archer : MonoBehaviour
         AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
         arrowAttack.SetStatsData(characterStats);
         arrow.layer = this.gameObject.layer;
-        arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 10f);
+        arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 10f).SetUpdate(false);
         if (arrow != null)
-            DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); });
+            DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); }).SetUpdate(false);
     }
 
     private void SpawnBall()
@@ -80,9 +80,9 @@ public class Archer : MonoBehaviour
         AttackPoint ballAttack = ball.GetComponent<AttackPoint>();
         ballAttack.SetStatsData(characterStats);
         ball.layer = this.gameObject.layer;
-        ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 200f);
+        ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 20f).SetUpdate(false);
         if (ball != null)
-            DOVirtual.DelayedCall(10f, () => { ball.transform.DOScale(0, 1f); });
+            DOVirtual.DelayedCall(10f, () => { ball.transform.DOScale(0, 1f); }).SetUpdate(false);
     }
 
 

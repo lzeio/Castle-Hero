@@ -14,7 +14,7 @@ public class Castle : MonoBehaviour
         if(other.TryGetComponent(out StatSystem statSystem))
         {
             Health -= statSystem.health;
-            statSystem.UpdateHealth(statSystem.health);
+            statSystem.KillCharacter();
            // GamePlayUIScript.Instance.CastleHealth.GetComponent<TMP_Text>().text = Health+"";
             Destroy(statSystem.gameObject);
         }
