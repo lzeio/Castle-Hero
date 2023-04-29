@@ -81,6 +81,8 @@ public class Archer : MonoBehaviour
         ballAttack.SetStatsData(characterStats);
         ball.layer = this.gameObject.layer;
         ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 200f);
+        if (ball != null)
+            DOVirtual.DelayedCall(10f, () => { ball.transform.DOScale(0, 1f); });
     }
 
 
