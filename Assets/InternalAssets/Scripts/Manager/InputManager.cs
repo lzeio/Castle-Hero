@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public static Action OnClick;
+    public static Action OnSpawnHero;
+    public static Action OnSpeedChange;
     public int heroindex;
     private void Awake()
     {
@@ -22,7 +23,12 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            OnClick?.Invoke();
+            OnSpawnHero?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            OnSpeedChange?.Invoke();
         }
         
     }

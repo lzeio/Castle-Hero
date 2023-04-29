@@ -34,7 +34,9 @@ public class GameplayManager : MonoBehaviour
         InputManager = FindObjectOfType<InputManager>();
         CoinsManager = FindObjectOfType<CoinsManager>();
         WaveSystem = FindObjectOfType<WaveSystem>();
+        InputManager.OnSpeedChange += ChangeTimeScale;
     }
+
 
     public void ChangeTimeScale()
     {
