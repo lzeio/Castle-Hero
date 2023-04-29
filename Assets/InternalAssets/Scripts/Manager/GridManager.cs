@@ -13,7 +13,7 @@ public class GridManager : MonoBehaviour
 
     private void Awake()
     {
-        InputManager.OnClick += SpawnHero;
+        InputManager.OnSpawnHero += SpawnHero;
     }
     private void Start()
     {
