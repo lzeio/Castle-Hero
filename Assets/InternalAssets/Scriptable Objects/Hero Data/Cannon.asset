@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: Cannon
   Speed: 100
-  AttackRange: 100
+  AttackRange: 69
+  Reward: 0
   TierI_AttackDamage: 10
   TierI_Health: 100
   TierI_Cost: 50

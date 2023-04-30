@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: Archer
   Speed: 100
-  AttackRange: 100
+  AttackRange: 69
+  Reward: 0
   TierI_AttackDamage: 10
   TierI_Health: 100
-  TierI_Cost: 50
+  TierI_Cost: 45
   TierII_AttackDamage: 20
   TierII_Health: 200
   TierII_Cost: 100

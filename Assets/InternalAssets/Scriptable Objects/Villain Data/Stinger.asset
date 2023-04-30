@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: Stinger
   Speed: 5
-  AttackRange: 3
+  AttackRange: 5
   Reward: 50
   TierI_AttackDamage: 1
   TierI_Health: 100

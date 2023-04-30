@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: Champion
   Speed: 10
-  AttackRange: 10
+  AttackRange: 40
+  Reward: 0
   TierI_AttackDamage: 10
   TierI_Health: 100
   TierI_Cost: 50
