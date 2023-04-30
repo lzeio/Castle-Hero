@@ -8,15 +8,14 @@ public class Castle : MonoBehaviour
 {
 
     public int Health;
-    public LayerMask villainLayerMask;
     public void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out StatSystem statSystem))
         {
-            Health -= statSystem.health;
-            statSystem.KillCharacter();
-           // GamePlayUIScript.Instance.CastleHealth.GetComponent<TMP_Text>().text = Health+"";
-            Destroy(statSystem.gameObject);
+                Health -= statSystem.health;
+                statSystem.KillCharacter();
+                // GamePlayUIScript.Instance.CastleHealth.GetComponent<TMP_Text>().text = Health+"";
+                Destroy(statSystem.gameObject);
         }
     }
 

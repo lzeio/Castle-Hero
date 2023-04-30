@@ -62,6 +62,8 @@ public class Cannon : MonoBehaviour
     public void ShootProjectile(GameObject projectile)
     {
         projectile.transform.DOMoveZ(projectile.transform.position.z * characterStats.characterData.AttackRange, 10f);
+        if (projectile != null)
+            DOVirtual.DelayedCall(10f, () => { projectile.transform.DOScale(0, 1f); }).SetUpdate(false);
     }
 
 

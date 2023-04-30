@@ -97,7 +97,7 @@ public class Archer : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.green;
         if (characterStats != null)
             Debug.DrawRay(raycastPoint, transform.forward * characterStats.characterData.AttackRange, Color.red);
     }
