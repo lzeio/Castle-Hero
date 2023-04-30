@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         if (hasChampion && heroIndex == 5) return;
+        else championButton.interactable = true;
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
