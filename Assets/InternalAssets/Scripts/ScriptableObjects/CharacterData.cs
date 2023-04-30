@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using static UnityEditor.Progress;
 using UnityEditor;
 
 [CreateAssetMenu(fileName = "CharacterName", menuName = "CharacterData")]
