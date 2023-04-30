@@ -1,11 +1,14 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> Heroes = default;
     int heroIndex = 0;
+    public Button championButton;
+    public bool hasChampion;
     void Start()
     {
 
@@ -13,6 +16,7 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
+        if (hasChampion && heroIndex == 5) return;
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -48,20 +52,37 @@ public class SpawnManager : MonoBehaviour
                     {
                         return;
                     }
-                    Vector3 cellPos = GameplayManager.Instance.GridManager_Two.GetCellPosition(row, col);
-                    GameObject _hero = Instantiate(Heroes[heroIndex]);
-                    _hero.transform.position = cellPos + new Vector3(0, 0, 1f);
-                    GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied = true;
+                    SpawnHero(row, col);
                     GameplayManager.Instance.CoinsManager.AddCoins(-Heroes[heroIndex].GetComponent<StatSystem>().characterData.TierI_Cost);
-                    Heroes[heroIndex].GetComponent<StatSystem>().rowPosition = row;
-                    Heroes[heroIndex].GetComponent<StatSystem>().colPosition = col;
+                    if(heroIndex == 5 )
+                    {
+                        hasChampion = true;
+                        championButton.interactable = false;
+
+                    }
                 }
             }
         }
     }
 
+    public void SpawnHero(int row, int col)
+    {
+        Vector3 cellPos = GameplayManager.Instance.GridManager_Two.GetCellPosition(row, col);
+        GameObject _hero = Instantiate(Heroes[heroIndex]);
+        _hero.transform.position = cellPos + new Vector3(0, 0, 1f);
+        SetPosition(_hero, row, col);
+    }
+
+    public void SetPosition(GameObject hero, int row, int col)
+    {
+        GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied = true;
+        hero.GetComponent<StatSystem>().rowPosition = row;
+        hero.GetComponent<StatSystem>().colPosition = col;
+    }
+
     public void SelectHero(int index)
     {
+        if (hasChampion && index == 5) return;
         heroIndex = index;
     }
 }
