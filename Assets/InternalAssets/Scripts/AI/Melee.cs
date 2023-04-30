@@ -37,7 +37,7 @@ public class Melee : MonoBehaviour
     private void OnDestroy()
     {
         characterStats.OnDeath -= OnDeath;
-        DOTween.KillAll();
+        DOTween.Kill(this);
     }
 
 

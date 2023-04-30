@@ -59,7 +59,7 @@ public class Archer : MonoBehaviour
     private void OnDestroy()
     {
         characterStats.OnDeath -= OnDeath;
-        DOTween.KillAll();
+        DOTween.Kill(this);
     }
 
     private void SpawnArrow()
