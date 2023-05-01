@@ -55,7 +55,7 @@ public class Cannon : MonoBehaviour
             AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
             arrowAttack.SetStatsData(characterStats);
             ShootProjectile(arrow);
-            DOVirtual.DelayedCall(2f, () => canShoot = true).SetUpdate(false);
+            DOVirtual.DelayedCall(2.25f, () => canShoot = true).SetUpdate(false);
         }
     }
 
