@@ -15,14 +15,18 @@ MonoBehaviour:
   CharacterId: HeavyInfantry
   Speed: 0
   AttackRange: 10
-  TierI_AttackDamage: 10
-  TierI_Health: 100
+  Reward: 0
+  Base_Damage: 18
+  Base_Health: 250
+  Cost: 50
+  TierI_AttackDamage: 25
+  TierI_Health: 500
   TierI_Cost: 50
-  TierII_AttackDamage: 20
-  TierII_Health: 200
+  TierII_AttackDamage: 35
+  TierII_Health: 800
   TierII_Cost: 100
-  TierIII_AttackDamage: 30
-  TierIII_Health: 300
+  TierIII_AttackDamage: 45
+  TierIII_Health: 1200
   TierIII_Cost: 150
   Movable: 0
   Projectile: {fileID: 0}

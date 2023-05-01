@@ -15,14 +15,18 @@ MonoBehaviour:
   CharacterId: LightInfantry
   Speed: 100
   AttackRange: 8
-  TierI_AttackDamage: 10
-  TierI_Health: 100
+  Reward: 0
+  Base_Damage: 10
+  Base_Health: 150
+  Cost: 0
+  TierI_AttackDamage: 18
+  TierI_Health: 300
   TierI_Cost: 50
   TierII_AttackDamage: 20
-  TierII_Health: 200
+  TierII_Health: 500
   TierII_Cost: 100
   TierIII_AttackDamage: 30
-  TierIII_Health: 300
+  TierIII_Health: 800
   TierIII_Cost: 150
   Movable: 0
   Projectile: {fileID: 0}
