@@ -49,12 +49,12 @@ public class SpawnManager : MonoBehaviour
                 if (row >= 0 && col >= 0)
                 {
                     if (GameplayManager.Instance.GridManager_Two.Grid[row, col].GetComponent<Tile>().IsOccupied ||
-                        !GameplayManager.Instance.CoinsManager.HasEnoughCoins(Heroes[heroIndex].GetComponent<StatSystem>().characterData.TierI_Cost))
+                        !GameplayManager.Instance.CoinsManager.HasEnoughCoins(Heroes[heroIndex].GetComponent<StatSystem>().characterData.Cost))
                     {
                         return;
                     }
                     SpawnHero(row, col);
-                    GameplayManager.Instance.CoinsManager.AddCoins(-Heroes[heroIndex].GetComponent<StatSystem>().characterData.TierI_Cost);
+                    GameplayManager.Instance.CoinsManager.AddCoins(-Heroes[heroIndex].GetComponent<StatSystem>().characterData.Cost);
                     if(heroIndex == 5 )
                     {
                         hasChampion = true;

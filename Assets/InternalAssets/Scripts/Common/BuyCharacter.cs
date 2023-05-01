@@ -17,6 +17,6 @@ public class BuyCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _button.interactable = GameplayManager.Instance.CoinsManager.HasEnoughCoins(characterData.TierI_Cost);
+        _button.interactable = GameplayManager.Instance.CoinsManager.HasEnoughCoins(characterData.Cost);
     }
 }

@@ -13,16 +13,21 @@ public class CharacterData : ScriptableObject
     public float AttackRange;
     public int Reward;
 
+    [Header("Base")]
+    public int Base_Damage;
+    public int Base_Health;
+    public int Cost;
+
     [Header("Tier 1 Upgrades")]
     public int TierI_AttackDamage;
-    public int TierI_Health;
+    public int TierI_Health; 
     public int TierI_Cost;
 
     [Header("Tier 2 Upgrades")]
     public int TierII_AttackDamage;
-    public int TierII_Health; 
-    public int TierII_Cost;
-
+    public int TierII_Health;
+    public int TierII_Cost;  
+    
     [Header("Tier 3 Upgrades")]
     public int TierIII_AttackDamage;
     public int TierIII_Health;

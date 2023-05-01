@@ -21,8 +21,8 @@ public class StatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = characterData.TierI_Health;
-        damage = characterData.TierI_AttackDamage;
+        health = characterData.Base_Health;
+        damage = characterData.Base_Damage;
         try
         {
             upgradeableComponent = GetComponent<UpgradeableComponent>();
@@ -32,27 +32,34 @@ public class StatSystem : MonoBehaviour
         {
             Debug.Log("Villains cannot be upgraded");
         }
-        NextUpgradeLevel = 2;
-        NextUpgradeCost = characterData.TierII_Cost;
+        NextUpgradeLevel = 1;
+        NextUpgradeCost = characterData.TierI_Cost;
     }
 
     private void UpdateStats()
     {
         switch (NextUpgradeLevel)
         {
+            case 1:
+                health = characterData.TierI_Health;
+                damage = characterData.TierI_AttackDamage;
+                NextUpgradeLevel++;
+                GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
+                NextUpgradeCost = characterData.TierII_Cost;
+
+                break;      
             case 2:
                 health = characterData.TierII_Health;
                 damage = characterData.TierII_AttackDamage;
                 NextUpgradeLevel++;
                 GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
-                NextUpgradeCost = characterData.TierIII_Cost;
+                NextUpgradeCost = characterData.TierII_Cost;
 
                 break;
             case 3:
                 health = characterData.TierIII_Health;
                 damage = characterData.TierIII_AttackDamage;
                 GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
-                NextUpgradeLevel++;
                 break;
             default:
                 break;
