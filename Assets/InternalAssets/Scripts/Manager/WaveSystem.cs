@@ -25,7 +25,7 @@ public class WaveSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (spawnTimer <= 0)
         {
@@ -53,8 +53,8 @@ public class WaveSystem : MonoBehaviour
         }
         else
         {
-            spawnTimer -= Time.fixedDeltaTime;
-            waveTimer -= Time.fixedDeltaTime;
+            spawnTimer -= Time.deltaTime;
+            waveTimer -= Time.deltaTime;
         }
 
         if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
@@ -104,7 +104,8 @@ public class WaveSystem : MonoBehaviour
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
     }
-    public void KIA(GameObject gameObject)
+
+    public void KilledInAction(GameObject gameObject)
     {
         if(spawnedEnemies.Contains(gameObject))
         {

@@ -22,7 +22,7 @@ public class Cannon : MonoBehaviour
 
     private void OnDeath(GameObject character)
     {
-        GameplayManager.Instance.WaveSystem.KIA(character);
+        GameplayManager.Instance.WaveSystem.KilledInAction(character);
         transform.DOScale(0f, 1f).OnComplete(() => Destroy(gameObject)).SetUpdate(false);
        
     }

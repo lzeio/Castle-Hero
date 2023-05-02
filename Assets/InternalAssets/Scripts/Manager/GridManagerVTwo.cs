@@ -42,43 +42,7 @@ public class GridManagerVTwo : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
-
-        //    if (Physics.Raycast(ray, out hit))
-        //    {
-        //        GameObject hitObject = hit.collider.gameObject;
-        //        int row = -1;
-        //        int col = -1;
-
-        //        for (int i = 0; i < Rows; i++)
-        //        {
-        //            for (int j = 0; j < Columns; j++)
-        //            {
-        //                if (Grid[i, j] == hitObject)
-        //                {
-        //                    row = i;
-        //                    col = j;
-        //                    break;
-        //                }
-        //            }
-
-        //            if (row >= 0 && col >= 0)
-        //            {
-        //                break;
-        //            }
-        //        }
-
-        //        if (row >= 0 && col >= 0)
-        //        {
-        //            Vector3 cellPos = GetCellPosition(row, col);
-        //            GameObject cube = Instantiate(gridCubePrefab);
-        //            cube.transform.position = cellPos + new Vector3(0, 0, 0);
-        //        }
-        //    }
-        //}
+  
     }
 
     public Vector3 GetCellPosition(int row, int col)
