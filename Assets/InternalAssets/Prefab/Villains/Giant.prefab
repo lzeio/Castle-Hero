@@ -1131,6 +1131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsProjectile: 0
+  DealsDamageOverTime: 0
 --- !u!1 &6657736875296129758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsProjectile: 0
+  DealsDamageOverTime: 0
 --- !u!1 &6657736875296129800
 GameObject:
   m_ObjectHideFlags: 0
