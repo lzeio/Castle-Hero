@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4664417887027346782}
   - component: {fileID: 7228312566775410835}
   m_Layer: 7
-  m_Name: Giant
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

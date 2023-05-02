@@ -68,7 +68,7 @@ public class WaveSystem : MonoBehaviour
     {
         waveValue = currWave * 10;
         GenerateEnemies();
-
+        waveDuration += 5;
         spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
         waveTimer = waveDuration; // wave duration is read only
     }

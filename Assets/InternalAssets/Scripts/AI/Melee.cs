@@ -52,7 +52,15 @@ public class Melee : MonoBehaviour
             {
                 animationController.Attack();
             }
-
+            else
+            {
+                if (characterStats.characterData.Movable)
+                {
+                    animationController.ResetAnimation();
+                    animationController.Move();
+                    transform.position += (transform.forward * characterStats.characterData.Speed * Time.deltaTime);
+                }
+            }
         }
         else
         {

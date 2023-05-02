@@ -680,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsProjectile: 0
+  DealsDamageOverTime: 0
 --- !u!1 &7078377035361044216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760825943597, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975171760844988041, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
       propertyPath: m_Layer
