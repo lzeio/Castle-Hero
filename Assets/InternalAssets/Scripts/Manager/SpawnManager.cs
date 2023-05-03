@@ -9,10 +9,6 @@ public class SpawnManager : MonoBehaviour
     int heroIndex = 0;
     public Button championButton;
     public bool hasChampion;
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -55,7 +51,7 @@ public class SpawnManager : MonoBehaviour
                     }
                     SpawnHero(row, col);
                     GameplayManager.Instance.CoinsManager.AddCoins(-Heroes[heroIndex].GetComponent<StatSystem>().characterData.Cost);
-                    if(heroIndex == 5 )
+                    if (heroIndex == 5)
                     {
                         hasChampion = true;
                         championButton.interactable = false;

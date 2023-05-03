@@ -42,7 +42,7 @@ public class Melee : MonoBehaviour
 
 
 
-    protected virtual void FixedUpdate()
+    protected virtual void Update()
     {
         raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, characterStats.characterData.AttackRange))

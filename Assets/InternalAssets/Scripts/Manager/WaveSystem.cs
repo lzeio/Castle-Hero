@@ -75,16 +75,6 @@ public class WaveSystem : MonoBehaviour
 
     public void GenerateEnemies()
     {
-        // Create a temporary list of enemies to generate
-        // 
-        // in a loop grab a random enemy 
-        // see if we can afford it
-        // if we can, add it to our list, and deduct the cost.
-
-        // repeat... 
-
-        //  -> if we have no points left, leave the loop
-
         List<GameObject> generatedEnemies = new List<GameObject>();
         while (waveValue > 0 || generatedEnemies.Count < 50)
         {
@@ -107,7 +97,7 @@ public class WaveSystem : MonoBehaviour
 
     public void KilledInAction(GameObject gameObject)
     {
-        if(spawnedEnemies.Contains(gameObject))
+        if (spawnedEnemies.Contains(gameObject))
         {
             spawnedEnemies.Remove(gameObject);
         }
