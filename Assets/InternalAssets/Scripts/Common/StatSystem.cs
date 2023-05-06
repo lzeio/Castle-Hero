@@ -72,7 +72,6 @@ public class StatSystem : MonoBehaviour
     public void UpdateHealth(int damage)
     {
         health -= damage;
-        Debug.Log($"Health is {health} and Character is {this.gameObject}");
         if (health <= 0 && isAlive)
         {
             isAlive = false;
