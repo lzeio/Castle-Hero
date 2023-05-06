@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 {
     public static Action OnSpawnHero;
     public static Action OnSpeedChange;
-    public int heroindex;
+    
     private void Awake()
     {
 

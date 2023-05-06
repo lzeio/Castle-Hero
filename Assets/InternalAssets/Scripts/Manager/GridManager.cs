@@ -13,7 +13,7 @@ public class GridManager : MonoBehaviour
 
     private void Awake()
     {
-        InputManager.OnSpawnHero += SpawnHero;
+
     }
     private void Start()
     {
@@ -48,40 +48,8 @@ public class GridManager : MonoBehaviour
 
     public void SpawnHero()
     {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                GameObject hitObject = hit.collider.gameObject;
-                int row = -1;
-                int col = -1;
-
-                for (int i = 0; i < Rows; i++)
-                {
-                    for (int j = 0; j < Columns; j++)
-                    {
-                        if (Grid[i, j] == hitObject)
-                        {
-                            row = i;
-                            col = j;
-                            break;
-                        }
-                    }
-
-                    if (row >= 0 && col >= 0)
-                    {
-                        break;
-                    }
-                }
-
-                if (row >= 0 && col >= 0)
-                {
-
-                    Vector3 cellPos = GetCellPosition(row, col);
-                   // GameObject cube = Instantiate(heroesPrefabs[InputManager.Instance.heroindex]);
-                }
-            }
+       
+           
     }
   
 }

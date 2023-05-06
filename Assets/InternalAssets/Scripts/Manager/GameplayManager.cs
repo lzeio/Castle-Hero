@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public enum TimeScaleOption
 }
 public class GameplayManager : MonoBehaviour
 {
+    public static event Action<float> OnTimeScaleChanged;
     public static GameplayManager Instance;
 
 
@@ -45,14 +47,17 @@ public class GameplayManager : MonoBehaviour
             case TimeScaleOption.Normal:
                 timeScale = TimeScaleOption.Double;
                 Time.timeScale = 2f;
+                OnTimeScaleChanged?.Invoke(Time.timeScale);
                 break;
             case TimeScaleOption.Double:
                 timeScale = TimeScaleOption.Quadruple;
                 Time.timeScale = 4f;
+                OnTimeScaleChanged?.Invoke(Time.timeScale);
                 break;
             case TimeScaleOption.Quadruple:
                 timeScale = TimeScaleOption.Normal;
                 Time.timeScale = 1f;
+                OnTimeScaleChanged?.Invoke(Time.timeScale);
                 break;
         }
 

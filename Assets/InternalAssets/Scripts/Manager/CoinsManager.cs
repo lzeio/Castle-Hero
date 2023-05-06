@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,12 +6,14 @@ using UnityEngine;
 
 public class CoinsManager : MonoBehaviour
 {
+    public static event Action OnCoinsUpdated;
     public int Coins;
 
     public void AddCoins(int amount)
     {
         Coins += amount;
-       // GamePlayUIScript.Instance.CoinsText.GetComponent<TMP_Text>().text = Coins + "";
+        OnCoinsUpdated?.Invoke();
+      
     }
 
     public bool HasEnoughCoins(int amount)

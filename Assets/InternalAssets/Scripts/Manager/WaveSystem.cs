@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSystem : MonoBehaviour
 {
-    public List<Enemy> enemies = new List<Enemy>();
+    public static event Action<int> OnWaveCountUpdated;
+    public List<CharacterData> Enemies;
     public int currWave;
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
@@ -61,6 +63,7 @@ public class WaveSystem : MonoBehaviour
         {
             currWave++;
             GenerateWave();
+            OnWaveCountUpdated?.Invoke(currWave);
         }
     }
 
@@ -78,12 +81,12 @@ public class WaveSystem : MonoBehaviour
         List<GameObject> generatedEnemies = new List<GameObject>();
         while (waveValue > 0 || generatedEnemies.Count < 50)
         {
-            int randEnemyId = Random.Range(0, enemies.Count);
-            int randEnemyCost = enemies[randEnemyId].cost;
+            int randEnemyId = UnityEngine.Random.Range(0, Enemies.Count);
+            int randEnemyCost = Enemies[randEnemyId].Cost;
 
             if (waveValue - randEnemyCost >= 0)
             {
-                generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
+                generatedEnemies.Add(Enemies[randEnemyId].CharacterPrefab);
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)
@@ -104,10 +107,4 @@ public class WaveSystem : MonoBehaviour
     }
 }
 
-
-[System.Serializable]
-public class Enemy
-{
-    public GameObject enemyPrefab;
-    public int cost;
-}
+ 
