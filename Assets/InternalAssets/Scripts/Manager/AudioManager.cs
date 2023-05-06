@@ -1,10 +1,5 @@
-using UnityEngine.Audio;
 using System;
 using UnityEngine;
-using Unity.VisualScripting;
-
-//Credit to Brackeys youtube tutorial on Audio managers, as the majority of this code and learning how to use it was made by him.
-
 
 public partial class AudioManager : MonoBehaviour
 {
@@ -39,10 +34,11 @@ public partial class AudioManager : MonoBehaviour
 
     private void SpawnManager_OnHeroSpawn(bool championSpawn)
     {
-        if(championSpawn)
+        if (championSpawn)
         {
             Play("ChampionSpawn");
-        }else
+        }
+        else
         {
             Play("HeroesSpawn");
         }
