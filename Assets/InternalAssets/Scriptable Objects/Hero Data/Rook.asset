@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rook
   m_EditorClassIdentifier: 
   CharacterId: Rook
+  CharacterPrefab: {fileID: 5491343083788315644, guid: e5fb8bf29257b874a81a900911ace8ad, type: 3}
   Speed: 0
   AttackRange: 1
   Reward: 0

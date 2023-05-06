@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Ice Dragon
   m_EditorClassIdentifier: 
   CharacterId: IceDragon
+  CharacterPrefab: {fileID: 8901468430432981448, guid: 2c416b54f60f31346ac21d76d3a98075, type: 3}
   Speed: 5
   AttackRange: 10
   Reward: 50
   Base_Damage: 12
   Base_Health: 100
-  Cost: 0
+  Cost: 1
   TierI_AttackDamage: 0
   TierI_Health: 0
   TierI_Cost: 0

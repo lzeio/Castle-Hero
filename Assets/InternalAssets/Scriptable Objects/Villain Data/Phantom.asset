@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Phantom
   m_EditorClassIdentifier: 
   CharacterId: Phantom
+  CharacterPrefab: {fileID: 940522737821596290, guid: bdd668fdb9a13e446859b9a5a5c1f3e9, type: 3}
   Speed: 0.5
   AttackRange: 10
   Reward: 50
   Base_Damage: 25
   Base_Health: 500
-  Cost: 0
+  Cost: 10
   TierI_AttackDamage: 0
   TierI_Health: 0
   TierI_Cost: 0

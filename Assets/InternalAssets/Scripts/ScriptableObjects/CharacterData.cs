@@ -7,6 +7,7 @@ public class CharacterData : ScriptableObject
 {
     public string CharacterId;
 
+    public GameObject CharacterPrefab;
 
     [Header("Character Stats")]
     public float Speed;

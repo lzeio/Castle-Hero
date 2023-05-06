@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Heavy Infantry
   m_EditorClassIdentifier: 
   CharacterId: HeavyInfantry
+  CharacterPrefab: {fileID: 7078377035361000898, guid: d93ced85c08abda4ab6a450ae865ff55, type: 3}
   Speed: 0
   AttackRange: 10
   Reward: 0

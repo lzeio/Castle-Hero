@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Stinger
   m_EditorClassIdentifier: 
   CharacterId: Stinger
+  CharacterPrefab: {fileID: 7824131125181369295, guid: 4d9dfde281c42aa4bbb75aafeaadc2f3, type: 3}
   Speed: 5
   AttackRange: 5
   Reward: 50
   Base_Damage: 2
   Base_Health: 100
-  Cost: 0
+  Cost: 10
   TierI_AttackDamage: 0
   TierI_Health: 0
   TierI_Cost: 0

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   CharacterId: Archer
+  CharacterPrefab: {fileID: 746389324519616137, guid: 3970bd47c1f181940b8c80372c0db387, type: 3}
   Speed: 100
   AttackRange: 69
   Reward: 0
   Base_Damage: 10
   Base_Health: 100
-  Cost: 0
+  Cost: 50
   TierI_AttackDamage: 15
   TierI_Health: 200
   TierI_Cost: 0

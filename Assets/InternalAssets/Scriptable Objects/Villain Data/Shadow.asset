@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Shadow
   m_EditorClassIdentifier: 
   CharacterId: Shadow
+  CharacterPrefab: {fileID: 6657736875296129706, guid: d75efe39ed70c2d47b1284a5568da60d, type: 3}
   Speed: 2.5
   AttackRange: 3
   Reward: 50
   Base_Damage: 2
   Base_Health: 100
-  Cost: 0
+  Cost: 10
   TierI_AttackDamage: 0
   TierI_Health: 0
   TierI_Cost: 0

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Light Infantry
   m_EditorClassIdentifier: 
   CharacterId: LightInfantry
+  CharacterPrefab: {fileID: 5127627604827454293, guid: 3b64b6305a388844faf01d63a34baa4c, type: 3}
   Speed: 100
   AttackRange: 8
   Reward: 0
   Base_Damage: 10
   Base_Health: 150
-  Cost: 0
+  Cost: 50
   TierI_AttackDamage: 18
   TierI_Health: 300
   TierI_Cost: 50

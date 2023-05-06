@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Champion
   m_EditorClassIdentifier: 
   CharacterId: Champion
+  CharacterPrefab: {fileID: 5063322787243151393, guid: 85ab6870d93c2af42ac33285b133e7b5, type: 3}
   Speed: 10
   AttackRange: 40
   Reward: 0
