@@ -64,7 +64,8 @@ public partial class AudioManager : MonoBehaviour
         if(name == "Theme")
         {
             s.source.outputAudioMixerGroup = AudioMixer;
-            
+            //VVVVIP LINE
+            AudioMixer.audioMixer.SetFloat("Volume", Mathf.Log10(.1f) * 20);
         }
 
         s.source.Play();
