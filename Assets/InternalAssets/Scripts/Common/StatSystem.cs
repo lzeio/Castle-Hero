@@ -60,10 +60,12 @@ public class StatSystem : MonoBehaviour
                 health = characterData.TierIII_Health;
                 damage = characterData.TierIII_AttackDamage;
                 GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
+                NextUpgradeCost = int.MaxValue;
                 break;
             default:
                 break;
         }
+        AudioManager.Instance.Play("Upgrade");
     }
 
     bool isAlive = true;

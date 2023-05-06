@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
+    public static event Action<bool> OnHeroSpawn;
     public List<CharacterData> Heroes = default;
     
     public int heroIndex {  get; private set; }
@@ -12,7 +13,7 @@ public class SpawnManager : MonoBehaviour
     public bool hasChampion { get; private set; }
     private void Start()
     {
-        InputManager.OnSpawnHero += SpawnHero;
+        InputManager.TrySpawnHero += SpawnHero;
         IamChampion.OnChampionIsSlain += ChampionIsSlained;
         heroIndex = 0;
     }
@@ -78,8 +79,10 @@ public class SpawnManager : MonoBehaviour
         if (heroIndex == 5)
         {
             hasChampion = true;
-            championButton.interactable = false;
+            championButton.interactable = false; 
+            OnHeroSpawn?.Invoke(true);
         }
+        OnHeroSpawn?.Invoke(false);
     }
 
     public void SetPosition(GameObject hero, int row, int col)

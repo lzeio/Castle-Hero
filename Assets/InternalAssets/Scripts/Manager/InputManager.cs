@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public static Action OnSpawnHero;
+    public static Action TrySpawnHero;
     public static Action OnSpeedChange;
     
     private void Awake()
@@ -21,9 +21,9 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            OnSpawnHero?.Invoke();
+            TrySpawnHero?.Invoke();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
