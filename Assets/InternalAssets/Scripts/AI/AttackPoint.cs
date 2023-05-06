@@ -1,25 +1,15 @@
-using System.Net;
+using DG.Tweening;
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class AttackPoint : MonoBehaviour
 {
     [SerializeField] private bool IsProjectile;
     [SerializeField] private bool DealsDamageOverTime;
+    [SerializeField] private int damageDuration = 5;
     private StatSystem characterStats;
 
-    int duration = 5;
     
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,12 +20,14 @@ public class AttackPoint : MonoBehaviour
         {
             if(DealsDamageOverTime)
             {
-                stats.DealDamageOverTime(characterStats.DealDamage(), duration);
+                stats.DealDamageOverTime(characterStats.DealDamage(), damageDuration);
+                return;
             }
             stats.UpdateHealth(characterStats.DealDamage());
             if(IsProjectile)
             {
-                Destroy(gameObject);
+                transform.GetChild(transform.childCount-1).gameObject.SetActive(true);
+                DOVirtual.DelayedCall(0.2f,()=> Destroy(gameObject)).SetUpdate(false);
             }
         }
 
