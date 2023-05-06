@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UpgradeableComponent : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class UpgradeableComponent : MonoBehaviour
    [SerializeField] private GameObject UI;
    [SerializeField] private Button upgradeButton;
    [SerializeField] private Button retireButton;
+   [SerializeField] private TMP_Text health;
+   [SerializeField] private TMP_Text attack;
+
 
     private CharacterData characterData;
     private StatSystem statSystem;
@@ -25,7 +29,9 @@ public class UpgradeableComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        upgradeButton.interactable = GameplayManager.Instance.CoinsManager.HasEnoughCoins(statSystem.NextUpgradeCost);  
+        upgradeButton.interactable = GameplayManager.Instance.CoinsManager.HasEnoughCoins(statSystem.NextUpgradeCost);
+        health.text = statSystem.health.ToString();
+        attack.text = statSystem.damage.ToString();
     }
 
     public void Upgrade()
