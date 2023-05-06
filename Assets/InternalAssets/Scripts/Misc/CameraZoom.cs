@@ -23,7 +23,7 @@ public class CameraZoom : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x - zoomAmount, maxZoomX, minZoomX);
         pos.y = Mathf.Clamp(pos.y - zoomAmount, maxZoomY, minZoomY);
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(1))
         {
             float dragAmount = Input.GetAxis("Mouse X")*dragSpeed;
             pos.z = Mathf.Clamp(pos.z - dragAmount, maxZoomZ, minZoomZ);

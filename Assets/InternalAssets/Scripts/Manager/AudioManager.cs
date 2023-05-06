@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UIElements;
 
 public partial class AudioManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public partial class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     //AudioManager
 
+    public AudioMixerGroup AudioMixer;
     void Awake()
     {
         if (Instance == null)
@@ -47,6 +50,7 @@ public partial class AudioManager : MonoBehaviour
     void Start()
     {
         Play("Theme");
+
     }
 
     public void Play(string name)
@@ -56,6 +60,11 @@ public partial class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Sound: " + name + " not found");
             return;
+        }
+        if(name == "Theme")
+        {
+            s.source.outputAudioMixerGroup = AudioMixer;
+            AudioMixer.
         }
 
         s.source.Play();
@@ -76,6 +85,7 @@ public class Sound
     public AudioSource source;
     public AudioClip clip;
     public string clipName;
+    [Range(0f,1f)]
     public float volume;
     public bool loop;
 }

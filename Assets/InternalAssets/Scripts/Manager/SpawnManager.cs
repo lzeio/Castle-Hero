@@ -77,6 +77,7 @@ public class SpawnManager : MonoBehaviour
             hasChampion = true;
             championButton.interactable = false; 
             OnHeroSpawn?.Invoke(true);
+            return;
         }
         OnHeroSpawn?.Invoke(false);
     }
