@@ -64,7 +64,7 @@ public partial class AudioManager : MonoBehaviour
         if(name == "Theme")
         {
             s.source.outputAudioMixerGroup = AudioMixer;
-            AudioMixer.
+            
         }
 
         s.source.Play();
