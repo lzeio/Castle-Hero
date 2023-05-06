@@ -3155,7 +3155,7 @@ GameObject:
   - component: {fileID: 4051839337170656534}
   - component: {fileID: 1002508680182819059}
   m_Layer: 5
-  m_Name: GameCanvas
+  m_Name: GameCanvasTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3263,6 +3263,10 @@ MonoBehaviour:
   - {fileID: 188584374}
   - {fileID: 188584373}
   - {fileID: 188584372}
+  QualityHighlights: []
+  CastleHealth: {fileID: 0}
+  Wavenumber: {fileID: 0}
+  CoinsText: {fileID: 0}
 --- !u!1 &4051839337174225876
 GameObject:
   m_ObjectHideFlags: 0
