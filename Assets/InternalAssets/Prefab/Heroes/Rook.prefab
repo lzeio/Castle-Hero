@@ -164,6 +164,8 @@ MonoBehaviour:
   UI: {fileID: 1641556948889473638}
   upgradeButton: {fileID: 1641556949462820076}
   retireButton: {fileID: 1641556950117663816}
+  health: {fileID: 3561682427324151089}
+  attack: {fileID: 3954664201565854654}
 --- !u!1001 &8676883075283571787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359,5 +361,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3561682427324151089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5262412610804408698, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+  m_PrefabInstance: {fileID: 8676883075283571787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3954664201565854654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5659812022618492917, guid: eb31f5a55ae42c6479edf04f72e150ba, type: 3}
+  m_PrefabInstance: {fileID: 8676883075283571787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
