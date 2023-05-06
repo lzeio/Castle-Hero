@@ -20,6 +20,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnHero()
     {
+        if (heroIndex == 5 && hasChampion) { return; }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -63,11 +64,6 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
 
-       
-        if (Input.GetMouseButtonDown(0))
-        {
-            
-        }
     }
 
     public void InstantiateHero(int row, int col)
