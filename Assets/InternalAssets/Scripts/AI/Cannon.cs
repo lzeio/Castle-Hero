@@ -12,12 +12,15 @@ public class Cannon : MonoBehaviour
 {
     private StatSystem characterStats;
     private Vector3 raycastPoint;
+    private AudioSource audioSource;
     bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         characterStats = GetComponent<StatSystem>();
         characterStats.OnDeath += OnDeath;
+
     }
 
     private void OnDeath(GameObject character)
@@ -36,6 +39,7 @@ public class Cannon : MonoBehaviour
             if (hitInfo.transform.gameObject.layer!=this.gameObject.layer)
             {
                 SpawnCannonBall();
+                
             }
         }
         
@@ -56,6 +60,7 @@ public class Cannon : MonoBehaviour
             arrowAttack.SetStatsData(characterStats);
             ShootProjectile(arrow);
             DOVirtual.DelayedCall(2.25f, () => canShoot = true).SetUpdate(false);
+            audioSource.Play();
         }
     }
 

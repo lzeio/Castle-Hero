@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Archer : MonoBehaviour
 {
-
+    private AudioSource audioSource;
     private AnimationController animationController;
     private StatSystem characterStats;
     private Vector3 raycastPoint;
@@ -20,6 +20,7 @@ public class Archer : MonoBehaviour
     {
         characterStats = GetComponent<StatSystem>();
         animationController = GetComponent<AnimationController>();
+        audioSource = GetComponent<AudioSource>();
         characterStats.OnDeath += OnDeath;
     }
 
@@ -37,6 +38,7 @@ public class Archer : MonoBehaviour
             if (hit.transform.gameObject.layer != this.gameObject.layer)
             {
                 animationController.Attack();
+              
                 return;
             }
         }
@@ -68,7 +70,8 @@ public class Archer : MonoBehaviour
         AttackPoint arrowAttack = arrow.GetComponent<AttackPoint>();
         arrowAttack.SetStatsData(characterStats);
         arrow.layer = this.gameObject.layer;
-        arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 10f).SetUpdate(false);
+        arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 3f).SetUpdate(false);
+        audioSource.Play();
         if (arrow != null)
             DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); }).SetUpdate(false);
     }
@@ -79,7 +82,8 @@ public class Archer : MonoBehaviour
         AttackPoint ballAttack = ball.GetComponent<AttackPoint>();
         ballAttack.SetStatsData(characterStats);
         ball.layer = this.gameObject.layer;
-        ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 20f).SetUpdate(false);
+        ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 6f).SetUpdate(false);
+        audioSource.Play();
         if (ball != null)
             DOVirtual.DelayedCall(10f, () => { ball.transform.DOScale(0, 1f); }).SetUpdate(false);
     }

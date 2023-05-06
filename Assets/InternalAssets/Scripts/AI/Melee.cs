@@ -10,6 +10,7 @@ public class Melee : MonoBehaviour
 {
     [SerializeField] protected Ray Ray;
     [SerializeField] private List<AttackPoint> attackPoints;
+    private AudioSource audioSource;
     protected AnimationController animationController;
     protected StatSystem characterStats;
     public Vector3 raycastPoint;
@@ -21,6 +22,7 @@ public class Melee : MonoBehaviour
     }
     protected virtual void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animationController = GetComponent<AnimationController>();
         characterStats = GetComponent<StatSystem>();
         canMove = characterStats.characterData.Movable;
@@ -46,6 +48,12 @@ public class Melee : MonoBehaviour
             if (hitInfo.transform.gameObject.layer != this.gameObject.layer)
             {
                 animationController.Attack();
+                if(!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+
+                }
+                
             }
             else
             {
@@ -59,6 +67,7 @@ public class Melee : MonoBehaviour
         }
         else
         {
+            
             if (characterStats.characterData.Movable)
             {
                 animationController.ResetAnimation();
