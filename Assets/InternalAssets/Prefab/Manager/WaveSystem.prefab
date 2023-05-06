@@ -241,21 +241,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6927a65bd3706478ae0493bbda2651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - EnemyPrefab: {fileID: 6946541024286829039, guid: e2a9f927a6cca5d4eba43b2b24a770f3, type: 3}
-    Count: 1
-  - EnemyPrefab: {fileID: 6657736875296129706, guid: d75efe39ed70c2d47b1284a5568da60d, type: 3}
-    Count: 2
-  - EnemyPrefab: {fileID: 2835295330714545824, guid: 6495859a1472db5489e7a5d7ff5ff4d9, type: 3}
-    Count: 3
-  - EnemyPrefab: {fileID: 8901468430432981448, guid: 2c416b54f60f31346ac21d76d3a98075, type: 3}
-    Count: 4
-  - EnemyPrefab: {fileID: 940522737821596290, guid: bdd668fdb9a13e446859b9a5a5c1f3e9, type: 3}
-    Count: 5
-  - EnemyPrefab: {fileID: 7501724690619581030, guid: 64c00825eec14b14ebcf69ef5bc9d917, type: 3}
-    Count: 6
-  - EnemyPrefab: {fileID: 7824131125181369295, guid: 4d9dfde281c42aa4bbb75aafeaadc2f3, type: 3}
-    Count: 7
+  Enemies:
+  - {fileID: 11400000, guid: 59296b57d92515f40bc3b66c544a78fb, type: 2}
+  - {fileID: 11400000, guid: 60bceb1007f0c9b43aa0a9e93f62f465, type: 2}
+  - {fileID: 11400000, guid: df264e6a1653dbf4cbadac3b6fdeb915, type: 2}
+  - {fileID: 11400000, guid: c8249813bbd83fe4cb36813e650c682e, type: 2}
+  - {fileID: 11400000, guid: 13474997cfbdf5d4aa06b4c80cfdd3a2, type: 2}
+  - {fileID: 11400000, guid: d1e7ed41feac6f6469948d0d47dcc119, type: 2}
+  - {fileID: 11400000, guid: fbf890bcf71e8784fae6c6f54867f053, type: 2}
   currWave: 1
   enemiesToSpawn: []
   spawnLocation:
@@ -265,10 +258,8 @@ MonoBehaviour:
   - {fileID: 8319198654387114621}
   - {fileID: 809276956}
   spawnIndex: 0
-  waveDuration: 5
+  waveDuration: 60
   spawnedEnemies: []
-  waveEnded: 0
-  countMultiplier: 2
 --- !u!1001 &207547981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,6 +314,10 @@ PrefabInstance:
     - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
       propertyPath: m_Name
       value: FX_Explosion_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
@@ -386,6 +381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Explosion_Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
 --- !u!4 &443653445217290788 stripped
@@ -447,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
       propertyPath: m_Name
       value: FX_Explosion_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
@@ -512,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
@@ -575,6 +578,10 @@ PrefabInstance:
     - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
       propertyPath: m_Name
       value: FX_Explosion_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 443653445314069269, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e3e8e2f6ecdbb04a982af0a14f2d887, type: 3}

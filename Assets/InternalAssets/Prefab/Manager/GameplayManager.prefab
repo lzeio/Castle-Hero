@@ -48,3 +48,6 @@ MonoBehaviour:
   UIManager: {fileID: 0}
   GridManager_Two: {fileID: 0}
   GridManager: {fileID: 0}
+  InputManager: {fileID: 0}
+  CoinsManager: {fileID: 0}
+  WaveSystem: {fileID: 0}

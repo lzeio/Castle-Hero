@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2511511343111337892
+--- !u!1 &5831374792986914246
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2511511343111337895}
-  - component: {fileID: 2511511343111337894}
+  - component: {fileID: 415650614185117493}
+  - component: {fileID: 6037587242631730949}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2511511343111337895
+--- !u!4 &415650614185117493
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2511511343111337892}
+  m_GameObject: {fileID: 5831374792986914246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.11893, y: 4.0868273, z: 24.295643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2511511343111337894
+--- !u!114 &6037587242631730949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2511511343111337892}
+  m_GameObject: {fileID: 5831374792986914246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57112d68f850ea4fa3f9df48ad99bbf, type: 3}
+  m_Script: {fileID: 11500000, guid: cb7185bf2fc0b5743802811b2e571572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heroes:
-  - {fileID: 11400000, guid: 13de533b15c50884fbbc9f71e00a1481, type: 2}
-  - {fileID: 11400000, guid: be21212cd5484d547bcf725e634dc461, type: 2}
-  - {fileID: 11400000, guid: 3c62f38af88131e42b3df75a87ce28f3, type: 2}
-  - {fileID: 11400000, guid: 7d7737a69c23e35479ddaa46b416e477, type: 2}
-  - {fileID: 11400000, guid: d6f5702a3c9ef0d4bbbe70723dc8e54f, type: 2}
-  - {fileID: 11400000, guid: 2869ab48b0946784bba89316798850ec, type: 2}
-  championButton: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  castleHealthBar: {fileID: 0}
+  coinsCount: {fileID: 0}
+  waveCount: {fileID: 0}

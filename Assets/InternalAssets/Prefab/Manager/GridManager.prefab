@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rows: 8
   Columns: 5
-  GridWidth: 50
+  GridWidth: 51
   GridHeight: 71
-  gridCubePrefab: {fileID: 81852707020303449, guid: 6c1bbc3ad4e1233448dad2670a256eb1, type: 3}
   gridCellPrefab: {fileID: 7144974841016361280, guid: 61a0088ebe8bcc24b926e27dee5be64a, type: 3}
