@@ -1,9 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class IamChampion : MonoBehaviour
 {
+    public  static IamChampion Instance;
+    public static event Action OnChampionIsSlain;
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +25,6 @@ public class IamChampion : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameplayManager.Instance.SpawnManager.hasChampion = false;
+        OnChampionIsSlain?.Invoke();
     }
 }
