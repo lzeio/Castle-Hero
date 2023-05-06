@@ -19,7 +19,7 @@ MonoBehaviour:
   Reward: 50
   Base_Damage: 12
   Base_Health: 100
-  Cost: 1
+  Cost: 500
   TierI_AttackDamage: 0
   TierI_Health: 0
   TierI_Cost: 0
