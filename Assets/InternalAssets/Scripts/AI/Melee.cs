@@ -1,9 +1,6 @@
 using DG.Tweening;
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 [RequireComponent(typeof(StatSystem))]
 [RequireComponent(typeof(BoxCollider))]
@@ -39,8 +36,6 @@ public class Melee : MonoBehaviour
         characterStats.OnDeath -= OnDeath;
         DOTween.Kill(this);
     }
-
-
 
     protected virtual void Update()
     {

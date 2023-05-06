@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Archer : MonoBehaviour
 {
+
     private AnimationController animationController;
     private StatSystem characterStats;
     private Vector3 raycastPoint;
