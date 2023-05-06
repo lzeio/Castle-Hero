@@ -8,15 +8,18 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Defenders : MonoBehaviour
 {
+    private AudioSource audioSource;
     protected AnimationController animationController;
     protected StatSystem statSystem;
     private bool canMove;
+    
 
     private Vector3 raycastPoint;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animationController = GetComponent<AnimationController>();
         statSystem = GetComponent<StatSystem>();
         canMove = statSystem.characterData.Movable;
@@ -49,6 +52,10 @@ public class Defenders : MonoBehaviour
         if (other.TryGetComponent<StatSystem>(out StatSystem stats))
         {
             stats.UpdateHealth(statSystem.DealDamage());
+            if(!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
     }
 
