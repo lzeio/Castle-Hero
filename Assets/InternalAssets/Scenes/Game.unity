@@ -228,6 +228,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &201732119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5081900007093345365, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+  m_PrefabInstance: {fileID: 1371547819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &257662138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5779834226467941660, guid: aeac250105bafb542b8eaa59a7f3a544, type: 3}
@@ -341,6 +352,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+--- !u!1 &618877381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 642181941, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+  m_PrefabInstance: {fileID: 1371547819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &681537073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 690767468, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+  m_PrefabInstance: {fileID: 1371547819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +878,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1060155297}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
+      propertyPath: RedhealthBar
+      value: 
+      objectReference: {fileID: 201732119}
+    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
+      propertyPath: GameOverPanel
+      value: 
+      objectReference: {fileID: 618877381}
+    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: MediumWaveText
       value: 
       objectReference: {fileID: 806039241}
@@ -864,6 +893,10 @@ PrefabInstance:
       propertyPath: castleHealthBar
       value: 
       objectReference: {fileID: 986833667}
+    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
+      propertyPath: NewHighScorePopup
+      value: 
+      objectReference: {fileID: 681537073}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: SFXLevel.Array.size
       value: 2
@@ -1728,7 +1761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!218 &1792609188
 Terrain:
   m_ObjectHideFlags: 0

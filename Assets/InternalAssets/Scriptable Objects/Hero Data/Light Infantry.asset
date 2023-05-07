@@ -19,13 +19,13 @@ MonoBehaviour:
   Reward: 0
   Base_Damage: 10
   Base_Health: 150
-  Cost: 100
+  Cost: 150
   TierI_AttackDamage: 18
   TierI_Health: 300
-  TierI_Cost: 200
+  TierI_Cost: 300
   TierII_AttackDamage: 20
   TierII_Health: 500
-  TierII_Cost: 400
+  TierII_Cost: 500
   TierIII_AttackDamage: 30
   TierIII_Health: 800
   TierIII_Cost: 800
