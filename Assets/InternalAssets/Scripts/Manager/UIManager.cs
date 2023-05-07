@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,12 +15,32 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private List<Button> heroSelector = default;
 
+    [Header("UIPanels")]
+    [SerializeField] private GameObject[] GameUIPanels;
+    [SerializeField] private GameObject[] MenuUIPanels;
+
+    [Header("Settings")]
+    [SerializeField] private GameObject[] SettingsQualityHighlights;
+    [SerializeField] private GameObject[] PauseQualityHighlights;
+
+    [SerializeField] private Slider[] MusicLevel;
+    [SerializeField] private Slider[] SFXLevel;
+
+    [Header("WaveHighScores")]
+    [SerializeField] private TMP_Text EasyWaveText;
+    [SerializeField] private TMP_Text MediumWaveText;
+    [SerializeField] private TMP_Text HardWaveText;
+
     private void Start()
     {
         CoinsManager.OnCoinsUpdated += CoinsManager_OnCoinsUpdated;
         Castle.OnCastleHealthUpdated += Castle_OnCastleHealthUpdated;
         WaveSystem.OnWaveCountUpdated += WaveSystem_OnWaveCountUpdated;
         GameplayManager.OnTimeScaleChanged += GameplayManager_OnTimeScaleChanged;
+        SetHighScores();
+        SelectedQuality(GameData.GetCurrentQuality());
+        SetMusicLevels(GameData.GetMusicLevel());
+        SetSoundLevels(GameData.GetSoundLevel());
     }
 
     public void Update()
@@ -54,11 +75,6 @@ public class UIManager : MonoBehaviour
         coinsCount.text = GameplayManager.Instance.CoinsManager.Coins.ToString();
     }
 
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("Game");
-    }
-
     public void ExitGame()
     {
         Application.Quit();
@@ -68,12 +84,80 @@ public class UIManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
+        SelectGamePanel(1);
     }
 
     public void Continue()
     {
+        SelectGamePanel(0);
         GameplayManager.Instance.ChangeTimeScale();
     }
+    private void ResetPanels()
+    {
+        foreach (GameObject Gpanel in GameUIPanels)
+        {
+            Gpanel.SetActive(false);
+        }
+        foreach (GameObject Mpanel in MenuUIPanels)
+        {
+            Mpanel.SetActive(false);
+        }
 
+    }
+    public void SelectGamePanel(int index)
+    {
+        ResetPanels();
+        GameUIPanels[index].SetActive(true);
+        if(index == 1)
+        {
+            SetSoundLevels(GameData.GetSoundLevel());
+            SetMusicLevels(GameData.GetMusicLevel());
+        }
+    }
+    public void SelectMenuPanel(int index)
+    {
+        ResetPanels();
+        MenuUIPanels[index].SetActive(true);
+    }
+
+    public void SelectedQuality(int index)
+    {
+        GameData.SetCurrentQuality(index);
+        foreach  (GameObject Ghigh in SettingsQualityHighlights)
+        {
+            Ghigh.SetActive(false);
+        }
+        foreach  (GameObject Mhigh in PauseQualityHighlights)
+        {
+            Mhigh.SetActive(false);
+        }
+        SettingsQualityHighlights[index].SetActive(true) ;
+        PauseQualityHighlights[index].SetActive(true) ;
+        QualitySettings.SetQualityLevel(index);
+    }
+
+    private void SetHighScores()
+    {
+        EasyWaveText.text =  " "+GameData.GetEasyWave();
+        MediumWaveText.text = " " + GameData.GetMediumWave();
+        HardWaveText.text = " " + GameData.GetHardWave();
+    }
+
+    public void SetSoundLevels(float index)
+    {
+        for (int i = 0; i < SFXLevel.Length; i++)
+        {
+            SFXLevel[i].value = index;
+        }
+        GameData.SetSoundLevel(index);
+    }
+    public void SetMusicLevels(float index)
+    {
+        for (int i = 0; i < MusicLevel.Length; i++)
+        {
+            MusicLevel[i].value = index;
+        }
+        GameData.SetMusicLevel(index);
+    }
 
 }

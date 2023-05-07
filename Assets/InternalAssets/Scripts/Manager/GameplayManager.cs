@@ -26,6 +26,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+        Time.timeScale = 0f;
     }
     private void Start()
     {
