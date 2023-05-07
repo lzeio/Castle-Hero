@@ -72,8 +72,7 @@ public class Archer : MonoBehaviour
         arrow.layer = this.gameObject.layer;
         arrow.transform.DOMoveZ(transform.position.z * characterStats.characterData.AttackRange, 3f).SetUpdate(false);
         audioSource.Play();
-        if (arrow != null)
-            DOVirtual.DelayedCall(10f, () => { arrow.transform.DOScale(0, 1f); }).SetUpdate(false);
+        DOVirtual.DelayedCall(10f, () => DestroyProjectiles(arrow)).SetUpdate(false);
     }
 
     private void SpawnBall()
@@ -84,8 +83,7 @@ public class Archer : MonoBehaviour
         ball.layer = this.gameObject.layer;
         ball.transform.DOMoveZ(-transform.position.z * characterStats.characterData.AttackRange, 6f).SetUpdate(false);
         audioSource.Play();
-        if (ball != null)
-            DOVirtual.DelayedCall(10f, () => { ball.transform.DOScale(0, 1f); }).SetUpdate(false);
+        DOVirtual.DelayedCall(10f, () => DestroyProjectiles(ball)).SetUpdate(false);
     }
 
 
@@ -96,6 +94,12 @@ public class Archer : MonoBehaviour
         GameplayManager.Instance.WaveSystem.KilledInAction(character);
         transform.DOScale(0f, 1f).SetUpdate(false);
         DOVirtual.DelayedCall(1f, () => Destroy(gameObject));
+    }
+    
+    public void DestroyProjectiles(GameObject projectiles)
+    {
+        if (projectiles != null)
+            Destroy(projectiles);
     }
 
     private void OnDrawGizmos()
