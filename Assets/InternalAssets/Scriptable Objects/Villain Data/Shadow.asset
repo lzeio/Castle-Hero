@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterId: Shadow
   CharacterPrefab: {fileID: 6657736875296129706, guid: d75efe39ed70c2d47b1284a5568da60d, type: 3}
-  Speed: 2.5
+  Speed: 4
   AttackRange: 3
-  Reward: 50
-  Base_Damage: 2
+  Reward: 40
+  Base_Damage: 8
   Base_Health: 100
   Cost: 1
   TierI_AttackDamage: 0

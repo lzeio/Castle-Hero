@@ -16,7 +16,7 @@ MonoBehaviour:
   CharacterPrefab: {fileID: 2835295330714545824, guid: 6495859a1472db5489e7a5d7ff5ff4d9, type: 3}
   Speed: 1.5
   AttackRange: 4.5
-  Reward: 50
+  Reward: 75
   Base_Damage: 10
   Base_Health: 400
   Cost: 8
