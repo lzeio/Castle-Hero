@@ -137,8 +137,10 @@ public class UIManager : MonoBehaviour
         GameUIPanels[index].SetActive(true);
         if(index == 1)
         {
+            SetSoundLevels(GameData.GetSoundLevel());
             SetMusicLevels(GameData.GetMusicLevel());
-            SetSoundLevels(0f);
+            AudioManager.Instance.SFXLevels(0f);
+            GameplayManager.Instance.SpawnManager.DisableSpawning();
         }
         OnButtonClicked?.Invoke();
     }

@@ -100,4 +100,8 @@ public class SpawnManager : MonoBehaviour
     {
         hasChampion = false;
     }
+    public void DisableSpawning()
+    {
+        heroIndex = 80;
+    }
 }
