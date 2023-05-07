@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ public class WaveSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateWave();
+        DOVirtual.DelayedCall(5F, () => GenerateWave());
     }
 
     // Update is called once per frame
