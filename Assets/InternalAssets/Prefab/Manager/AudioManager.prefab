@@ -65,3 +65,9 @@ MonoBehaviour:
     clipName: Theme
     volume: 100
     loop: 0
+  - source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6f37e2c30cc270742ae84f9d54a1b090, type: 3}
+    clipName: UI
+    volume: 100
+    loop: 0
+  AudioMixer: {fileID: 0}
