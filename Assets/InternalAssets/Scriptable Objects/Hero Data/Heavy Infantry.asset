@@ -21,13 +21,13 @@ MonoBehaviour:
   Base_Health: 200
   Cost: 300
   TierI_AttackDamage: 25
-  TierI_Health: 500
-  TierI_Cost: 600
-  TierII_AttackDamage: 35
-  TierII_Health: 800
-  TierII_Cost: 1000
-  TierIII_AttackDamage: 45
-  TierIII_Health: 1200
-  TierIII_Cost: 1500
+  TierI_Health: 350
+  TierI_Cost: 500
+  TierII_AttackDamage: 30
+  TierII_Health: 600
+  TierII_Cost: 750
+  TierIII_AttackDamage: 35
+  TierIII_Health: 800
+  TierIII_Cost: 1000
   Movable: 0
   Projectile: {fileID: 0}

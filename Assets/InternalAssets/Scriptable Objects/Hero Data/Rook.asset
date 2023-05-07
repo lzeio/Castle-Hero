@@ -15,19 +15,19 @@ MonoBehaviour:
   CharacterId: Rook
   CharacterPrefab: {fileID: 5491343083788315644, guid: e5fb8bf29257b874a81a900911ace8ad, type: 3}
   Speed: 0
-  AttackRange: 1
+  AttackRange: 0
   Reward: 0
-  Base_Damage: 15
+  Base_Damage: 5
   Base_Health: 400
   Cost: 75
-  TierI_AttackDamage: 20
-  TierI_Health: 2000
-  TierI_Cost: 600
-  TierII_AttackDamage: 30
-  TierII_Health: 3000
-  TierII_Cost: 1200
-  TierIII_AttackDamage: 40
-  TierIII_Health: 5000
-  TierIII_Cost: 2000
+  TierI_AttackDamage: 10
+  TierI_Health: 600
+  TierI_Cost: 150
+  TierII_AttackDamage: 15
+  TierII_Health: 750
+  TierII_Cost: 300
+  TierIII_AttackDamage: 20
+  TierIII_Health: 900
+  TierIII_Cost: 500
   Movable: 0
   Projectile: {fileID: 0}
