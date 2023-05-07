@@ -8,7 +8,10 @@ using UnityEngine;
 public class StatSystem : MonoBehaviour
 {
     public event Action<GameObject> OnDeath;
+    public static event Action<LayerMask> onDeath;
     public CharacterData characterData;
+
+    
     private UpgradeableComponent upgradeableComponent;
 
     public int health;
@@ -78,6 +81,7 @@ public class StatSystem : MonoBehaviour
             OnDeath?.Invoke(gameObject);
             GameplayManager.Instance.CoinsManager.AddCoins(characterData.Reward);
             GameplayManager.Instance.GridManager_Two.Grid[rowPosition, colPosition].GetComponent<Tile>().IsOccupied = false;
+            onDeath(gameObject.layer);
         }
 
     }
