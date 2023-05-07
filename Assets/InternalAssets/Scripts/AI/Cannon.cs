@@ -14,6 +14,7 @@ public class Cannon : MonoBehaviour
     private Vector3 raycastPoint;
     private AudioSource audioSource;
     bool canShoot = true;
+    public RaycastHit[] hits;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,16 +34,22 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z + 1.5f);
-        if (Physics.Raycast(raycastPoint, transform.forward, out RaycastHit hitInfo, characterStats.characterData.AttackRange))
+        raycastPoint = new Vector3(transform.position.x, transform.position.y + 1.75f, transform.position.z);
+        hits = Physics.RaycastAll(raycastPoint, transform.forward, characterStats.characterData.AttackRange);
+        foreach (RaycastHit hit in hits)
         {
-            if (hitInfo.transform.gameObject.layer!=this.gameObject.layer)
+            if (hit.transform.gameObject.layer == this.gameObject.layer)
+            {
+                continue;
+            }
+            else
+            if (hit.transform.gameObject.layer != this.gameObject.layer)
             {
                 SpawnCannonBall();
-                
+                return;
             }
         }
-        
+
     }
     private void OnDestroy()
     {
