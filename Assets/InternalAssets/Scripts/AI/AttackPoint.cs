@@ -8,8 +8,14 @@ public class AttackPoint : MonoBehaviour
     [SerializeField] private int damageDuration = 5;
     private StatSystem characterStats;
 
-    
 
+    private void OnEnable()
+    {
+        if(IsProjectile)
+        {
+            DOVirtual.DelayedCall(1f, () => Destroy(gameObject)).SetUpdate(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
