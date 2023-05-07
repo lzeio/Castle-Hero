@@ -37,6 +37,8 @@ public partial class AudioManager : MonoBehaviour
         SpawnManager.OnHeroSpawn += SpawnManager_OnHeroSpawn;
         UIManager.OnButtonClicked += UIManager_OnButtonClicked;
         StatSystem.onDeath += StatSystem_onDeath;
+        SFXLevels(GameData.GetSoundLevel());
+        MusicLevels(GameData.GetMusicLevel());
     }
 
     private void StatSystem_onDeath(LayerMask Layer)
@@ -75,7 +77,7 @@ public partial class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found");
             return;
         }
-        if(name == "Theme")
+        if (name == "Theme")
         {
             s.source.outputAudioMixerGroup = MusicMixer;
         }
@@ -91,12 +93,14 @@ public partial class AudioManager : MonoBehaviour
     }
     public void SFXLevels(float value)
     {
-        MusicMixer.audioMixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
-    } 
+        SFXMixer.audioMixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
+    }
     public void MusicLevels(float value)
     {
         MusicMixer.audioMixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
     }
+    
+    
 }
 
 [System.Serializable]
@@ -106,7 +110,7 @@ public class Sound
     public AudioSource source;
     public AudioClip clip;
     public string clipName;
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     public float volume;
     public bool loop;
 }

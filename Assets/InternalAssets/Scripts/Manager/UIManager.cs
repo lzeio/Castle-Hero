@@ -137,8 +137,8 @@ public class UIManager : MonoBehaviour
         GameUIPanels[index].SetActive(true);
         if(index == 1)
         {
-            SetSoundLevels(GameData.GetSoundLevel());
             SetMusicLevels(GameData.GetMusicLevel());
+            SetSoundLevels(0f);
         }
         OnButtonClicked?.Invoke();
     }
