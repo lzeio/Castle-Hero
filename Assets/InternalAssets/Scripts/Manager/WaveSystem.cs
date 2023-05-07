@@ -19,6 +19,8 @@ public class WaveSystem : MonoBehaviour
     private float spawnInterval;
     private float spawnTimer;
 
+    public int level;
+
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -69,9 +71,9 @@ public class WaveSystem : MonoBehaviour
 
     public void GenerateWave()
     {
-        waveValue = currWave * 10;
+        waveValue = currWave * level;
         GenerateEnemies();
-        waveDuration += 5;
+        waveDuration += 30;
         spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
         waveTimer = waveDuration; // wave duration is read only
     }
