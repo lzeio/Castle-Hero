@@ -27,7 +27,7 @@ public class AttackPoint : MonoBehaviour
             if(IsProjectile)
             {
                 transform.GetChild(transform.childCount-1).gameObject.SetActive(true);
-                DOVirtual.DelayedCall(0.2f,()=> Destroy(gameObject)).SetUpdate(false);
+                DOVirtual.DelayedCall(0.1f,()=> Destroy(gameObject)).SetUpdate(false);
             }
         }
 
