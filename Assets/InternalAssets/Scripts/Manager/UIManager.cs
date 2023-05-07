@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
             castleHealthBar.gameObject.SetActive(false);
         }
         RedhealthBar.fillAmount = (float)health / 10000;
-        if(health> 0) 
+        if(health<= 0) 
         {
             SelectGamePanel(2);
         }
