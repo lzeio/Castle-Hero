@@ -19,15 +19,15 @@ MonoBehaviour:
   Reward: 0
   Base_Damage: 10
   Base_Health: 100
-  Cost: 50
+  Cost: 100
   TierI_AttackDamage: 15
   TierI_Health: 200
-  TierI_Cost: 0
+  TierI_Cost: 200
   TierII_AttackDamage: 20
   TierII_Health: 300
-  TierII_Cost: 0
+  TierII_Cost: 400
   TierIII_AttackDamage: 30
   TierIII_Health: 500
-  TierIII_Cost: 0
+  TierIII_Cost: 800
   Movable: 0
   Projectile: {fileID: 8224076286754674253, guid: 69f1511ba8e8bde4da0bef43b2cb380e, type: 3}

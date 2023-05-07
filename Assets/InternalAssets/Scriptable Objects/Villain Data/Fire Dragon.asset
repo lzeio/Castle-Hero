@@ -16,10 +16,10 @@ MonoBehaviour:
   CharacterPrefab: {fileID: 6946541024286829039, guid: e2a9f927a6cca5d4eba43b2b24a770f3, type: 3}
   Speed: 5
   AttackRange: 10
-  Reward: 50
+  Reward: 10
   Base_Damage: 12
   Base_Health: 100
-  Cost: 1
+  Cost: 10
   TierI_AttackDamage: 0
   TierI_Health: 0
   TierI_Cost: 0
