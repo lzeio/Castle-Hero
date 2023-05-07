@@ -37,7 +37,8 @@ public class WaveSystem : MonoBehaviour
             //spawn an enemy
             if (enemiesToSpawn.Count > 0)
             {
-                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnIndex].position, spawnLocation[spawnIndex].rotation); // spawn first enemy in our list
+                int spawnlocation = UnityEngine.Random.Range(-1, 5);
+                GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnlocation].position, spawnLocation[spawnlocation].rotation); // spawn first enemy in our list
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
                 spawnTimer = spawnInterval;
@@ -75,7 +76,7 @@ public class WaveSystem : MonoBehaviour
         waveValue = currWave * level+ UnityEngine.Random.Range(1,11);
         GenerateEnemies();
         waveDuration += 30;
-        spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
+        spawnInterval = 10f; // gives a fixed time between each enemies
         waveTimer = waveDuration; // wave duration is read only
     }
 
