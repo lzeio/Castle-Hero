@@ -71,7 +71,7 @@ public class WaveSystem : MonoBehaviour
 
     public void GenerateWave()
     {
-        waveValue = currWave * level;
+        waveValue = currWave * level+ UnityEngine.Random.Range(1,11);
         GenerateEnemies();
         waveDuration += 30;
         spawnInterval = waveDuration / enemiesToSpawn.Count; // gives a fixed time between each enemies
