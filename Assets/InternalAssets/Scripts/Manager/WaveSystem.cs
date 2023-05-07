@@ -37,7 +37,7 @@ public class WaveSystem : MonoBehaviour
             //spawn an enemy
             if (enemiesToSpawn.Count > 0)
             {
-                int spawnlocation = UnityEngine.Random.Range(0, 4);
+                int spawnlocation = UnityEngine.Random.Range(0, 5);
                 GameObject enemy = (GameObject)Instantiate(enemiesToSpawn[0], spawnLocation[spawnlocation].position, spawnLocation[spawnlocation].rotation); // spawn first enemy in our list
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
