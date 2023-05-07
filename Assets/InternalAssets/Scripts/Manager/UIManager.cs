@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private List<Button> heroSelector = default;
 
+    [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private GameObject NewHighScorePopup;
+
     [Header("UIPanels")]
     [SerializeField] private GameObject[] GameUIPanels;
     [SerializeField] private GameObject[] MenuUIPanels;
