@@ -15,11 +15,12 @@ public class SpawnManager : MonoBehaviour
     {
         InputManager.TrySpawnHero += SpawnHero;
         IamChampion.OnChampionIsSlain += ChampionIsSlained;
-        heroIndex = 0;
+        heroIndex = 80;
     }
 
     private void SpawnHero()
     {
+        if(heroIndex>= Heroes.Count) { return; }
         if (heroIndex == 5 && hasChampion) { return; }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
