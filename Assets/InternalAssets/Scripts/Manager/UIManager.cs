@@ -100,6 +100,14 @@ public class UIManager : MonoBehaviour
         GameplayManager.Instance.ChangeTimeScale();
         OnButtonClicked?.Invoke();
     }
+
+    public void DifficultySelection(int level)
+    {
+        SelectGamePanel(0);
+        GameplayManager.Instance.ChangeTimeScale();
+        OnButtonClicked?.Invoke();
+        GameplayManager.Instance.WaveSystem.level = level;
+    }
     private void ResetPanels()
     {
         foreach (GameObject Gpanel in GameUIPanels)
