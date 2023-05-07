@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
     private void Castle_OnCastleHealthUpdated(int health)
     {
         castleHealthBar.fillAmount = (float)health / 10000;
-        if(castleHealthBar.fillAmount > 0.20) 
+        if(castleHealthBar.fillAmount < 0.20) 
         {
             castleHealthBar.gameObject.SetActive(false);
         }
