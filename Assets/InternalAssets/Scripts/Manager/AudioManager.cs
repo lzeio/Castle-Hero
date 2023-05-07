@@ -33,6 +33,19 @@ public partial class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
         SpawnManager.OnHeroSpawn += SpawnManager_OnHeroSpawn;
+        UIManager.OnButtonClicked += UIManager_OnButtonClicked;
+        StatSystem.onDeath += StatSystem_onDeath;
+    }
+
+    private void StatSystem_onDeath(LayerMask Layer)
+    {
+        if (Layer == 6)
+            Play("Death");
+    }
+
+    private void UIManager_OnButtonClicked()
+    {
+        Play("UI");
     }
 
     private void SpawnManager_OnHeroSpawn(bool championSpawn)
