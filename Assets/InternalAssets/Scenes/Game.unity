@@ -267,6 +267,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+      propertyPath: SFXMixer
+      value: 
+      objectReference: {fileID: -4291701649397139796, guid: fb85d190701a8114c918f86204132bfd, type: 2}
+    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+      propertyPath: MusicMixer
+      value: 
+      objectReference: {fileID: -4820349262867671754, guid: fb85d190701a8114c918f86204132bfd, type: 2}
+    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3705893970584690813, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
       propertyPath: m_Name
       value: AudioManager

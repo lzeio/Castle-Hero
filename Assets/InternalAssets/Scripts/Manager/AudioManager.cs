@@ -11,7 +11,8 @@ public partial class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     //AudioManager
 
-    public AudioMixerGroup AudioMixer;
+    public AudioMixerGroup SFXMixer;
+    public AudioMixerGroup MusicMixer;
     void Awake()
     {
         if (Instance == null)
@@ -31,6 +32,7 @@ public partial class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = SFXMixer;
         }
         SpawnManager.OnHeroSpawn += SpawnManager_OnHeroSpawn;
         UIManager.OnButtonClicked += UIManager_OnButtonClicked;
@@ -63,7 +65,6 @@ public partial class AudioManager : MonoBehaviour
     void Start()
     {
         Play("Theme");
-
     }
 
     public void Play(string name)
@@ -76,9 +77,7 @@ public partial class AudioManager : MonoBehaviour
         }
         if(name == "Theme")
         {
-            s.source.outputAudioMixerGroup = AudioMixer;
-            //VVVVIP LINE
-            AudioMixer.audioMixer.SetFloat("Volume", Mathf.Log10(.1f) * 20);
+            s.source.outputAudioMixerGroup = MusicMixer;
         }
 
         s.source.Play();
@@ -89,6 +88,14 @@ public partial class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.clipName == name);
 
         s.source.Stop();
+    }
+    public void SFXLevels(float value)
+    {
+        MusicMixer.audioMixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
+    } 
+    public void MusicLevels(float value)
+    {
+        MusicMixer.audioMixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
     }
 }
 

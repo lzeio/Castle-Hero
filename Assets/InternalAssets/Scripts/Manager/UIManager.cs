@@ -161,21 +161,23 @@ public class UIManager : MonoBehaviour
         HardWaveText.text = " " + GameData.GetHardWave();
     }
 
-    public void SetSoundLevels(float index)
+    public void SetSoundLevels(float value)
     {
         for (int i = 0; i < SFXLevel.Length; i++)
         {
-            SFXLevel[i].value = index;
+            SFXLevel[i].value = value;
         }
-        GameData.SetSoundLevel(index);
+        GameData.SetSoundLevel(value);
+        AudioManager.Instance.SFXLevels(value);
     }
-    public void SetMusicLevels(float index)
+    public void SetMusicLevels(float value)
     {
         for (int i = 0; i < MusicLevel.Length; i++)
         {
-            MusicLevel[i].value = index;
+            MusicLevel[i].value = value;
         }
-        GameData.SetMusicLevel(index);
+        GameData.SetMusicLevel(value);
+        AudioManager.Instance.MusicLevels(value);
     }
 
 }
