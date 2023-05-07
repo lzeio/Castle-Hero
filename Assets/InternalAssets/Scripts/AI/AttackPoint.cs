@@ -13,7 +13,7 @@ public class AttackPoint : MonoBehaviour
     {
         if(IsProjectile)
         {
-            DOVirtual.DelayedCall(1f, () => Destroy(gameObject)).SetUpdate(false);
+            DOVirtual.DelayedCall(3f, () => Destroy(gameObject)).SetUpdate(false);
         }
     }
 
