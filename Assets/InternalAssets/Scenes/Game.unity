@@ -849,10 +849,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5831374792986914246, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: TimeScale
       value: 
@@ -861,10 +857,6 @@ PrefabInstance:
       propertyPath: waveCount
       value: 
       objectReference: {fileID: 1371547821}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: MusicLevel
-      value: 
-      objectReference: {fileID: 928132535}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: coinsCount
       value: 
@@ -898,14 +890,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 681537073}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: SFXLevel.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: MusicLevel.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: SFXLevel.Array.data[0]
       value: 
       objectReference: {fileID: 257662138}
@@ -913,18 +897,6 @@ PrefabInstance:
       propertyPath: SFXLevel.Array.data[1]
       value: 
       objectReference: {fileID: 907996541}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: GameUIPanels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: MenuUIPanels.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: heroSelector.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: MusicLevel.Array.data[0]
       value: 
@@ -941,6 +913,10 @@ PrefabInstance:
       propertyPath: GameUIPanels.Array.data[1]
       value: 
       objectReference: {fileID: 1414873741}
+    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
+      propertyPath: GameUIPanels.Array.data[2]
+      value: 
+      objectReference: {fileID: 618877381}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: MenuUIPanels.Array.data[0]
       value: 
@@ -986,10 +962,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1506489664}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: PauseQualityHighlights.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: PauseQualityHighlights.Array.data[0]
       value: 
       objectReference: {fileID: 342013574}
@@ -1001,10 +973,6 @@ PrefabInstance:
       propertyPath: PauseQualityHighlights.Array.data[2]
       value: 
       objectReference: {fileID: 1164332545}
-    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
-      propertyPath: SettingsQualityHighlights.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: SettingsQualityHighlights.Array.data[0]
       value: 

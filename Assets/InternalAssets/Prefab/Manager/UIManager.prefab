@@ -44,7 +44,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7185bf2fc0b5743802811b2e571572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
   castleHealthBar: {fileID: 0}
+  RedhealthBar: {fileID: 0}
   coinsCount: {fileID: 0}
   waveCount: {fileID: 0}
+  TimeScale: {fileID: 0}
+  heroSelector:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  GameOverPanel: {fileID: 0}
+  NewHighScorePopup: {fileID: 0}
+  GameUIPanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  MenuUIPanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SettingsQualityHighlights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PauseQualityHighlights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  MusicLevel:
+  - {fileID: 0}
+  - {fileID: 0}
+  SFXLevel:
+  - {fileID: 0}
+  - {fileID: 0}
+  EasyWaveText: {fileID: 0}
+  MediumWaveText: {fileID: 0}
+  HardWaveText: {fileID: 0}
