@@ -24,20 +24,20 @@ public class UpgradeSystem : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    if(_upgradeable != null)
+                    if (_upgradeable != null)
                     {
                         _upgradeable.ToggleUI(false);
                     }
                     _upgradeable = upgradeable;
                     _upgradeable.ToggleUI(true);
                 }
-            }
-        }
-        else
-        {
-            if (_upgradeable != null && Input.GetMouseButtonDown(1))
-            {
-                _upgradeable.ToggleUI(false);
+                else
+                {
+                    if (_upgradeable != null && Input.GetMouseButtonDown(1))
+                    {
+                        _upgradeable.ToggleUI(false);
+                    }
+                }
             }
         }
     }
