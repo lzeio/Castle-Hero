@@ -2476,6 +2476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 831388722183628436, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 831388722183628440, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
