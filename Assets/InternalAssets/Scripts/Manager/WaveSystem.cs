@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class WaveSystem : MonoBehaviour
 {
+    [SerializeField]private float spawnInterval = 5f;
     public static event Action<int> OnWaveCountUpdated;
     public List<CharacterData> Enemies;
     public int currWave;
@@ -17,9 +18,8 @@ public class WaveSystem : MonoBehaviour
 
     public int waveDuration;
     private float waveTimer;
-    private float spawnInterval;
     private float spawnTimer;
-
+   
     public int level;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
@@ -76,7 +76,7 @@ public class WaveSystem : MonoBehaviour
         waveValue = currWave * level+ UnityEngine.Random.Range(1,11);
         GenerateEnemies();
         waveDuration += 15;
-        spawnInterval = 5f; // gives a fixed time between each enemies
+       
         waveTimer = waveDuration; // wave duration is read only
     }
 
