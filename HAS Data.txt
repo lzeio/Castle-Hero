@@ -1,11 +1,11 @@
-Villains(H/A/S)
-- Stinger - 100/2^t where t=5f/5
-- SpiderKing- 150/3/3
-- Shadow-	100/2/2.5
-- Golem- 400/2.5/1
-- Ice D- 200/12/5
-- Fire D- 200/12/5
-- Phantom- 500/25/0.5
+Villains(H/A/S/C)
+- Stinger - 100/2^t where t=5f/5/4
+- SpiderKing- 150/3/3/1
+- Shadow-	100/2/2.5/1
+- Golem- 400/2.5/1/8
+- Ice D- 200/12/5/10
+- Fire D- 200/12/5/10
+- Phantom- 500/25/0.5/5
 
 Heroes(H/A/C)
 - Archer- 100/10/

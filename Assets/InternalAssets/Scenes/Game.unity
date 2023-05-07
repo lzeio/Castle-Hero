@@ -1052,6 +1052,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1278012895}
+    - target: {fileID: 5081900007038616850, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+      propertyPath: m_text
+      value: 'WAVE : 1'
+      objectReference: {fileID: 0}
     - target: {fileID: 5081900007130829174, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1792,6 +1796,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1862521846, guid: cf0fe3e81cdb7bb49bd7f5ddad3bb71d, type: 3}
+      propertyPath: waveDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8115061890587602500, guid: cf0fe3e81cdb7bb49bd7f5ddad3bb71d, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1854,6 +1862,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 328778574, guid: 9f363e615b013c74cb3363532cc89700, type: 3}
+      propertyPath: Health
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 6631125305880917264, guid: 9f363e615b013c74cb3363532cc89700, type: 3}
       propertyPath: m_RootOrder
       value: 5

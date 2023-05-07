@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static event Action OnButtonClicked;
 
     [SerializeField] private Image castleHealthBar;
+    [SerializeField] private Image RedhealthBar;
     [SerializeField] private TMP_Text coinsCount;
     [SerializeField] private TMP_Text waveCount;
     [SerializeField] private TMP_Text TimeScale;
@@ -73,6 +74,16 @@ public class UIManager : MonoBehaviour
     private void Castle_OnCastleHealthUpdated(int health)
     {
         castleHealthBar.fillAmount = (float)health / 10000;
+        if(castleHealthBar.fillAmount > 0.20) 
+        {
+            castleHealthBar.gameObject.SetActive(false);
+        }
+        RedhealthBar.fillAmount = (float)health / 10000;
+        if(health> 0) 
+        {
+            SelectGamePanel(2);
+        }
+         
     }
 
     private void CoinsManager_OnCoinsUpdated()
@@ -156,9 +167,9 @@ public class UIManager : MonoBehaviour
 
     private void SetHighScores()
     {
-        EasyWaveText.text =  " "+GameData.GetEasyWave();
-        MediumWaveText.text = " " + GameData.GetMediumWave();
-        HardWaveText.text = " " + GameData.GetHardWave();
+        EasyWaveText.text =  "Wave "+GameData.GetEasyWave();
+        MediumWaveText.text = "Wave " + GameData.GetMediumWave();
+        HardWaveText.text = "Wave " + GameData.GetHardWave();
     }
 
     public void SetSoundLevels(float value)
