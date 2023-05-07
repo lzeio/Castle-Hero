@@ -1,12 +1,12 @@
+using System;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 public class UIManager : MonoBehaviour
 {
 
+    public static event Action OnButtonClicked;
 
     [SerializeField] private Image castleHealthBar;
     [SerializeField] private TMP_Text coinsCount;
@@ -58,11 +58,13 @@ public class UIManager : MonoBehaviour
     private void GameplayManager_OnTimeScaleChanged(float time)
     {
         TimeScale.text = $"{time}X";
+        //Time Audio here
     }
 
     private void WaveSystem_OnWaveCountUpdated(int count)
     {
         waveCount.text = $"WAVE : {count.ToString()}";
+        //New Wave Audio here
     }
 
     private void Castle_OnCastleHealthUpdated(int health)
@@ -78,6 +80,7 @@ public class UIManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+
     }
 
 
@@ -85,12 +88,14 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         SelectGamePanel(1);
+        OnButtonClicked?.Invoke();
     }
 
     public void Continue()
     {
         SelectGamePanel(0);
         GameplayManager.Instance.ChangeTimeScale();
+        OnButtonClicked?.Invoke();
     }
     private void ResetPanels()
     {
@@ -113,11 +118,13 @@ public class UIManager : MonoBehaviour
             SetSoundLevels(GameData.GetSoundLevel());
             SetMusicLevels(GameData.GetMusicLevel());
         }
+        OnButtonClicked?.Invoke();
     }
     public void SelectMenuPanel(int index)
     {
         ResetPanels();
         MenuUIPanels[index].SetActive(true);
+        OnButtonClicked?.Invoke();
     }
 
     public void SelectedQuality(int index)
