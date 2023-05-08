@@ -17,6 +17,7 @@ public class Castle : MonoBehaviour
             statSystem.KillCharacter();
             OnCastleHealthUpdated?.Invoke(Health);
             Destroy(statSystem.gameObject);
+            GameplayManager.Instance.CoinsManager.AddCoins(50);
         }
     }
 
