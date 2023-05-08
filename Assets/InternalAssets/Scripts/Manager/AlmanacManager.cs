@@ -57,8 +57,8 @@ public class AlmanacManager : MonoBehaviour
         }
         content.text = data[currentIndex].Info;
         Name.text = data[currentIndex].Name;
-        Attack.text = data[currentIndex].characterData.Base_Damage.ToString();
         profile.sprite = data[currentIndex].characterImage;
+        UpdateHealthAndAttackText();
         currentIndex++;
     }
     public void UpdateHealthAndAttackText()
