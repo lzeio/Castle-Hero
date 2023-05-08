@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6927a65bd3706478ae0493bbda2651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnInterval: 5
   Enemies:
   - {fileID: 11400000, guid: 59296b57d92515f40bc3b66c544a78fb, type: 2}
   - {fileID: 11400000, guid: 60bceb1007f0c9b43aa0a9e93f62f465, type: 2}
@@ -258,7 +259,7 @@ MonoBehaviour:
   - {fileID: 8319198654387114621}
   - {fileID: 809276956}
   spawnIndex: 0
-  waveDuration: 60
+  waveDuration: 30
   level: 0
   spawnedEnemies: []
 --- !u!1001 &207547981

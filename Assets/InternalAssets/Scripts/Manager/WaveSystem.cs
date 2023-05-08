@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class WaveSystem : MonoBehaviour
 {
-    [SerializeField]private float spawnInterval = 5f;
     public static event Action<int> OnWaveCountUpdated;
+    [SerializeField]private float spawnInterval = 5f;
     public List<CharacterData> Enemies;
     public int currWave;
     private int waveValue;
@@ -26,7 +26,7 @@ public class WaveSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DOVirtual.DelayedCall(5F, () => GenerateWave());
+        GenerateWave();
     }
 
     // Update is called once per frame
@@ -73,11 +73,10 @@ public class WaveSystem : MonoBehaviour
 
     public void GenerateWave()
     {
-        waveValue = currWave * level+ UnityEngine.Random.Range(1,11);
-        GenerateEnemies();
+        waveValue = currWave * level + UnityEngine.Random.Range(1, 11);
         waveDuration += 15;
-       
         waveTimer = waveDuration; // wave duration is read only
+        GenerateEnemies();
     }
 
     public void GenerateEnemies()

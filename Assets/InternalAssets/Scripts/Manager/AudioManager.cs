@@ -36,8 +36,14 @@ public partial class AudioManager : MonoBehaviour
         SpawnManager.OnHeroSpawn += SpawnManager_OnHeroSpawn;
         UIManager.OnButtonClicked += UIManager_OnButtonClicked;
         StatSystem.onDeath += StatSystem_onDeath;
+        WaveSystem.OnWaveCountUpdated += WaveSystem_OnWaveCountUpdated;
         SFXLevels(GameData.GetSoundLevel());
         MusicLevels(GameData.GetMusicLevel());
+    }
+
+    private void WaveSystem_OnWaveCountUpdated(int obj)
+    {
+        Play("Wave");
     }
 
     private void StatSystem_onDeath(LayerMask Layer)
