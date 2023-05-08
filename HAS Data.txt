@@ -19,3 +19,43 @@ Heroes(H/A/C)
 
 CaStLe HeRoEs
 
+ARCHER
+The archer is a master of precision and deadly accuracy. Armed with a longbow, this agile and skilled warrior dominates the battlefield from afar. Their shots rain down upon enemies like a storm, making them a formidable force to be reckoned with.
+
+CANNON
+cannon strikes terror into the hearts of its foes. While its range is limited, its devastating firepower and destructive force make it a formidable presence on the battlefield.
+
+LIGHT INFANTRY
+ The light infantry is a swift and nimble warrior, armed with quick and agile melee attacks that allow them to swiftly engage and disorient their enemies. While their individual strikes may lack raw power, their lightning-fast speed and relentless assault make them a formidable force on the battlefield.
+
+HEAVY INFANTRY
+The heavy infantry, a juggernaut of strength and fortitude, stands tall as an immovable force on the battlefield. Armed with massive, imposing weaponry, they strike fear into the hearts of their foes. Every swing of their mighty weapon carries unparalleled power, making them a formidable and relentless adversary.
+
+ROOK
+The Rook, an embodiment of fortitude and unyielding resilience, stands as an immovable wall on the battlefield. With an imposing presence and an unwavering commitment to protect their allies, they serve as the ultimate shield, soaking up damage and damages the enemy only on the enemies first attack.
+
+CHAMPION
+The Fire Dragon, a majestic and fearsome creature of flames and fury, dominates the battlefield with their scorching breath and blazing presence. They instill terror in the hearts of heroes, their attacks capable of engulfing multiple adversaries in fiery destruction, leaving behind a trail of ash and devastation.
+
+Stinger
+Stinger, the nefarious bee, buzzes with malevolence and a venomous sting that strikes fear into the hearts of their adversaries. With a deadly combination of regular attacks and a toxic venom that lingers, they are a formidable opponent, leaving their foes weakened and writhing in pain.
+
+Spider King
+ The Spider King, a formidable creature with legs that scuttle across the ground with eerie grace, strikes fear into the hearts of their adversaries. they possess an unmatched agility and speed that sets them apart. Their strikes may be less damaging, but their swift movements make them a relentless and elusive foe.
+
+Shadow
+Shadow, a formidable and enigmatic adversary, emerges from the depths of darkness to sow chaos among the heroes. With a perfect balance of strength, speed, and resilience, they strike fear into the hearts of their adversaries. Shadow is a relentless force, inflicting decent damage while swiftly maneuvering through the battlefield.
+
+Phantom
+Phantom, a haunting and ethereal presence. Their movements may be ponderous, but their tremendous health and ability to phase through enemies make them an indomitable and relentless threat. They glide through the heroes, inflicting damage as they pass, leaving an unsettling trail of spectral energy in their wake.
+
+Golem
+ Golem, a colossal and formidable force of destruction, towers over the battlefield with an intimidating presence. Bound together by raw strength and fortified with extraordinary endurance, they strike fear into the hearts of heroes. Golem is a slow-moving juggernaut, capable of enduring immense punishment while delivering devastating blows.
+
+Ice dragon
+The Ice Dragon, a majestic and fearsome creature of frost and fury, dominates the battlefield with their icy breath and piercing gaze. They strike terror into the hearts of heroes, their attacks capable of piercing through multiple adversaries, leaving a trail of freezing devastation in their wake.
+
+Fire Dragon
+The Fire Dragon, a majestic and fearsome creature of flames and fury, dominates the battlefield with their scorching breath and blazing presence. They instill terror in the hearts of heroes, their attacks capable of engulfing multiple adversaries in fiery destruction, leaving behind a trail of ash and devastation.
+
+
