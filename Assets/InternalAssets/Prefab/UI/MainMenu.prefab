@@ -747,7 +747,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: ClosePopup
+  id: 4
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -987,7 +987,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: ClosePopup
+  id: 4
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: ClosePopup
+  id: 4
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -1520,7 +1520,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: ClosePopup
+  id: 4
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -2415,7 +2415,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -4288,7 +4288,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: ClosePopup
+  id: 4
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -4812,6 +4812,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WaveSystem, Assembly-CSharp
+        m_MethodName: GenerateWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &3912216550064335355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4886,7 +4910,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: Difficulty
+  id: 1
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -5167,7 +5191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2662449708076466204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5513,6 +5537,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WaveSystem, Assembly-CSharp
+        m_MethodName: GenerateWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &3481720939828043898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5587,7 +5635,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: Difficulty
+  id: 1
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -5717,6 +5765,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WaveSystem, Assembly-CSharp
+        m_MethodName: GenerateWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &7562282628755643439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5791,7 +5863,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: Difficulty
+  id: 1
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -6865,7 +6937,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -7378,7 +7450,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -8162,7 +8234,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Menu
+  id: 0
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -8401,7 +8473,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Menu
+  id: 0
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -8642,7 +8714,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Menu
+  id: 0
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -8881,7 +8953,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Menu
+  id: 0
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -9196,7 +9268,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Menu
+  id: 0
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -9910,7 +9982,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -10062,7 +10134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8692732139855850835
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10564,7 +10636,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -11154,7 +11226,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -11529,7 +11601,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 2
   loops: 1
-  id: Difficulty
+  id: 1
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -11891,7 +11963,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
@@ -13176,7 +13248,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: Settings
+  id: 3
   isRelative: 0
   isFrom: 1
   isIndependentUpdate: 1
