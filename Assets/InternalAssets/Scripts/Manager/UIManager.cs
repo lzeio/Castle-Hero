@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     //[SerializeField] private DOTweenAnimation GameAnimation;
     [SerializeField] private DOTweenAnimation UIAnimation;
     [SerializeField] private int CurrentMenuAnim = 0;
+    [SerializeField] private int CurrentGameAnim = 0;
 
     [Header("Settings")]
     [SerializeField] private GameObject[] SettingsQualityHighlights;
@@ -83,12 +84,12 @@ public class UIManager : MonoBehaviour
 
     private void Castle_OnCastleHealthUpdated(int health)
     {
-        castleHealthBar.fillAmount = (float)health / 10000;
+        castleHealthBar.fillAmount = (float)health / 5000;
         if(castleHealthBar.fillAmount < 0.20) 
         {
             castleHealthBar.gameObject.SetActive(false);
         }
-        RedhealthBar.fillAmount = (float)health / 10000;
+        RedhealthBar.fillAmount = (float)health / 5000;
         if(health<= 0) 
         {
             SelectGamePanel(2);
@@ -143,15 +144,7 @@ public class UIManager : MonoBehaviour
     }
     public void SelectGamePanel(int index)
     {
-        ResetPanels();
-        GameUIPanels[index].SetActive(true);
-        if(index == 1)
-        {
-            SetSoundLevels(GameData.GetSoundLevel());
-            SetMusicLevels(GameData.GetMusicLevel());
-            AudioManager.Instance.SFXLevels(0f);
-            GameplayManager.Instance.SpawnManager.DisableSpawning();
-        }
+        GameUIAnim(index);
         OnButtonClicked?.Invoke();
     }
     public void SelectMenuPanel(int index)
@@ -207,7 +200,12 @@ public class UIManager : MonoBehaviour
     {
         UIAnimation.DOPlayBackwardsAllById(CurrentMenuAnim + "");
         Debug.Log("Anim rewind");
-        DOVirtual.DelayedCall(2f, () => DelayedAnim(index));
+        DOVirtual.DelayedCall(1f, () => DelayedAnim(index));
+    }
+    void GameUIAnim(int index)
+    {
+        UIAnimation.DOPlayBackwardsAllById(CurrentGameAnim + "");
+        DOVirtual.DelayedCall(1f, ()=> DelayedGameAnim(index));
     }
     void DelayedAnim( int index)
     {
@@ -215,6 +213,21 @@ public class UIManager : MonoBehaviour
         MenuUIPanels[index].SetActive(true);
         UIAnimation.DORestartAllById(index + "");
         CurrentMenuAnim = index;
+    }
+    void DelayedGameAnim(int index )
+    {
+        ResetPanels();
+        GameUIPanels[index].SetActive(true);
+        if (index == 1)
+        {
+            SetSoundLevels(GameData.GetSoundLevel());
+            SetMusicLevels(GameData.GetMusicLevel());
+            AudioManager.Instance.SFXLevels(0f);
+            GameplayManager.Instance.SpawnManager.DisableSpawning();
+
+        }
+        CurrentGameAnim = index;
+        UIAnimation.DORestartAllById(index + "");
     }
     public void ReloadScene()
     {
