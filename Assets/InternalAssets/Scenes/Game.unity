@@ -239,6 +239,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &210620717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 210620717, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+  m_PrefabInstance: {fileID: 1371547819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &218551474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 218551474, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+  m_PrefabInstance: {fileID: 1371547819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &257662138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5779834226467941660, guid: aeac250105bafb542b8eaa59a7f3a544, type: 3}
@@ -278,30 +294,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
-      propertyPath: SFXMixer
-      value: 
-      objectReference: {fileID: -4291701649397139796, guid: fb85d190701a8114c918f86204132bfd, type: 2}
-    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
-      propertyPath: MusicMixer
-      value: 
-      objectReference: {fileID: -4820349262867671754, guid: fb85d190701a8114c918f86204132bfd, type: 2}
-    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3705893970584690808, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3705893970584690813, guid: 08f803e328d632f4a86f2abb4abcfeb7, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1821,6 +1813,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f363e615b013c74cb3363532cc89700, type: 3}
+--- !u!1 &2121559018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2121559020}
+  - component: {fileID: 2121559019}
+  m_Layer: 0
+  m_Name: ToolTipManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2121559019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121559018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b501a52975393284da5c00e7995a12f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tooltip: {fileID: 218551474}
+  textComponenet: {fileID: 210620717}
+--- !u!4 &2121559020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121559018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.982433, y: -11.616051, z: -13.079827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2511511342905378889
 PrefabInstance:
   m_ObjectHideFlags: 0
