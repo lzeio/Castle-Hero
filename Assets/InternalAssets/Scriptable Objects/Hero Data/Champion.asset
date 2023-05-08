@@ -18,16 +18,16 @@ MonoBehaviour:
   AttackRange: 40
   Reward: 0
   Base_Damage: 12
-  Base_Health: 300
+  Base_Health: 350
   Cost: 500
   TierI_AttackDamage: 18
-  TierI_Health: 500
-  TierI_Cost: 1000
+  TierI_Health: 600
+  TierI_Cost: 5000
   TierII_AttackDamage: 24
-  TierII_Health: 800
-  TierII_Cost: 1500
+  TierII_Health: 1000
+  TierII_Cost: 10000
   TierIII_AttackDamage: 30
-  TierIII_Health: 1000
-  TierIII_Cost: 2000
+  TierIII_Health: 1200
+  TierIII_Cost: 20000
   Movable: 0
   Projectile: {fileID: 0}
