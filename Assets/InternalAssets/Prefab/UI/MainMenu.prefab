@@ -530,7 +530,7 @@ RectTransform:
   - {fileID: 8988984299542818765}
   - {fileID: 707137014817164784}
   m_Father: {fileID: 8692732139855850835}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10084,8 +10084,8 @@ RectTransform:
   - {fileID: 2297540881094374546}
   - {fileID: 2297540881141210242}
   - {fileID: 2297540880745862291}
-  - {fileID: 2022436062517075000}
   - {fileID: 3265669376395596869}
+  - {fileID: 2022436062517075000}
   m_Father: {fileID: 4170593501933972465}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10120,10 +10120,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 70261a2af157def45b227fc4c6cdf501, type: 2}
   - {fileID: 11400000, guid: a64361d39a778f04aac109f2f100b18e, type: 2}
   - {fileID: 11400000, guid: 2f8d7b1cc5321bb4e96b7663afb640b2, type: 2}
-  content: {fileID: 2297540880745862290}
+  content: {fileID: 8376063681108397443}
   Name: {fileID: 2297540880493625077}
   profile: {fileID: 2297540881430759089}
-  Stats: {fileID: 0}
+  Attack: {fileID: 1262639791337060233}
+  Health: {fileID: 8030017285060890814}
 --- !u!222 &3999066444699771031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12761,7 +12762,7 @@ RectTransform:
   m_Children:
   - {fileID: 2553040881926227406}
   m_Father: {fileID: 8692732139855850835}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

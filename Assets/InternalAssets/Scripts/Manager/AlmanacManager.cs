@@ -10,7 +10,8 @@ public class AlmanacManager : MonoBehaviour
     public TMP_Text content;
     public TMP_Text Name;
     public Image profile;
-    public TMP_Text Stats;
+    public TMP_Text Attack;
+    public TMP_Text Health;
 
 
     int currentIndex = 0;
@@ -19,8 +20,9 @@ public class AlmanacManager : MonoBehaviour
     {
         content.text = data[currentIndex].Info;
         Name.text = data[currentIndex].Name;
-        Stats.text = data[currentIndex].characterData.Base_Damage.ToString();
+        UpdateHealthAndAttackText();
         profile.sprite = data[currentIndex].characterImage;
+        currentIndex++;
     }
 
     // Update is called once per frame
@@ -42,8 +44,8 @@ public class AlmanacManager : MonoBehaviour
         }
         content.text = data[currentIndex].Info;
         Name.text = data[currentIndex].Name;
-        Stats.text = data[currentIndex].characterData.Base_Damage.ToString();
         profile.sprite = data[currentIndex].characterImage;
+        UpdateHealthAndAttackText();
         currentIndex--;
     }
     public void OnRightButtonClicked()
@@ -55,8 +57,18 @@ public class AlmanacManager : MonoBehaviour
         }
         content.text = data[currentIndex].Info;
         Name.text = data[currentIndex].Name;
-        Stats.text = data[currentIndex].characterData.Base_Damage.ToString();
+        Attack.text = data[currentIndex].characterData.Base_Damage.ToString();
         profile.sprite = data[currentIndex].characterImage;
         currentIndex++;
+    }
+    public void UpdateHealthAndAttackText()
+    {
+        //Attack String 
+        Attack.text = $"Base Attack:{data[currentIndex].characterData.Base_Damage} \r\nTier I Attack:{data[currentIndex].characterData.TierI_AttackDamage}" +
+            $"\r\nTier II Attack:{data[currentIndex].characterData.TierII_AttackDamage} \r\nTier III Attack:{data[currentIndex].characterData.TierIII_AttackDamage}";
+        //Health String
+        Health.text = $"Base Health:{data[currentIndex].characterData.Base_Health} \r\nTier I Health:{data[currentIndex].characterData.TierI_Health}" +
+            $"\r\nTier II Health:{data[currentIndex].characterData.TierII_Health} \r\nTier III Health:{data[currentIndex].characterData.TierIII_Health}";
+        //
     }
 }
