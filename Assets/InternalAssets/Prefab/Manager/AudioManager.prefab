@@ -48,22 +48,22 @@ MonoBehaviour:
   - source: {fileID: 0}
     clip: {fileID: 8300000, guid: b950a1298dd86d149b800c51eeda4336, type: 3}
     clipName: HeroesSpawn
-    volume: 0
+    volume: 1
     loop: 0
   - source: {fileID: 0}
     clip: {fileID: 8300000, guid: 70fa83e9e8a9cde4eb69a37f969cad99, type: 3}
     clipName: ChampionSpawn
-    volume: 0
+    volume: 1
     loop: 0
   - source: {fileID: 0}
     clip: {fileID: 8300000, guid: 07bb9678f90455e4eb3d73ed05c90a1f, type: 3}
     clipName: Upgrade
-    volume: 0
+    volume: 1
     loop: 0
   - source: {fileID: 0}
     clip: {fileID: 8300000, guid: a06d7f5c3bdce8442bce6cf9415c9b16, type: 3}
     clipName: Theme
-    volume: 0
+    volume: 1
     loop: 0
   - source: {fileID: 0}
     clip: {fileID: 8300000, guid: 692fd95be27060743bbe87f5ad4449b2, type: 3}
@@ -80,4 +80,5 @@ MonoBehaviour:
     clipName: TurnPage
     volume: 1
     loop: 0
-  AudioMixer: {fileID: 24300002, guid: fb85d190701a8114c918f86204132bfd, type: 2}
+  SFXMixer: {fileID: -4291701649397139796, guid: fb85d190701a8114c918f86204132bfd, type: 2}
+  MusicMixer: {fileID: -4820349262867671754, guid: fb85d190701a8114c918f86204132bfd, type: 2}

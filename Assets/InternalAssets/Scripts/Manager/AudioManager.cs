@@ -6,13 +6,12 @@ using UnityEngine.UIElements;
 public partial class AudioManager : MonoBehaviour
 {
 
-    public Sound[] sounds;
+   [SerializeField] private AudioMixerGroup SFXMixer;
+   [SerializeField] private AudioMixerGroup MusicMixer;
+   [SerializeField] private Sound[] sounds;
 
     public static AudioManager Instance;
     //AudioManager
-
-    public AudioMixerGroup SFXMixer;
-    public AudioMixerGroup MusicMixer;
     void Awake()
     {
         if (Instance == null)
@@ -72,7 +71,7 @@ public partial class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.clipName == name);
-        if (s == null || s.source.isPlaying)
+        if (s == null)
         {
             Debug.LogWarning("Sound: " + name + " not found");
             return;
