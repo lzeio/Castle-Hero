@@ -23,10 +23,12 @@ public class WaveSystem : MonoBehaviour
     public int level;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
+
+    public List<GameObject> EnemiesGameObject;
     // Start is called before the first frame update
     void Start()
     {
-        GenerateWave();
+        
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class WaveSystem : MonoBehaviour
                 enemiesToSpawn.RemoveAt(0); // and remove it
                 spawnedEnemies.Add(enemy);
                 spawnTimer = spawnInterval;
+                EnemiesGameObject.Add(enemy);
 
                 if (spawnIndex + 1 <= spawnLocation.Length - 1)
                 {
@@ -107,6 +110,19 @@ public class WaveSystem : MonoBehaviour
         {
             spawnedEnemies.Remove(gameObject);
         }
+    }
+
+    public void ResetWaveSystem()
+    {
+        foreach (GameObject item in EnemiesGameObject)
+        {
+            Destroy(item);
+        }
+
+        EnemiesGameObject.Clear();
+        currWave = 1;
+        waveDuration = 15;
+        waveTimer = 0;
     }
 }
 

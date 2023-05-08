@@ -42,6 +42,7 @@ public class UpgradeableComponent : MonoBehaviour
     public void Retire()
     {
         GameplayManager.Instance.GridManager_Two.Grid[statSystem.rowPosition, statSystem.colPosition].GetComponent<Tile>().IsOccupied = false;
+        GameplayManager.Instance.SpawnManager.SpawnHeroes.Remove(this.gameObject);
         Destroy(gameObject);
     }
 

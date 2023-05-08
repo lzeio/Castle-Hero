@@ -83,6 +83,8 @@ public class StatSystem : MonoBehaviour
             OnDeath?.Invoke(gameObject);
             GameplayManager.Instance.CoinsManager.AddCoins(characterData.Reward);
             GameplayManager.Instance.GridManager_Two.Grid[rowPosition, colPosition].GetComponent<Tile>().IsOccupied = false;
+            GameplayManager.Instance.SpawnManager.SpawnHeroes.Remove(this.gameObject);
+            GameplayManager.Instance.WaveSystem.EnemiesGameObject.Remove(this.gameObject);  
             onDeath(gameObject.layer);
         }
 

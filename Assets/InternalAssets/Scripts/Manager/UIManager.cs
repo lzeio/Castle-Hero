@@ -7,6 +7,7 @@ using DG.Tweening;
 using UnityEditor;
 using System.Collections;
 using System.Reflection;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -214,6 +215,14 @@ public class UIManager : MonoBehaviour
         MenuUIPanels[index].SetActive(true);
         UIAnimation.DORestartAllById(index + "");
         CurrentMenuAnim = index;
+    }
+    public void ReloadScene()
+    {
+        // Get the current active scene
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Reload the current scene
+        SceneManager.LoadScene(currentScene.name);
     }
 
 }

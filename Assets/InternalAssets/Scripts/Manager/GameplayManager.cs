@@ -66,4 +66,12 @@ public class GameplayManager : MonoBehaviour
 
         Debug.Log("Current Timescale Multiplier: " + timeScale.ToString());
     }
+
+    public void ResetGame()
+    {
+        WaveSystem.ResetWaveSystem();
+        SpawnManager.ResetSpawnCharacter();
+        FindObjectOfType<Castle>().Health = 5000;
+        Time.timeScale = 0f;
+    }
 }

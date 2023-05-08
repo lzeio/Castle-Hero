@@ -11,6 +11,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Button championButton;
     public List<CharacterData> Heroes = default;
 
+    public List<GameObject> SpawnHeroes;
+
     private void Start()
     {
         InputManager.TrySpawnHero += SpawnHero;
@@ -70,11 +72,12 @@ public class SpawnManager : MonoBehaviour
         GameObject _hero = Instantiate(Heroes[heroIndex].CharacterPrefab);
         _hero.transform.position = cellPos + new Vector3(0, 0, 1f);
         SetPosition(_hero, row, col);
+        SpawnHeroes.Add(_hero);
         if (heroIndex == 5)
         {
             hasChampion = true;
             championButton.interactable = false;
-            OnHeroSpawn?.Invoke(true);
+            OnHeroSpawn?.Invoke(hasChampion);
             return;
         }
         OnHeroSpawn?.Invoke(false);
@@ -100,5 +103,15 @@ public class SpawnManager : MonoBehaviour
     public void DisableSpawning()
     {
         heroIndex = 80;
+    }
+
+    public void ResetSpawnCharacter()
+    {
+        foreach (GameObject item in SpawnHeroes)
+        {
+            Destroy(item);
+        }
+
+        SpawnHeroes.Clear();
     }
 }
