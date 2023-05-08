@@ -7515,8 +7515,8 @@ MonoBehaviour:
   id: GamePlayUI
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
-  autoKill: 1
+  isIndependentUpdate: 1
+  autoKill: 0
   isActive: 1
   isValid: 1
   target: {fileID: 5081900006606718226}
@@ -7735,8 +7735,8 @@ MonoBehaviour:
   id: GamePlayUI
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
-  autoKill: 1
+  isIndependentUpdate: 1
+  autoKill: 0
   isActive: 1
   isValid: 1
   target: {fileID: 5081900006896797528}
@@ -8171,8 +8171,8 @@ MonoBehaviour:
   id: GamePlayUI
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
-  autoKill: 1
+  isIndependentUpdate: 1
+  autoKill: 0
   isActive: 1
   isValid: 1
   target: {fileID: 5081900006969755632}
@@ -9016,7 +9016,7 @@ MonoBehaviour:
   id: GamePlayUI
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -9729,7 +9729,7 @@ MonoBehaviour:
   id: GamePlayUI
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -10561,7 +10561,7 @@ MonoBehaviour:
   id: HighScore
   isRelative: 0
   isFrom: 0
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1

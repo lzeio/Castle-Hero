@@ -427,7 +427,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -953,7 +953,7 @@ MonoBehaviour:
   id: ClosePopup
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   id: ClosePopup
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   id: ClosePopup
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   id: ClosePopup
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -3601,8 +3601,8 @@ MonoBehaviour:
   id: Almanac
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
-  autoKill: 1
+  isIndependentUpdate: 1
+  autoKill: 0
   isActive: 1
   isValid: 1
   target: {fileID: 2297540881094374546}
@@ -3841,8 +3841,8 @@ MonoBehaviour:
   id: Almanac
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
-  autoKill: 1
+  isIndependentUpdate: 1
+  autoKill: 0
   isActive: 1
   isValid: 1
   target: {fileID: 2297540881141210242}
@@ -4905,7 +4905,7 @@ MonoBehaviour:
   id: ClosePopup
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -5781,7 +5781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2662449708076466204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8043,8 +8043,8 @@ RectTransform:
   m_Father: {fileID: 1189305400057634156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.8099861}
   m_SizeDelta: {x: 151, y: 133.94002}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   id: Menu
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -8748,7 +8748,7 @@ MonoBehaviour:
   id: Menu
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -9228,7 +9228,7 @@ MonoBehaviour:
   id: Menu
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -9543,7 +9543,7 @@ MonoBehaviour:
   id: Menu
   isRelative: 0
   isFrom: 1
-  isIndependentUpdate: 0
+  isIndependentUpdate: 1
   autoKill: 0
   isActive: 1
   isValid: 1
@@ -9881,7 +9881,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10114,7 +10114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3409498273999625682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10649,8 +10649,8 @@ RectTransform:
   m_Father: {fileID: 7589639425122304777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.8099861}
   m_SizeDelta: {x: 151, y: 133.94002}
   m_Pivot: {x: 0.5, y: 0.5}
