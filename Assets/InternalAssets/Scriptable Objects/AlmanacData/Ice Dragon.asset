@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Ice Dragon
   m_EditorClassIdentifier: 
   Name: Ice Dragon
-  Info: 
+  Info: The Ice Dragon, a majestic and fearsome creature of frost and fury, dominates
+    the battlefield with their icy breath and piercing gaze. They strike terror into
+    the hearts of heroes, their attacks capable of piercing through multiple adversaries,
+    leaving a trail of freezing devastation in their wake.
   characterImage: {fileID: 21300000, guid: 45cd938c0c5cd12428b770292f8ebb2a, type: 3}
   characterData: {fileID: 11400000, guid: d1e7ed41feac6f6469948d0d47dcc119, type: 2}

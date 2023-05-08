@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Cannon
   m_EditorClassIdentifier: 
   Name: Cannon
-  Info: 
+  Info: 'cannon strikes terror into the hearts of its foes. While its range is limited,
+    its devastating firepower and destructive force make it a formidable presence
+    on the battlefield. '
   characterImage: {fileID: 21300000, guid: 80cf5b6b3ab528f43aefe21f227140f6, type: 3}
   characterData: {fileID: 11400000, guid: be21212cd5484d547bcf725e634dc461, type: 2}

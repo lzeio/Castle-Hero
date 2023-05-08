@@ -35,8 +35,7 @@ ROOK
 The Rook, an embodiment of fortitude and unyielding resilience, stands as an immovable wall on the battlefield. With an imposing presence and an unwavering commitment to protect their allies, they serve as the ultimate shield, soaking up damage and damages the enemy only on the enemies first attack.
 
 CHAMPION
-The Fire Dragon, a majestic and fearsome creature of flames and fury, dominates the battlefield with their scorching breath and blazing presence. They instill terror in the hearts of heroes, their attacks capable of engulfing multiple adversaries in fiery destruction, leaving behind a trail of ash and devastation.
-
+The Champion, a formidable warrior renowned for their indomitable spirit and unmatched combat prowess, stands tall as a beacon of strength on the battlefield. Clad in impenetrable armor and wielding a mighty weapon, they are both a formidable defender and a relentless aggressor. The Champion possesses extraordinary abilities that enable them to retaliate against attackers, while boasting exceptional health and delivering lightning-fast attacks with substantial damage.
 Stinger
 Stinger, the nefarious bee, buzzes with malevolence and a venomous sting that strikes fear into the hearts of their adversaries. With a deadly combination of regular attacks and a toxic venom that lingers, they are a formidable opponent, leaving their foes weakened and writhing in pain.
 

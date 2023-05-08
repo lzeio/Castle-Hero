@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Phantom
   m_EditorClassIdentifier: 
   Name: Phantom
-  Info: 
+  Info: 'Phantom, a haunting and ethereal presence. Their movements may be ponderous,
+    but their tremendous health and ability to phase through enemies make them an
+    indomitable and relentless threat. They glide through the heroes, inflicting
+    damage as they pass, leaving an unsettling trail of spectral energy in their
+    wake. '
   characterImage: {fileID: 21300000, guid: 071bdca4204ef3b49972b6057b5e5c53, type: 3}
   characterData: {fileID: 11400000, guid: fbf890bcf71e8784fae6c6f54867f053, type: 2}

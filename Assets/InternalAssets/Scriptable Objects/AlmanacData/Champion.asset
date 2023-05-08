@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Champion
   m_EditorClassIdentifier: 
   Name: Champion
-  Info: 
+  Info: 'The Champion are both a formidable defender and a relentless aggressor.
+    The Champion possesses extraordinary abilities that enable them to retaliate
+    against attackers, while boasting exceptional health and delivering lightning-fast
+    attacks with substantial damage. '
   characterImage: {fileID: 21300000, guid: 0c001f0daf947ac4eb2d7a733f3aabf3, type: 3}
   characterData: {fileID: 11400000, guid: 2869ab48b0946784bba89316798850ec, type: 2}

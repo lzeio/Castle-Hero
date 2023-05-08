@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8ac6a2a69e73845957002c522d9d11, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  Name: Archer Anna
-  Info: Arrow Mare Karta
+  Name: Archer
+  Info: 'The archer is a master of precision and deadly accuracy. Armed with a longbow,
+    this agile and skilled warrior dominates the battlefield from afar. Their shots
+    rain down upon enemies like a storm, making them a formidable force to be reckoned
+    with. '
   characterImage: {fileID: 21300000, guid: 3290eeeb97a8f434ea64adb156bf599a, type: 3}
   characterData: {fileID: 11400000, guid: 13de533b15c50884fbbc9f71e00a1481, type: 2}

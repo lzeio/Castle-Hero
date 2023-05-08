@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   Name: Golem
-  Info: 
+  Info: 'Golem, a colossal and formidable force of destruction, towers over the battlefield
+    with an intimidating presence. Bound together by raw strength and fortified with
+    extraordinary endurance, they strike fear into the hearts of heroes. Golem is
+    a slow-moving juggernaut, capable of enduring immense punishment while delivering
+    devastating blows. '
   characterImage: {fileID: 21300000, guid: 81ea5fa45fa9fb347a9268b5bf958a1e, type: 3}
   characterData: {fileID: 11400000, guid: 60bceb1007f0c9b43aa0a9e93f62f465, type: 2}

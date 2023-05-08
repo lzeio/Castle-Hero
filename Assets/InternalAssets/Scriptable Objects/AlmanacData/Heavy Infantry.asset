@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Heavy Infantry
   m_EditorClassIdentifier: 
   Name: Heavy Infantry
-  Info: Heavy Inf
+  Info: The heavy infantry, a juggernaut of strength and fortitude, stands tall as
+    an immovable force on the battlefield. Armed with massive, imposing weaponry,
+    they strike fear into the hearts of their foes. Every swing of their mighty weapon
+    carries unparalleled power, making them a formidable and relentless adversary.
   characterImage: {fileID: 21300000, guid: cb349972611aef044b9c21025696c824, type: 3}
   characterData: {fileID: 11400000, guid: 7d7737a69c23e35479ddaa46b416e477, type: 2}

@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: SpiderKing
   m_EditorClassIdentifier: 
   Name: Stinger
-  Info: 
+  Info: The Spider King, a formidable creature with legs that scuttle across the
+    ground with eerie grace, strikes fear into the hearts of their adversaries. they
+    possess an unmatched agility and speed that sets them apart. Their strikes may
+    be less damaging, but their swift movements make them a relentless and elusive
+    foe.
   characterImage: {fileID: 21300000, guid: 85c53a461f251014dba38db92b866e11, type: 3}
   characterData: {fileID: 11400000, guid: df264e6a1653dbf4cbadac3b6fdeb915, type: 2}

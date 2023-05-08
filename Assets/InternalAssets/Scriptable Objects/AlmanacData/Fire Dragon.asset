@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Fire Dragon
   m_EditorClassIdentifier: 
   Name: Fire Dragon
-  Info: 
+  Info: 'The Fire Dragon, a majestic and fearsome creature of flames and fury, dominates
+    the battlefield with their scorching breath and blazing presence. They instill
+    terror in the hearts of heroes, their attacks capable of engulfing multiple adversaries
+    in fiery destruction, leaving behind a trail of ash and devastation. The Fire
+    Dragon, a majestic and fearsome creature of flames and fury, dominates the battlefield
+    with their scorching breath and blazing presence. They instill terror in the
+    hearts of heroes, their attacks capable of engulfing multiple adversaries in
+    fiery destruction, leaving behind a trail of ash and devastation. '
   characterImage: {fileID: 21300000, guid: af3dc55b0daa24040ba451442a577f31, type: 3}
   characterData: {fileID: 11400000, guid: 13474997cfbdf5d4aa06b4c80cfdd3a2, type: 2}

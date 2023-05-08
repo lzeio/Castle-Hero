@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8ac6a2a69e73845957002c522d9d11, type: 3}
   m_Name: Light Infantry
   m_EditorClassIdentifier: 
-  Name: Light Light
-  Info: Lightttttt
+  Name: Light Infantry
+  Info: The light infantry is a swift and nimble warrior, armed with quick and agile
+    melee attacks that allow them to swiftly engage and disorient their enemies.
+    While their individual strikes may lack raw power, their lightning-fast speed
+    and relentless assault make them a formidable force on the battlefield.
   characterImage: {fileID: 21300000, guid: ac5aca30c3b9c6c4783eb7642bbbff60, type: 3}
   characterData: {fileID: 11400000, guid: 3c62f38af88131e42b3df75a87ce28f3, type: 2}
