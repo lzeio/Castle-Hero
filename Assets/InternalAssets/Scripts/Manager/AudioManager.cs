@@ -6,9 +6,9 @@ using UnityEngine.UIElements;
 public partial class AudioManager : MonoBehaviour
 {
 
-   [SerializeField] private AudioMixerGroup SFXMixer;
-   [SerializeField] private AudioMixerGroup MusicMixer;
-   [SerializeField] private Sound[] sounds;
+    [SerializeField] private AudioMixerGroup SFXMixer;
+    [SerializeField] private AudioMixerGroup MusicMixer;
+    [SerializeField] private Sound[] sounds;
 
     public static AudioManager Instance;
     //AudioManager
@@ -22,7 +22,12 @@ public partial class AudioManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        SpawnManager.OnHeroSpawn += SpawnManager_OnHeroSpawn;
+        UIManager.OnButtonClicked += UIManager_OnButtonClicked;
+        StatSystem.onDeath += StatSystem_onDeath;
+        WaveSystem.OnWaveCountUpdated += WaveSystem_OnWaveCountUpdated;
+        SFXLevels(GameData.GetSoundLevel());
+        MusicLevels(GameData.GetMusicLevel());
 
         foreach (Sound s in sounds)
         {
@@ -33,12 +38,6 @@ public partial class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.outputAudioMixerGroup = SFXMixer;
         }
-        SpawnManager.OnHeroSpawn += SpawnManager_OnHeroSpawn;
-        UIManager.OnButtonClicked += UIManager_OnButtonClicked;
-        StatSystem.onDeath += StatSystem_onDeath;
-        WaveSystem.OnWaveCountUpdated += WaveSystem_OnWaveCountUpdated;
-        SFXLevels(GameData.GetSoundLevel());
-        MusicLevels(GameData.GetMusicLevel());
     }
 
     private void WaveSystem_OnWaveCountUpdated(int obj)
@@ -104,8 +103,8 @@ public partial class AudioManager : MonoBehaviour
     {
         MusicMixer.audioMixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
     }
-    
-    
+
+
 }
 
 [System.Serializable]

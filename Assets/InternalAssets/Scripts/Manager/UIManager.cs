@@ -62,13 +62,13 @@ public class UIManager : MonoBehaviour
     private void GameplayManager_OnTimeScaleChanged(float time)
     {
         TimeScale.text = $"{time}X";
-        //Time Audio here
+        
     }
 
     private void WaveSystem_OnWaveCountUpdated(int count)
     {
         waveCount.text = $"WAVE : {count.ToString()}";
-        //New Wave Audio here
+      
     }
 
     private void Castle_OnCastleHealthUpdated(int health)
