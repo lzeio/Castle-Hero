@@ -575,6 +575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &998632671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4619742206451745438, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
+  m_PrefabInstance: {fileID: 1371547819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1060155297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5813007771690466712, guid: aeac250105bafb542b8eaa59a7f3a544, type: 3}
@@ -842,6 +847,10 @@ PrefabInstance:
       value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
+      propertyPath: NewWave
+      value: 
+      objectReference: {fileID: 998632671}
+    - target: {fileID: 6037587242631730949, guid: 57372ba810b9ba644aa4185391f7e4fe, type: 3}
       propertyPath: TimeScale
       value: 
       objectReference: {fileID: 1371547827}
@@ -1013,10 +1022,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1278012895}
-    - target: {fileID: 3376668351246590994, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: isIndependentUpdate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4808337856547538226, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1025,34 +1030,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1278012895}
-    - target: {fileID: 5081900006606718231, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: autoKill
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5081900006606718231, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: isIndependentUpdate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5081900006896797535, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: autoKill
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5081900006896797535, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: isIndependentUpdate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5081900006945428828, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1741246856}
-    - target: {fileID: 5081900006969755636, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: autoKill
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5081900006969755636, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: isIndependentUpdate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5081900006969755639, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1065,10 +1046,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1741246856}
-    - target: {fileID: 5081900007195865377, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: isIndependentUpdate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5081900007195865388, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1169,10 +1146,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1741246856}
-    - target: {fileID: 5081900007793753544, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
-      propertyPath: isIndependentUpdate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5081900008466757786, guid: 81e677cb16d2e2e4eb5870c27697262f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

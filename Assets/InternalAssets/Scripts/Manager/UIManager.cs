@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
+
 public class UIManager : MonoBehaviour
 {
 
@@ -18,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject NewHighScorePopup;
+    [SerializeField] private DOTweenAnimation NewWave;
 
     [Header("UIPanels")]
     [SerializeField] private GameObject[] GameUIPanels;
@@ -68,7 +71,7 @@ public class UIManager : MonoBehaviour
     private void WaveSystem_OnWaveCountUpdated(int count)
     {
         waveCount.text = $"WAVE : {count.ToString()}";
-      
+        NewWave.DORestartAllById("NewWave");
     }
 
     private void Castle_OnCastleHealthUpdated(int health)
