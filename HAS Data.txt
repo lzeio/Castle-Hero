@@ -1,18 +1,18 @@
 Villains(H/A/S/C)
-- Stinger - 100/2^t where t=5f/5/4
-- SpiderKing- 150/3/3/1
-- Shadow-	100/2/2.5/1
+- Stinger - 100/7^t where t=5f/5/4
+- SpiderKing- 100/5/10/1
+- Shadow-	100/8/4/1
 - Golem- 400/2.5/1/8
-- Ice D- 200/12/5/10
-- Fire D- 200/12/5/10
+- Ice D- 150/15/5/10
+- Fire D- 150/15/5/10
 - Phantom- 500/25/0.5/5
 
 Heroes(H/A/C)
-- Archer- 100/10/
-- Cannon- 150/15/
-- Light Infantry- 100/10/
-- Heavy Infantry - 100/18
-- Rook -1000/15
+- Archer- 100/10/100
+- Cannon- 150/15/250
+- Light Infantry- 100/10/150
+- Heavy Infantry - 200/18/300
+- Rook -500/15/150
 
 
 
