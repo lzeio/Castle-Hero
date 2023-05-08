@@ -48,14 +48,15 @@ public class StatSystem : MonoBehaviour
                 damage = characterData.TierI_AttackDamage;
                 NextUpgradeLevel++;
                 GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
+                GameplayManager.Instance.UpgradeSystem._upgradeable.TierLevel.sprite=GameplayManager.Instance.UpgradeSystem.TierI;
                 NextUpgradeCost = characterData.TierII_Cost;
-
                 break;      
             case 2:
                 health = characterData.TierII_Health;
                 damage = characterData.TierII_AttackDamage;
                 NextUpgradeLevel++;
                 GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
+                GameplayManager.Instance.UpgradeSystem._upgradeable.TierLevel.sprite = GameplayManager.Instance.UpgradeSystem.TierI2;
                 NextUpgradeCost = characterData.TierII_Cost;
 
                 break;
@@ -63,6 +64,7 @@ public class StatSystem : MonoBehaviour
                 health = characterData.TierIII_Health;
                 damage = characterData.TierIII_AttackDamage;
                 GameplayManager.Instance.CoinsManager.AddCoins(-NextUpgradeCost);
+                GameplayManager.Instance.UpgradeSystem._upgradeable.TierLevel.sprite = GameplayManager.Instance.UpgradeSystem.TierI3;
                 NextUpgradeCost = int.MaxValue;
                 break;
             default:

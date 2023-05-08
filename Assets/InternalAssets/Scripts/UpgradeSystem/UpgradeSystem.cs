@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class UpgradeSystem : MonoBehaviour
 {
+
     public UpgradeableComponent _upgradeable;
+
+    public Sprite TierI;
+    public Sprite TierI2;
+    public Sprite TierI3;
     // Start is called before the first frame update
     void Start()
     {

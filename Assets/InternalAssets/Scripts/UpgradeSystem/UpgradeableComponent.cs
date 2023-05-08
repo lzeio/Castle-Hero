@@ -8,12 +8,12 @@ using TMPro;
 public class UpgradeableComponent : MonoBehaviour
 {
     public event Action OnUpgrade;
-   [SerializeField] private GameObject UI;
-   [SerializeField] private Button upgradeButton;
-   [SerializeField] private Button retireButton;
-   [SerializeField] private TMP_Text health;
-   [SerializeField] private TMP_Text attack;
-
+    public Image TierLevel;
+    [SerializeField] private GameObject UI;
+    [SerializeField] private Button upgradeButton;
+    [SerializeField] private Button retireButton;
+    [SerializeField] private TMP_Text health;
+    [SerializeField] private TMP_Text attack;
 
     private CharacterData characterData;
     private StatSystem statSystem;
@@ -36,7 +36,7 @@ public class UpgradeableComponent : MonoBehaviour
 
     public void Upgrade()
     {
-        OnUpgrade?.Invoke();    
+        OnUpgrade?.Invoke();
     }
 
     public void Retire()
@@ -44,8 +44,8 @@ public class UpgradeableComponent : MonoBehaviour
         GameplayManager.Instance.GridManager_Two.Grid[statSystem.rowPosition, statSystem.colPosition].GetComponent<Tile>().IsOccupied = false;
         Destroy(gameObject);
     }
-    
-    public  void ToggleUI(bool toggle)
+
+    public void ToggleUI(bool toggle)
     {
         UI.SetActive(toggle);
     }

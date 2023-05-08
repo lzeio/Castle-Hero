@@ -1627,6 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f98e5fc4888abc44b90f8b439a5fd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TierLevel: {fileID: 1858510750271098157}
   UI: {fileID: 3248416282285000171}
   upgradeButton: {fileID: 5890712847374101347}
   retireButton: {fileID: 2576003902831842227}
@@ -3023,6 +3024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 831388722183628436, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 831388722183628440, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3105,7 +3110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 831388722183628440, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.25
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 831388722183628440, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3129,6 +3134,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
+--- !u!114 &1858510750271098157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4564362388170829394, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
+  m_PrefabInstance: {fileID: 2782413982889419647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2576003902831842227 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 370090255073407180, guid: 9a8c9f9f7a51da045b1d5e11b9ae6be7, type: 3}
