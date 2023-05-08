@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8ac6a2a69e73845957002c522d9d11, type: 3}
   m_Name: Rook
   m_EditorClassIdentifier: 
-  Name: Hathi
+  Name: Rook
   Info: 'The Rook, an embodiment of fortitude and unyielding resilience, stands as
     an immovable wall on the battlefield. With an imposing presence and an unwavering
     commitment to protect their allies, they serve as the ultimate shield, soaking
