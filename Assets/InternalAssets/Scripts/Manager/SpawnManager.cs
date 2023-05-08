@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class SpawnManager : MonoBehaviour
 {
     public static event Action<bool> OnHeroSpawn;
-    public List<CharacterData> Heroes = default;
-    
-    public int heroIndex {  get; private set; }
-    public Button championButton;
+    public int heroIndex { get; private set; }
     public bool hasChampion { get; private set; }
+    [SerializeField] private Button championButton;
+    public List<CharacterData> Heroes = default;
+
     private void Start()
     {
         InputManager.TrySpawnHero += SpawnHero;
@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnHero()
     {
-        if(heroIndex>= Heroes.Count) { return; }
+        if (heroIndex >= Heroes.Count) { return; }
         if (heroIndex == 5 && hasChampion) { return; }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -62,10 +62,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
+ 
 
     public void InstantiateHero(int row, int col)
     {
@@ -76,7 +73,7 @@ public class SpawnManager : MonoBehaviour
         if (heroIndex == 5)
         {
             hasChampion = true;
-            championButton.interactable = false; 
+            championButton.interactable = false;
             OnHeroSpawn?.Invoke(true);
             return;
         }
