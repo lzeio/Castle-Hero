@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEditor;
+using System.Collections;
+using System.Reflection;
 
 public class UIManager : MonoBehaviour
 {
@@ -25,6 +28,9 @@ public class UIManager : MonoBehaviour
     [Header("UIPanels")]
     [SerializeField] private GameObject[] GameUIPanels;
     [SerializeField] private GameObject[] MenuUIPanels;
+    //[SerializeField] private DOTweenAnimation GameAnimation;
+    [SerializeField] private DOTweenAnimation UIAnimation;
+    [SerializeField] private int CurrentMenuAnim = 0;
 
     [Header("Settings")]
     [SerializeField] private GameObject[] SettingsQualityHighlights;
@@ -149,8 +155,9 @@ public class UIManager : MonoBehaviour
     }
     public void SelectMenuPanel(int index)
     {
-        ResetPanels();
-        MenuUIPanels[index].SetActive(true);
+        UIAnim(index);      
+        //ResetPanels();
+        //MenuUIPanels[index].SetActive(true);
         OnButtonClicked?.Invoke();
     }
 
@@ -194,6 +201,19 @@ public class UIManager : MonoBehaviour
         }
         GameData.SetMusicLevel(value);
         AudioManager.Instance.MusicLevels(value);
+    }
+    void UIAnim(int index)
+    {
+        UIAnimation.DOPlayBackwardsAllById(CurrentMenuAnim + "");
+        Debug.Log("Anim rewind");
+        DOVirtual.DelayedCall(2f, () => DelayedAnim(index));
+    }
+    void DelayedAnim( int index)
+    {
+        ResetPanels();
+        MenuUIPanels[index].SetActive(true);
+        UIAnimation.DORestartAllById(index + "");
+        CurrentMenuAnim = index;
     }
 
 }

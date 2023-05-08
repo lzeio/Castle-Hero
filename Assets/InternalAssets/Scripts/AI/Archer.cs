@@ -92,7 +92,6 @@ public class Archer : MonoBehaviour
         animationController.ResetAnimation();
         animationController.Death();
         GameplayManager.Instance.WaveSystem.KilledInAction(character);
-        transform.DOScale(0f, 1f).SetUpdate(false);
         DOVirtual.DelayedCall(1f, () => Destroy(gameObject));
     }
     

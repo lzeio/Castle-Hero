@@ -44,7 +44,6 @@ public class Defenders : MonoBehaviour
             animationController.Death();
         }
         GameplayManager.Instance.WaveSystem.KilledInAction(character);
-        transform.DOScale(0f, 1f);
         DOVirtual.DelayedCall(1f, () => Destroy(gameObject));
     }
     private void OnTriggerEnter(Collider other)
