@@ -84,6 +84,7 @@ public class UIManager : MonoBehaviour
     private void WaveSystem_OnWaveCountUpdated(int count)
     {
         waveCount.text = $"WAVE : {count.ToString()}";
+        NewWave.gameObject.SetActive(true);
         NewWave.DORestartAllById("NewWave");
         waveNo = count;
     }

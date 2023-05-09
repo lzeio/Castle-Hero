@@ -22,7 +22,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -40,8 +40,10 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 233d72800d6ab6f4e8082b78907dd638, type: 3}
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
+  - logo: {fileID: 21300000, guid: 233d72800d6ab6f4e8082b78907dd638, type: 3}
+    duration: 5
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -271,7 +273,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: ac5aca30c3b9c6c4783eb7642bbbff60, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -546,6 +555,8 @@ PlayerSettings:
   - m_BuildTarget: iPhone
     m_EncodingQuality: 1
   - m_BuildTarget: tvOS
+    m_EncodingQuality: 1
+  - m_BuildTarget: Standalone
     m_EncodingQuality: 1
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetNormalMapEncoding:
