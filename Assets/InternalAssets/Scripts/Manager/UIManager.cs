@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenAnimation UIAnimation;
     [SerializeField] private int CurrentMenuAnim = 0;
     [SerializeField] private int CurrentGameAnim = 0;
+    [SerializeField] private bool ButtonPressed = false;
 
     [Header("Settings")]
     [SerializeField] private GameObject[] SettingsQualityHighlights;
@@ -45,6 +46,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text EasyWaveText;
     [SerializeField] private TMP_Text MediumWaveText;
     [SerializeField] private TMP_Text HardWaveText;
+    [SerializeField] private TMP_Text CurrentWave;
+    [SerializeField] private GameObject HighScorePopup;
+    [SerializeField] private int waveNo;
+    [SerializeField] private int SelectedDifficulty;
 
     private void Start()
     {
@@ -80,6 +85,7 @@ public class UIManager : MonoBehaviour
     {
         waveCount.text = $"WAVE : {count.ToString()}";
         NewWave.DORestartAllById("NewWave");
+        waveNo = count;
     }
 
     private void Castle_OnCastleHealthUpdated(int health)
@@ -93,7 +99,38 @@ public class UIManager : MonoBehaviour
         if(health<= 0) 
         {
             SelectGamePanel(2);
+            CurrentWave.text =  (waveNo - 1).ToString();
+            if(SelectedDifficulty == 5)
+            {
+                if(GameData.GetEasyWave()<waveNo)
+                {
+                    GameData.SetEasyWave(waveNo - 1);
+                    HighScorePopup.SetActive(true);
+                }
+                   
+
+            }
+            else if (SelectedDifficulty == 10)
+            {
+                if (GameData.GetEasyWave() < waveNo)
+                {
+                    GameData.SetMediumWave(waveNo - 1);
+                    HighScorePopup.SetActive(true);
+                }
+                    
+            }
+            else if (SelectedDifficulty == 15)
+            {
+                if (GameData.GetEasyWave() < waveNo)
+                {
+                    GameData.SetMediumWave(waveNo - 1);
+                    HighScorePopup.SetActive(true);
+                }
+                    
+            }
+
         }
+
          
     }
 
@@ -129,6 +166,7 @@ public class UIManager : MonoBehaviour
         GameplayManager.Instance.ChangeTimeScale();
         OnButtonClicked?.Invoke();
         GameplayManager.Instance.WaveSystem.level = level;
+        SelectedDifficulty= level;
     }
     private void ResetPanels()
     {
@@ -144,15 +182,27 @@ public class UIManager : MonoBehaviour
     }
     public void SelectGamePanel(int index)
     {
-        GameUIAnim(index);
-        OnButtonClicked?.Invoke();
+        if(ButtonPressed== false)
+        {
+            ButtonPressed =true;
+            GameUIAnim(index);
+            OnButtonClicked?.Invoke();
+        }
+        
     }
     public void SelectMenuPanel(int index)
     {
-        UIAnim(index);      
-        //ResetPanels();
-        //MenuUIPanels[index].SetActive(true);
-        OnButtonClicked?.Invoke();
+        if(ButtonPressed== false)
+        {
+            ButtonPressed =true;
+            UIAnim(index);
+            OnButtonClicked?.Invoke();
+            if(index == 1)
+            {
+                SetHighScores();
+            }
+        }
+       
     }
 
     public void SelectedQuality(int index)
@@ -204,7 +254,7 @@ public class UIManager : MonoBehaviour
     }
     void GameUIAnim(int index)
     {
-        UIAnimation.DOPlayBackwardsAllById(CurrentGameAnim + "");
+        //UIAnimation.DOPlayBackwardsAllById(CurrentGameAnim + "");
         DOVirtual.DelayedCall(1f, ()=> DelayedGameAnim(index));
     }
     void DelayedAnim( int index)
@@ -213,6 +263,7 @@ public class UIManager : MonoBehaviour
         MenuUIPanels[index].SetActive(true);
         UIAnimation.DORestartAllById(index + "");
         CurrentMenuAnim = index;
+        ButtonPressed = false;
     }
     void DelayedGameAnim(int index )
     {
@@ -228,6 +279,7 @@ public class UIManager : MonoBehaviour
         }
         CurrentGameAnim = index;
         UIAnimation.DORestartAllById(index + "");
+        ButtonPressed = false;
     }
     public void ReloadScene()
     {
@@ -237,5 +289,4 @@ public class UIManager : MonoBehaviour
         // Reload the current scene
         SceneManager.LoadScene(currentScene.name);
     }
-
 }
