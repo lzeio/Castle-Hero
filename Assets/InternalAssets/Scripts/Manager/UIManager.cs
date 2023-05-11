@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text HardWaveText;
     [SerializeField] private TMP_Text CurrentWave;
     [SerializeField] private GameObject HighScorePopup;
+    [SerializeField] private TMP_Text FinalhighScore;
     [SerializeField] private int waveNo;
     [SerializeField] private int SelectedDifficulty;
 
@@ -101,6 +102,8 @@ public class UIManager : MonoBehaviour
         {
             SelectGamePanel(2);
             CurrentWave.text =  (waveNo - 1).ToString();
+            Time.timeScale = 0;
+            FinalhighScore.text = waveNo.ToString();
             if(SelectedDifficulty == 5)
             {
                 if(GameData.GetEasyWave()<waveNo)
