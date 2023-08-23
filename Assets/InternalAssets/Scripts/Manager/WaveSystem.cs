@@ -90,9 +90,11 @@ public class WaveSystem : MonoBehaviour
         {
             int randEnemyId = UnityEngine.Random.Range(0, Enemies.Count);
             int randEnemyCost = Enemies[randEnemyId].Cost;
-            if (waveValue - randEnemyCost >= 0)
+            if (waveValue - randEnemyCost >= 0 && CanSpawnEnemy(randEnemyId))
             {
                 generatedEnemies.Add(Enemies[randEnemyId].CharacterPrefab);
+
+                Debug.Log($"Enemy Spawn Cost is {randEnemyCost}");
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)
@@ -124,6 +126,25 @@ public class WaveSystem : MonoBehaviour
         waveDuration = 15;
         waveTimer = 0;
     }
-
+    public bool CanSpawnEnemy(int enemyId)
+    {
+        if(currWave<=10 && Enemies[enemyId].Cost<4)
+        {
+            return true;
+        }
+        if (currWave > 10 && Enemies[enemyId].Cost < 6)
+        {
+            return true;
+        }
+        if (currWave >= 15 && Enemies[enemyId].Cost < 10)
+        {
+            return true;
+        }
+        if (currWave >= 20 && Enemies[enemyId].Cost < 15)
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
