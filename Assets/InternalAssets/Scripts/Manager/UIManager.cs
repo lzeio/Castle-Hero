@@ -84,10 +84,11 @@ public class UIManager : MonoBehaviour
 
     private void WaveSystem_OnWaveCountUpdated(int count)
     {
+        waveNo = count;
         waveCount.text = $"WAVE : {count.ToString()}";
+        if (waveNo <= 0) return;
         NewWave.gameObject.SetActive(true);
         NewWave.DORestartAllById("NewWave");
-        waveNo = count;
     }
 
     private void Castle_OnCastleHealthUpdated(int health)
