@@ -88,10 +88,11 @@ public class WaveSystem : MonoBehaviour
         List<GameObject> generatedEnemies = new List<GameObject>();
         while (waveValue > 0 || generatedEnemies.Count < 20)
         {
-            GetEnemyToSpawn(out int enemyId);
+            int randEnemyId = UnityEngine.Random.Range(0, Enemies.Count);
+            int randEnemyCost = Enemies[randEnemyId].Cost;
             if (waveValue - randEnemyCost >= 0)
             {
-                generatedEnemies.Add(enemyPrefab);
+                generatedEnemies.Add(Enemies[randEnemyId].CharacterPrefab);
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)
@@ -124,12 +125,5 @@ public class WaveSystem : MonoBehaviour
         waveTimer = 0;
     }
 
-    public void GetEnemyToSpawn(out int EnemyId)
-    {
-     switch (currWave)
-        {
-            case (currWave<10):
-        }
-    }
 }
 
