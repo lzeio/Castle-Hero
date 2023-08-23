@@ -7,7 +7,7 @@ using UnityEngine;
 public class WaveSystem : MonoBehaviour
 {
     public static event Action<int> OnWaveCountUpdated;
-    [SerializeField]private float spawnInterval = 5f;
+    [SerializeField] private float spawnInterval = 5f;
     public List<CharacterData> Enemies;
     public int currWave;
     private int waveValue;
@@ -19,7 +19,7 @@ public class WaveSystem : MonoBehaviour
     public int waveDuration;
     private float waveTimer;
     private float spawnTimer;
-   
+
     public int level;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
@@ -28,7 +28,7 @@ public class WaveSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -77,7 +77,8 @@ public class WaveSystem : MonoBehaviour
     public void GenerateWave()
     {
         waveValue = currWave * level + UnityEngine.Random.Range(1, 11);
-        waveDuration += 15;
+        spawnTimer = Mathf.Clamp((waveDuration / 3f), 25f, 40f);
+        waveDuration += 60;
         waveTimer = waveDuration; // wave duration is read only
         GenerateEnemies();
     }
@@ -85,14 +86,12 @@ public class WaveSystem : MonoBehaviour
     public void GenerateEnemies()
     {
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while (waveValue > 0 || generatedEnemies.Count < 50)
+        while (waveValue > 0 || generatedEnemies.Count < 20)
         {
-            int randEnemyId = UnityEngine.Random.Range(0, Enemies.Count);
-            int randEnemyCost = Enemies[randEnemyId].Cost;
-
+            GetEnemyToSpawn(out int enemyId);
             if (waveValue - randEnemyCost >= 0)
             {
-                generatedEnemies.Add(Enemies[randEnemyId].CharacterPrefab);
+                generatedEnemies.Add(enemyPrefab);
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)
@@ -124,6 +123,13 @@ public class WaveSystem : MonoBehaviour
         waveDuration = 15;
         waveTimer = 0;
     }
+
+    public void GetEnemyToSpawn(out int EnemyId)
+    {
+     switch (currWave)
+        {
+            case (currWave<10):
+        }
+    }
 }
 
- 

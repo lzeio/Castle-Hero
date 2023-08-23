@@ -14,7 +14,6 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         ToolTipManager.Instance.SetAndShowToolTip(message);
-        Debug.Log(message);
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
