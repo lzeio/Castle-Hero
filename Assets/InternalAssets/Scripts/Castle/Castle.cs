@@ -8,17 +8,28 @@ using System;
 public class Castle : MonoBehaviour
 {
     public static event Action<int> OnCastleHealthUpdated;
-    public int Health;
+    private int Health;
+
+    private void Start()
+    {
+        Health = GameplayManager.Instance.MaxCastleHealth;
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out StatSystem statSystem))
         {
             Health -= statSystem.health;
             statSystem.KillCharacter();
-            OnCastleHealthUpdated?.Invoke(Health);
+            UpdateCastleHealth(Health);
             Destroy(statSystem.gameObject);
             GameplayManager.Instance.CoinsManager.AddCoins(50);
         }
+    }
+
+    public void UpdateCastleHealth(int amount)
+    {
+        Health = amount;
+        OnCastleHealthUpdated?.Invoke(Health);
     }
 
 

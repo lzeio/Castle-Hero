@@ -122,7 +122,8 @@ public class WaveSystem : MonoBehaviour
         }
 
         EnemiesGameObject.Clear();
-        currWave = 1;
+        spawnedEnemies.Clear();
+        currWave = 0;
         waveDuration = 15;
         waveTimer = 0;
     }

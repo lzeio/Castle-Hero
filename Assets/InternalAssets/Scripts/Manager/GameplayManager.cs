@@ -13,7 +13,7 @@ public class GameplayManager : MonoBehaviour
     public static event Action<float> OnTimeScaleChanged;
     public static GameplayManager Instance;
 
-
+    public int MaxCastleHealth;
     public SpawnManager SpawnManager;
     public UIManager UIManager;
     public GridManagerVTwo GridManager_Two;
@@ -71,7 +71,8 @@ public class GameplayManager : MonoBehaviour
     {
         WaveSystem.ResetWaveSystem();
         SpawnManager.ResetSpawnCharacter();
-        FindObjectOfType<Castle>().Health = 5000;
+        UIManager.ResetHealthBarUI();
+        FindObjectOfType<Castle>().UpdateCastleHealth(MaxCastleHealth);
         Time.timeScale = 0f;
     }
 }

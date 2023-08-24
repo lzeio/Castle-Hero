@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         CoinsManager.OnCoinsUpdated += CoinsManager_OnCoinsUpdated;
-        Castle.OnCastleHealthUpdated += Castle_OnCastleHealthUpdated;
+        Castle.OnCastleHealthUpdated += OnCastleHealthUpdated;
         WaveSystem.OnWaveCountUpdated += WaveSystem_OnWaveCountUpdated;
         GameplayManager.OnTimeScaleChanged += GameplayManager_OnTimeScaleChanged;
         SetHighScores();
@@ -91,14 +91,14 @@ public class UIManager : MonoBehaviour
         NewWave.DORestartAllById("NewWave");
     }
 
-    private void Castle_OnCastleHealthUpdated(int health)
+    private void OnCastleHealthUpdated(int health)
     {
-        castleHealthBar.fillAmount = (float)health / 5000;
+        castleHealthBar.fillAmount = (float)health / GameplayManager.Instance.MaxCastleHealth;
         if(castleHealthBar.fillAmount < 0.20) 
         {
             castleHealthBar.gameObject.SetActive(false);
         }
-        RedhealthBar.fillAmount = (float)health / 5000;
+        RedhealthBar.fillAmount = (float)health / GameplayManager.Instance.MaxCastleHealth;
         if(health<= 0) 
         {
             SelectGamePanel(2);
@@ -128,7 +128,7 @@ public class UIManager : MonoBehaviour
             {
                 if (GameData.GetEasyWave() < waveNo)
                 {
-                    GameData.SetMediumWave(waveNo - 1);
+                    GameData.SetHardWave(waveNo - 1);
                     HighScorePopup.SetActive(true);
                 }
                     
@@ -293,5 +293,10 @@ public class UIManager : MonoBehaviour
 
         // Reload the current scene
         SceneManager.LoadScene(currentScene.name);
+    }
+
+    public void ResetHealthBarUI()
+    {
+        castleHealthBar.gameObject.SetActive(true);
     }
 }
