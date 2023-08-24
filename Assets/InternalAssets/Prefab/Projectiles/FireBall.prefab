@@ -14648,6 +14648,7 @@ MonoBehaviour:
   IsProjectile: 1
   DealsDamageOverTime: 0
   damageDuration: 5
+  vfx: {fileID: 68008361696775023}
 --- !u!1001 &68135358625488397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14669,15 +14670,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011428506136, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011428506136, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011428506136, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011428506136, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14741,6 +14742,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+--- !u!1 &68008361696775023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+  m_PrefabInstance: {fileID: 68135358625488397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &70972661069460501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011428506136, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}

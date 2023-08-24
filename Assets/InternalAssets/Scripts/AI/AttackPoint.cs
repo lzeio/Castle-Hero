@@ -6,6 +6,7 @@ public class AttackPoint : MonoBehaviour
     [SerializeField] private bool IsProjectile;
     [SerializeField] private bool DealsDamageOverTime;
     [SerializeField] private int damageDuration = 5;
+    [SerializeField] private GameObject vfx;
     private StatSystem characterStats;
 
 
@@ -14,6 +15,7 @@ public class AttackPoint : MonoBehaviour
         if(IsProjectile)
         {
             DOVirtual.DelayedCall(3f, () => Destroy(gameObject)).SetUpdate(false);
+            DOVirtual.DelayedCall(.5f,() => Destroy(vfx)).SetUpdate(false);
         }
     }
 
@@ -30,13 +32,24 @@ public class AttackPoint : MonoBehaviour
                 return;
             }
             stats.UpdateHealth(characterStats.DealDamage());
-            if(IsProjectile)
+            if (IsProjectile)
             {
-                transform.GetChild(transform.childCount-1).gameObject.SetActive(true);
-                DOVirtual.DelayedCall(0.1f,()=> Destroy(gameObject)).SetUpdate(false);
+
+                DOVirtual.DelayedCall(0.1f, () => Destroy(gameObject)).SetUpdate(false);
+
             }
         }
 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (IsProjectile)
+        {
+
+            DOVirtual.DelayedCall(0.1f, () => Destroy(gameObject)).SetUpdate(false);
+
+        }
     }
 
     public void SetStatsData(StatSystem data)

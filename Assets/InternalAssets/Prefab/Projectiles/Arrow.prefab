@@ -114,6 +114,7 @@ MonoBehaviour:
   IsProjectile: 1
   DealsDamageOverTime: 0
   damageDuration: 5
+  vfx: {fileID: 8999671598952864092}
 --- !u!1 &8999671598952864092
 GameObject:
   m_ObjectHideFlags: 0
