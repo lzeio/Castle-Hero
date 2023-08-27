@@ -15,7 +15,7 @@ public class AttackPoint : MonoBehaviour
         if(IsProjectile)
         {
             DOVirtual.DelayedCall(3f, () => Destroy(gameObject)).SetUpdate(false);
-            DOVirtual.DelayedCall(.5f,() => Destroy(vfx)).SetUpdate(false);
+            DOVirtual.DelayedCall(.25f,() => Destroy(vfx)).SetUpdate(false);
         }
     }
 
@@ -34,9 +34,7 @@ public class AttackPoint : MonoBehaviour
             stats.UpdateHealth(characterStats.DealDamage());
             if (IsProjectile)
             {
-
-                DOVirtual.DelayedCall(0.1f, () => Destroy(gameObject)).SetUpdate(false);
-
+                Destroy(gameObject);
             }
         }
 
@@ -47,7 +45,7 @@ public class AttackPoint : MonoBehaviour
         if (IsProjectile)
         {
 
-            DOVirtual.DelayedCall(0.1f, () => Destroy(gameObject)).SetUpdate(false);
+            Destroy(gameObject);
 
         }
     }
