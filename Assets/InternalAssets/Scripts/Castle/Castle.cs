@@ -8,7 +8,7 @@ using System;
 public class Castle : MonoBehaviour
 {
     public static event Action<int> OnCastleHealthUpdated;
-    private int Health;
+    public static int Health;
 
     private void Start()
     {
@@ -31,6 +31,5 @@ public class Castle : MonoBehaviour
         Health = amount;
         OnCastleHealthUpdated?.Invoke(Health);
     }
-
 
 }

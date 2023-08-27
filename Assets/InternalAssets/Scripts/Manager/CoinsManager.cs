@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class CoinsManager : MonoBehaviour
@@ -13,7 +10,7 @@ public class CoinsManager : MonoBehaviour
     {
         Coins += amount;
         OnCoinsUpdated?.Invoke();
-      
+
     }
 
     public bool HasEnoughCoins(int amount)
@@ -22,5 +19,9 @@ public class CoinsManager : MonoBehaviour
             return true;
         return false;
     }
-    
+
+    public void ResetCoins()
+    {
+        Coins = 0;
+    }
 }

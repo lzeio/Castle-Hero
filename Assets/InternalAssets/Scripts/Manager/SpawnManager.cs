@@ -22,6 +22,10 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnHero()
     {
+        if(Castle.Health<=0)
+        {
+            return;
+        }
         if (heroIndex >= Heroes.Count) { return; }
         if (heroIndex == 5 && hasChampion) { return; }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

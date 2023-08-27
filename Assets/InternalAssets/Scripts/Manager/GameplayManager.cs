@@ -72,6 +72,8 @@ public class GameplayManager : MonoBehaviour
         WaveSystem.ResetWaveSystem();
         SpawnManager.ResetSpawnCharacter();
         UIManager.ResetHealthBarUI();
+        CoinsManager.ResetCoins();
+        CoinsManager.AddCoins(1000);
         FindObjectOfType<Castle>().UpdateCastleHealth(MaxCastleHealth);
         Time.timeScale = 0f;
     }
