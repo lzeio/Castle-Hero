@@ -111,6 +111,7 @@ public class SpawnManager : MonoBehaviour
 
     public void ResetSpawnCharacter()
     {
+        heroIndex = 100;
         foreach (GameObject item in SpawnHeroes)
         {
             Destroy(item);
