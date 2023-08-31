@@ -254,7 +254,6 @@ public class UIManager : MonoBehaviour
     void UIAnim(int index)
     {
         UIAnimation.DOPlayBackwardsAllById(CurrentMenuAnim + "");
-        Debug.Log("Anim rewind");
         DOVirtual.DelayedCall(1f, () => DelayedAnim(index));
     }
     void GameUIAnim(int index)

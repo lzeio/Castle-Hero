@@ -64,7 +64,6 @@ public class GameplayManager : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Current Timescale Multiplier: " + timeScale.ToString());
     }
 
     public void ResetGame()

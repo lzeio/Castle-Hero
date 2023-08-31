@@ -1828,7 +1828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862521846, guid: cf0fe3e81cdb7bb49bd7f5ddad3bb71d, type: 3}
       propertyPath: spawnInterval
-      value: 5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 8115061890587602500, guid: cf0fe3e81cdb7bb49bd7f5ddad3bb71d, type: 3}
       propertyPath: m_RootOrder
@@ -2383,7 +2383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3686984445312993123, guid: 1e52b0f8ee175694b986a0c00cf9c515, type: 3}
       propertyPath: MaxCastleHealth
-      value: 50
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 3686984445312993124, guid: 1e52b0f8ee175694b986a0c00cf9c515, type: 3}
       propertyPath: m_RootOrder

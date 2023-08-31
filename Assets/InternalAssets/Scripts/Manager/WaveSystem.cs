@@ -86,15 +86,13 @@ public class WaveSystem : MonoBehaviour
     public void GenerateEnemies()
     {
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while (waveValue > 0 || generatedEnemies.Count < 20)
+        while (waveValue > 0 || generatedEnemies.Count < 25)
         {
             int randEnemyId = UnityEngine.Random.Range(0, Enemies.Count);
             int randEnemyCost = Enemies[randEnemyId].Cost;
             if (waveValue - randEnemyCost >= 0 && CanSpawnEnemy(randEnemyId))
             {
                 generatedEnemies.Add(Enemies[randEnemyId].CharacterPrefab);
-
-                Debug.Log($"Enemy Spawn Cost is {randEnemyCost}");
                 waveValue -= randEnemyCost;
             }
             else if (waveValue <= 0)

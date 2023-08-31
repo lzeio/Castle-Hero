@@ -42,7 +42,7 @@ public class AttackPoint : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (IsProjectile)
+        if (IsProjectile && other.gameObject.layer != this.gameObject.layer)
         {
 
             Destroy(gameObject);

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -45,10 +45,17 @@ public class UpgradeSystem : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                if (_upgradeable != null && Input.GetMouseButtonDown(1))
+                {
+                    _upgradeable.ToggleUI(false);
+                }
+            }
         }
     }
 
 }
 
-   
+
 
