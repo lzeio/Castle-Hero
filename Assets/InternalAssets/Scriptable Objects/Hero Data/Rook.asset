@@ -17,16 +17,16 @@ MonoBehaviour:
   Speed: 0
   AttackRange: 0
   Reward: 0
-  Base_Damage: 5
+  Base_Damage: 10
   Base_Health: 400
   Cost: 75
-  TierI_AttackDamage: 10
+  TierI_AttackDamage: 15
   TierI_Health: 600
   TierI_Cost: 400
-  TierII_AttackDamage: 15
+  TierII_AttackDamage: 20
   TierII_Health: 750
   TierII_Cost: 750
-  TierIII_AttackDamage: 20
+  TierIII_AttackDamage: 25
   TierIII_Health: 1000
   TierIII_Cost: 1250
   Movable: 0
